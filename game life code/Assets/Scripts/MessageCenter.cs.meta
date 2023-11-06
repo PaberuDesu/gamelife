@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6e81446c13e40bb4ab5239b4e3647db7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - SuccessMessage: {fileID: 8374829092015291749, guid: 02c8c47761bc73944bdb3135625a3b36, type: 3}
+  - ObjectExistsMessage: {fileID: 1895472259471427898, guid: 4a289374b90626e4b97f30ad726dc26a, type: 3}
+  - WrongCoordinates: {fileID: 7642171981436761772, guid: 54335f6ec467f33409f7cfae0fbb3b14, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
