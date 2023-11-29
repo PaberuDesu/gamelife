@@ -17,7 +17,9 @@ public class SettingsForModes : MonoBehaviour {
     public Image BorderExistsIndicator;
     public Transform BornConditionChanger;
     public Transform SurviveConditionChanger;
-    public Transform ScaleChanger;
+    [SerializeField] private Text XScaleChanger;
+    [SerializeField] private Text YScaleChanger;
+    [SerializeField] private Text ZScaleChanger;
     public Slider SpeedSlider;
 
     public float MinimumSimulationSpeed = 0.1f;
@@ -125,11 +127,11 @@ public class SettingsForModes : MonoBehaviour {
 
     public void ChangeScale() {
         int X, Y, Z;
-        try {X = int.Parse(ScaleChanger.GetChild(0).GetChild(ScaleChanger.GetChild(0).childCount - 1).gameObject.GetComponent<Text>().text);}
+        try {X = int.Parse(XScaleChanger.text);}
         catch {X = GameStatusData.X_size;}
-        try {Y = int.Parse(ScaleChanger.GetChild(1).GetChild(ScaleChanger.GetChild(1).childCount - 1).gameObject.GetComponent<Text>().text);}
+        try {Y = int.Parse(YScaleChanger.text);}
         catch {Y = GameStatusData.Y_size;}
-        try {Z = int.Parse(ScaleChanger.GetChild(2).GetChild(ScaleChanger.GetChild(2).childCount - 1).gameObject.GetComponent<Text>().text);}
+        try {Z = int.Parse(ZScaleChanger.text);}
         catch {Z = GameStatusData.Z_size;}
         if ((X != GameStatusData.X_size || Y != GameStatusData.Y_size || Z != GameStatusData.Z_size) && X*Y*Z <= maxArea) {
             if (X > 0)

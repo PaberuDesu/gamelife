@@ -8,16 +8,17 @@ public class Paint : MonoBehaviour {
     float Zoom = 1;
     const int minZoom = 1;
     const int maxZoom = 12;
-    [SerializeField] Vector2 MovePicDirection;
-    [SerializeField] TextureWrapMode _textureWrapMode;
-    [SerializeField] FilterMode _filterMode;
+    [SerializeField] private Vector2 MovePicDirection;
+    [SerializeField] private TextureWrapMode _textureWrapMode;
+    [SerializeField] private FilterMode _filterMode;
     public Texture2D _texture;
-    [SerializeField] Material _material;
-    [SerializeField] Collider _collider;
-    [SerializeField] Camera _camera;
-    [SerializeField] Transform ColorActivator;
-    [SerializeField] Text CurrentCoordOut;
-    [SerializeField] RectTransform MovePicButtons;
+    [SerializeField] private Material _material;
+    [SerializeField] private Collider _collider;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private Transform ColorActivator;
+    [SerializeField] private Transform ColorActivator_parentsList;
+    [SerializeField] private Text CurrentCoordOut;
+    [SerializeField] private RectTransform MovePicButtons;
 
     public Color[] _colors = {Color.white, Color.green, Color.red, new Color(0.6f, 0.3f, 0, 1), Color.magenta};
     int _activeColorNumber = 1;
@@ -122,7 +123,7 @@ public class Paint : MonoBehaviour {
             float YScaleCorrection = Mathf.Max(_material.mainTextureScale.y / _material.mainTextureScale.x, 1);
             int rayX = (int) ((hit.textureCoord.x / Zoom * XScaleCorrection + _material.mainTextureOffset[0]) * _textureX);
             int rayY = (int) ((hit.textureCoord.y / Zoom * YScaleCorrection + _material.mainTextureOffset[1]) * _textureY);
-            CurrentCoordOut.text = $"({rayX}; {rayY})";
+            CurrentCoordOut.text = $"Координата курсора: ({rayX};{rayY})";
             if (Input.GetKey(KeyCode.Mouse0)) {
                 _texture.SetPixel(rayX, rayY, _colors[_activeColorNumber]);
                 GameStatusData.All2DCells[rayX, rayY] = Convert.ToByte(_activeColorNumber);
@@ -155,7 +156,7 @@ public class Paint : MonoBehaviour {
     }
     
     public void ChangeActiveColor(int ColorNumber) {
-        ColorActivator.localPosition = Vector3.up * ((-160 * ColorNumber) - 64);
+        ColorActivator.SetParent(ColorActivator_parentsList.GetChild(ColorNumber),false);
         _activeColorNumber = ColorNumber;
     }
 
@@ -201,7 +202,7 @@ public class Paint : MonoBehaviour {
     private void ActivateCertainButton(int number, bool Activity) {MovePicButObjectList[number].SetActive(Activity);;}
 
     void ChangeZoomParameter() {
-        float CurrentZoom = -(Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 100);
+        float CurrentZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 100;
         if (CurrentZoom != 0) {
             if (Zoom + CurrentZoom <= maxZoom && Zoom + CurrentZoom >= minZoom) {
                 Zoom += CurrentZoom;

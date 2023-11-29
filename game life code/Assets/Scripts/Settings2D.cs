@@ -17,10 +17,11 @@ public class Settings2D : MonoBehaviour {
     public Image BorderExistsIndicator;
     public Transform BornConditionChanger;
     public Transform SurviveConditionChanger;
-    public Transform ScaleChanger;
+    [SerializeField] private Text XScaleChanger;
+    [SerializeField] private Text YScaleChanger;
     public Slider SpeedSlider;
 
-    [SerializeField] Paint paint;
+    [SerializeField] private Paint paint;
 
     public float MinimumSimulationSpeed = 0.1f;
     public float SimulationSpeed = 0.1f;
@@ -126,9 +127,9 @@ public class Settings2D : MonoBehaviour {
 
     public void ChangeScale() {
         int X, Y;
-        try {X = int.Parse(ScaleChanger.GetChild(0).GetChild(ScaleChanger.GetChild(0).childCount - 1).gameObject.GetComponent<Text>().text);}
+        try {X = int.Parse(XScaleChanger.text);}
         catch {X = GameStatusData.X_size2D;}
-        try {Y = int.Parse(ScaleChanger.GetChild(1).GetChild(ScaleChanger.GetChild(1).childCount - 1).gameObject.GetComponent<Text>().text);}
+        try {Y = int.Parse(YScaleChanger.text);}
         catch {Y = GameStatusData.Y_size2D;}
         if (X != GameStatusData.X_size2D || Y != GameStatusData.Y_size2D) {
             if (X > 0)
