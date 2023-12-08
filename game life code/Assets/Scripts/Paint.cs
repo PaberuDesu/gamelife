@@ -3,37 +3,44 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Paint : MonoBehaviour {
-    public int _textureX;
-    public int _textureY;
-    float Zoom = 1;
-    const int minZoom = 1;
-    const int maxZoom = 12;
-    [SerializeField] private Vector2 MovePicDirection;
-    [SerializeField] private TextureWrapMode _textureWrapMode;
-    [SerializeField] private FilterMode _filterMode;
+    private float Zoom = 1;
+    private const int minZoom = 1;
+    private const int maxZoom = 12;
+
+    private Vector2 ScaleProportion = Vector2.one;
+    private Vector2 canvasSize;
+    private Vector2 canvasCenter;
+
+    [SerializeField] Transform MovePicButParent;
+    [SerializeField] GameObject[] MovePicButObjectList = new GameObject[4];
+    private Vector2 MovePicDirection = Vector2.zero;
+
+    private Vector2 screenScale = Vector2.zero;
+
     public Texture2D _texture;
     [SerializeField] private Material _material;
-    [SerializeField] private Collider _collider;
-    [SerializeField] private Camera _camera;
+    public int _textureX;
+    public int _textureY;
+
     [SerializeField] private Transform ColorActivator;
     [SerializeField] private Transform ColorActivator_parentsList;
-    [SerializeField] private Text CurrentCoordOut;
-    [SerializeField] private RectTransform MovePicButtons;
-
     public Color[] _colors = {Color.white, Color.green, Color.red, new Color(0.6f, 0.3f, 0, 1), Color.magenta};
-    int _activeColorNumber = 1;
+    [SerializeField] private int _activeColorNumber = 1;
+    
+    [SerializeField] private Text CurrentCoordOut;
 
-    [SerializeField] GameObject[] MovePicButObjectList = new GameObject[4];
-    [SerializeField] RectTransform[] MovePicButtonsList = new RectTransform[4];
+    [SerializeField] private RectTransform _rectMask;
+    [SerializeField] private RectTransform _rect;
 
-    private bool _paintPermission = true;
+    private bool _isOnCanvas = false;
+    private bool _isPaintable = false;
 
-    void Awake() {
+    private void Awake() {
         _textureX = GameStatusData.Z_size;
         _textureY = GameStatusData.Y_size;
         _texture = new Texture2D(_textureX, _textureY);
-        _texture.wrapMode =_textureWrapMode;
-        _texture.filterMode = _filterMode;
+        _texture.wrapMode =TextureWrapMode.Clamp;
+        _texture.filterMode = FilterMode.Point;
         _material.mainTexture = _texture;
         _texture.Apply();
 
@@ -41,19 +48,11 @@ public class Paint : MonoBehaviour {
             GetNewSize();
             _texture.Apply();
         }
-        else {
-            _material.mainTextureScale = Vector2.one;
-            _material.mainTextureOffset = Vector2.zero;
-            DrawSlice();
-        }
+        else DrawSlice();
     }
-
-    public void PaintPermissionSet(bool permission) {_paintPermission = permission;}
 
     public void Resize() {
         Zoom = minZoom;
-        _material.mainTextureScale = Vector2.one;
-        _material.mainTextureOffset = Vector2.zero;
         _textureX = SliceCutter.AxisNumber == 0 ? GameStatusData.Z_size : GameStatusData.X_size;
         _textureY = SliceCutter.AxisNumber == 1 ? GameStatusData.Z_size : GameStatusData.Y_size;
         SetNormalSize();
@@ -67,16 +66,12 @@ public class Paint : MonoBehaviour {
         _textureX = GameStatusData.X_size2D;
         _textureY = GameStatusData.Y_size2D;
         Zoom = minZoom;
-        _material.mainTextureScale = Vector2.one;
-        _material.mainTextureOffset = Vector2.zero;
         SetNormalSize();
         _texture.Resize(_textureX, _textureY);
     }
 
     public void CutField() {
         Zoom = minZoom;
-        _material.mainTextureScale = Vector2.one;
-        _material.mainTextureOffset = Vector2.zero;
         int OldTextureX = _textureX;
         int OldTextureY = _textureY;
         _textureX = GameStatusData.X_size2D;
@@ -109,50 +104,75 @@ public class Paint : MonoBehaviour {
         GameStatusData.All2DCells = newAll2DCells;
     }
 
-    void Update() {
-        ChangeZoomParameter();
-        PaintWithMouse();
-        MovePicProcess(_material.mainTextureOffset + (MovePicDirection * Time.deltaTime));
+    private void Update() {
+        if (screenScale.x != Screen.width || screenScale.y != Screen.height) {
+            canvasSize = _rectMask.anchorMax - _rectMask.anchorMin;
+            canvasCenter = (_rectMask.anchorMin + _rectMask.anchorMax) / 2;
+            screenScale = new Vector2(Screen.width, Screen.height);
+        }
+        if (_isOnCanvas) ChangeZoomParameter();
+        if (_isPaintable) PaintWithMouse();
+        MovePicProcess(_rect.offsetMin + (MovePicDirection * Time.deltaTime));
     }
 
+    public void SetOnOrOutOfCanvas(bool _isOn) {_isOnCanvas = _isOn;}
+
+    public void SetPaintable(bool _isOn) {_isPaintable = _isOn;}
+
     private void PaintWithMouse() {
-        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (_collider.Raycast(ray, out hit, 100f) && _camera.enabled && _paintPermission) {
-            float XScaleCorrection = Mathf.Max(_material.mainTextureScale.x / _material.mainTextureScale.y, 1);
-            float YScaleCorrection = Mathf.Max(_material.mainTextureScale.y / _material.mainTextureScale.x, 1);
-            int rayX = (int) ((hit.textureCoord.x / Zoom * XScaleCorrection + _material.mainTextureOffset[0]) * _textureX);
-            int rayY = (int) ((hit.textureCoord.y / Zoom * YScaleCorrection + _material.mainTextureOffset[1]) * _textureY);
-            CurrentCoordOut.text = $"Координата курсора: ({rayX};{rayY})";
-            if (Input.GetKey(KeyCode.Mouse0)) {
-                _texture.SetPixel(rayX, rayY, _colors[_activeColorNumber]);
-                GameStatusData.All2DCells[rayX, rayY] = Convert.ToByte(_activeColorNumber);
-                _texture.Apply();
-            }
+        int x = (int) Mathf.Floor((Input.mousePosition.x - (canvasCenter.x * Screen.width) - _rect.offsetMin.x) / ScaleProportion.x / canvasSize.x / Screen.width / Zoom * GameStatusData.X_size2D + (GameStatusData.X_size2D)/2);
+        int y = (int) Mathf.Floor((Input.mousePosition.y - (canvasCenter.y * Screen.height) - _rect.offsetMin.y) / ScaleProportion.y / canvasSize.y / Screen.height / Zoom * GameStatusData.Y_size2D + (GameStatusData.Y_size2D)/2);
+        if (x < 0) x = 0;
+        if (x > GameStatusData.X_size2D - 1) x = GameStatusData.X_size2D - 1;
+        if (y < 0) y = 0;
+        if (y > GameStatusData.Y_size2D - 1) y = GameStatusData.Y_size2D - 1;
+        CurrentCoordOut.text = $"Координата курсора: ({x};{y})";
+        if (Input.GetKey(KeyCode.Mouse0)) {
+            _texture.SetPixel(x, y, _colors[_activeColorNumber]);
+            GameStatusData.All2DCells[x, y] = Convert.ToByte(_activeColorNumber);
+            _texture.Apply();
         }
     }
 
     public void PaintToPlay(int x, int y, int ColorID) {_texture.SetPixel(x, y, _colors[ColorID]);}
     
-    private void MovePicProcess(Vector2 MoveProgress) {
-        Vector2 NewOffset = MoveProgress;
-        if (MoveProgress.y <= 0) {
-            NewOffset.y = 0;
+    private void MovePicProcess(Vector2 MoveValue) {
+        if (Zoom == minZoom) {
             ActivateCertainButton(0, false);
-        } else ActivateCertainButton(0, true);
-        if (MoveProgress.y >= 1 - _material.mainTextureScale.y) {
-            NewOffset.y = 1 - _material.mainTextureScale.y;
             ActivateCertainButton(1, false);
-        } else ActivateCertainButton(1, true);
-        if (MoveProgress.x <= 0) {
-            NewOffset.x = 0;
             ActivateCertainButton(2, false);
-        } else ActivateCertainButton(2, true);
-        if (MoveProgress.x >= 1 - _material.mainTextureScale.x) {
-            NewOffset.x = 1 - _material.mainTextureScale.x;
             ActivateCertainButton(3, false);
-        } else ActivateCertainButton(3, true);
-        _material.mainTextureOffset = NewOffset;
+            _rect.offsetMin = Vector2.zero;
+            _rect.offsetMax = Vector2.zero;
+            MovePic(4);
+            return;
+        }
+        Vector2 maskSize = screenScale * canvasSize;
+        Vector2 maxDistance = (new Vector2(transform.localScale.x, transform.localScale.y) - Vector2.one) * maskSize / 2;
+        if (transform.localScale.x < 1) maxDistance.x = 0;
+        if (transform.localScale.y < 1) maxDistance.y = 0;
+
+        if (MoveValue.x < maxDistance.x) ActivateCertainButton(0, MovePicButParent.localScale.x >= 1);
+        if (MoveValue.x > -maxDistance.x) ActivateCertainButton(1, MovePicButParent.localScale.x >= 1);
+        if (MoveValue.y < maxDistance.y) ActivateCertainButton(2, MovePicButParent.localScale.y >= 1);
+        if (MoveValue.y > -maxDistance.y) ActivateCertainButton(3, MovePicButParent.localScale.y >= 1);
+
+        if (MoveValue.x > maxDistance.x) {
+            MoveValue.x = maxDistance.x;
+            ActivateCertainButton(0, false);
+        } else if (MoveValue.x < -maxDistance.x) {
+            MoveValue.x = -maxDistance.x;
+            ActivateCertainButton(1, false);
+        }
+        if (MoveValue.y > maxDistance.y) {
+            MoveValue.y = maxDistance.y;
+            ActivateCertainButton(2, false);
+        } else if (MoveValue.y < -maxDistance.y) {
+            MoveValue.y = -maxDistance.y;
+            ActivateCertainButton(3, false);
+        }
+        _rect.offsetMin = MoveValue;
+        _rect.offsetMax = MoveValue;
     }
     
     public void ChangeActiveColor(int ColorNumber) {
@@ -183,91 +203,68 @@ public class Paint : MonoBehaviour {
         _texture.Apply();
     }
 
-    void ButtonsResize() {
-        MovePicButtons.sizeDelta = new Vector2(transform.localScale.z, transform.localScale.x) * 852;
-        MovePicButtonsList[0].sizeDelta = new Vector2(30, 852 * transform.localScale.x);
-        MovePicButtonsList[1].sizeDelta = new Vector2(30, 852 * transform.localScale.x);
-        MovePicButtonsList[2].sizeDelta = new Vector2(852 * transform.localScale.z, 30);
-        MovePicButtonsList[3].sizeDelta = new Vector2(852 * transform.localScale.z, 30);
+    private void SetNormalSize() {
+        float x = GameStatusData.X_size2D;
+        float y = GameStatusData.Y_size2D;
+        if (x < y) ScaleProportion = new Vector2(x/y, 1);
+        else ScaleProportion = new Vector2(1, y/x);
+        transform.localScale = minZoom * ScaleProportion;
+        MovePicButParent.localScale = new Vector3 (
+                Mathf.Min(transform.localScale.x, 1),
+                Mathf.Min(transform.localScale.y, 1),
+                1);
     }
 
-    void SetNormalSize() {
-        if (_textureX > _textureY)
-            transform.localScale = new Vector3(1,1,(float)_textureY/_textureX);
-        else
-            transform.localScale = new Vector3((float)_textureX/_textureY,1,1);
-        ButtonsResize();
-    }
+    private void ActivateCertainButton(int number, bool Activity) {MovePicButObjectList[number].SetActive(Activity);}
 
-    private void ActivateCertainButton(int number, bool Activity) {MovePicButObjectList[number].SetActive(Activity);;}
-
-    void ChangeZoomParameter() {
+    private void ChangeZoomParameter() {
         float CurrentZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 100;
+        float previousZoom = Zoom;
         if (CurrentZoom != 0) {
-            if (Zoom + CurrentZoom <= maxZoom && Zoom + CurrentZoom >= minZoom) {
+            if (Zoom + CurrentZoom <= maxZoom && Zoom + CurrentZoom >= minZoom)
                 Zoom += CurrentZoom;
-                int X = GameStatusData.X_size2D;
-                int Y = GameStatusData.Y_size2D;
-                float x_resize = (float)X/Y*Zoom;
-                float y_resize = (float)Y/X*Zoom;
-                if (X > Y) {
-                    if (y_resize <= 1)
-                        transform.localScale = new Vector3(1,1,y_resize);
-                    else if (transform.localScale.z < 1)
-                        transform.localScale = new Vector3(1,1,1);
-                    float width = transform.localScale.x;
-                    float height = transform.localScale.z;
-                    if (width != height)
-                        _material.mainTextureScale = new Vector2(1/Zoom, 1);
-                    else _material.mainTextureScale = new Vector2(1/Zoom, X/Y/Zoom);
-                }
-                else if (Y > X) {
-                    if (x_resize <= 1)
-                        transform.localScale = new Vector3(x_resize,1,1);
-                    else if (transform.localScale.x < 1)
-                        transform.localScale = new Vector3(1,1,1);
-                    float width = transform.localScale.x;
-                    float height = transform.localScale.z;
-                    if (width != height)
-                        _material.mainTextureScale = new Vector2(1, 1/Zoom);
-                    else _material.mainTextureScale = new Vector2(Y/X/Zoom, 1/Zoom);
-                }
-                else {
-                    if (y_resize <= 1)
-                        transform.localScale = new Vector3(x_resize,1,y_resize);
-                    _material.mainTextureScale = new Vector2(1/Zoom, 1/Zoom);
-                }
-            }
-            else if (Zoom + CurrentZoom > maxZoom && Zoom < maxZoom) {
+            else if (Zoom + CurrentZoom > maxZoom && Zoom < maxZoom)
                 Zoom = maxZoom;
-                float XScaleCorrection = Mathf.Max(_material.mainTextureScale.x / _material.mainTextureScale.y, 1);
-                float YScaleCorrection = Mathf.Max(_material.mainTextureScale.y / _material.mainTextureScale.x, 1);
-                _material.mainTextureScale = new Vector2(XScaleCorrection/Zoom, YScaleCorrection/Zoom);
-            }
-            else if (Zoom + CurrentZoom < minZoom && Zoom > minZoom) {
+            else if (Zoom + CurrentZoom < minZoom && Zoom > minZoom)
                 Zoom = minZoom;
-                _material.mainTextureScale = Vector2.one;
-                SetNormalSize();
+            else return;
+
+            if (previousZoom != 1) {
+                float MoveValue = (Zoom - 1) / (previousZoom - 1);
+                _rect.offsetMin *= MoveValue;
+                _rect.offsetMax *= MoveValue;
             }
-            ButtonsResize();
-            if (CurrentZoom < 0)
-                MovePicProcess(_material.mainTextureOffset);
+
+            transform.localScale = Zoom * ScaleProportion;
+
+            MovePicButParent.localScale = new Vector3 (
+                Mathf.Min(transform.localScale.x, 1),
+                Mathf.Min(transform.localScale.y, 1),
+                1);
+            
+            Vector3 horButScale = new Vector3 (1/MovePicButParent.localScale.x, 1, 1);
+            Vector3 vertButScale = new Vector3 (1, 1/MovePicButParent.localScale.y, 1);
+
+            MovePicButObjectList[0].transform.localScale = horButScale;
+            MovePicButObjectList[1].transform.localScale = horButScale;
+            MovePicButObjectList[2].transform.localScale = vertButScale;
+            MovePicButObjectList[3].transform.localScale = vertButScale;
         }
     }
 
     public void MovePic(int DirectionID) {
         switch (DirectionID) {
             case 0:
-                MovePicDirection = Vector2.up;
+                MovePicDirection = Vector2.left * Screen.width;
                 break;
             case 1:
-                MovePicDirection = Vector2.down;
+                MovePicDirection = Vector2.right * Screen.width;
                 break;
             case 2:
-                MovePicDirection = Vector2.right;
+                MovePicDirection = Vector2.down * Screen.width;
                 break;
             case 3:
-                MovePicDirection = Vector2.left;
+                MovePicDirection = Vector2.up * Screen.width;
                 break;
             case 4:
                 MovePicDirection = Vector2.zero;

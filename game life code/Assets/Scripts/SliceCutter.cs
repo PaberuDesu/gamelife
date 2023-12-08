@@ -5,7 +5,10 @@ public class SliceCutter : MonoBehaviour {
     public Text Slice;
     public static int AxisNumber = 0;
     public static string AxisName = "X";
+    private static string[] Axises = {"X", "Y", "Z"};
     public static int Coordinate = 0;
+
+    private void Start() {transform.GetChild(0).gameObject.GetComponent<Image>().color = Color.white;}
 
     private void ReplaceText() {
         Slice.text = $"Координата среза: {AxisName+Coordinate}";
@@ -16,7 +19,7 @@ public class SliceCutter : MonoBehaviour {
             transform.GetChild(AxisNumber).gameObject.GetComponent<Image>().color = Color.grey;
             transform.GetChild(axis_number).gameObject.GetComponent<Image>().color = Color.white;
             AxisNumber = axis_number;
-            AxisName = AxisNumber == 0 ? "X" : (AxisNumber == 1 ? "Y" : "Z");
+            AxisName = Axises[AxisNumber];
             ReplaceText();
             try {
                 int size = AxisNumber == 0 ? GameStatusData.X_size : (AxisNumber == 1 ? GameStatusData.Y_size : GameStatusData.Z_size);
@@ -31,7 +34,7 @@ public class SliceCutter : MonoBehaviour {
 
     public void ChangeAxis() {
         transform.GetChild(AxisNumber).gameObject.GetComponent<Image>().color = Color.white;
-        AxisName = AxisNumber == 0 ? "X" : (AxisNumber == 1 ? "Y" : "Z");
+        AxisName = Axises[AxisNumber];
         ReplaceText();
     }
 

@@ -4060,7 +4060,6 @@ GameObject:
   m_Component:
   - component: {fileID: 971841504}
   - component: {fileID: 971841503}
-  - component: {fileID: 971841502}
   - component: {fileID: 971841505}
   m_Layer: 0
   m_Name: Main Camera
@@ -4069,14 +4068,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &971841502
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971841501}
-  m_Enabled: 1
 --- !u!20 &971841503
 Camera:
   m_ObjectHideFlags: 0
@@ -4195,7 +4186,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1305.6002, y: 0}
+  m_SizeDelta: {x: 464.21338, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &983751612
 MonoBehaviour:
@@ -5204,7 +5195,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1305.6002, y: 0}
+  m_SizeDelta: {x: 464.21338, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1394700247
 MonoBehaviour:
@@ -6619,7 +6610,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1305.6002, y: 0}
+  m_SizeDelta: {x: 464.21338, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766540536
 MonoBehaviour:
@@ -7656,7 +7647,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1305.6002, y: 0}
+  m_SizeDelta: {x: 464.21338, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956739787
 MonoBehaviour:
