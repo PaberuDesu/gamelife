@@ -8,7 +8,7 @@ public class SliceCutter : MonoBehaviour {
     private static string[] Axises = {"X", "Y", "Z"};
     public static int Coordinate = 0;
 
-    private void Start() {transform.GetChild(0).gameObject.GetComponent<Image>().color = Color.white;}
+    private void Start() {ChangeAxis();}
 
     private void ReplaceText() {
         Slice.text = $"Координата среза: {AxisName+Coordinate}";
@@ -16,10 +16,8 @@ public class SliceCutter : MonoBehaviour {
 
     public void ChangeAxis(int axis_number) {
         if (AxisNumber != axis_number) {
-            transform.GetChild(AxisNumber).gameObject.GetComponent<Image>().color = Color.grey;
-            transform.GetChild(axis_number).gameObject.GetComponent<Image>().color = Color.white;
             AxisNumber = axis_number;
-            AxisName = Axises[AxisNumber];
+            ChangeAxis();
             ReplaceText();
             try {
                 int size = AxisNumber == 0 ? GameStatusData.X_size : (AxisNumber == 1 ? GameStatusData.Y_size : GameStatusData.Z_size);
@@ -33,6 +31,8 @@ public class SliceCutter : MonoBehaviour {
     }
 
     public void ChangeAxis() {
+        for (int _axis = 0; _axis < 3; _axis++)
+            transform.GetChild(_axis).gameObject.GetComponent<Image>().color = Color.grey;
         transform.GetChild(AxisNumber).gameObject.GetComponent<Image>().color = Color.white;
         AxisName = Axises[AxisNumber];
         ReplaceText();
@@ -52,9 +52,5 @@ public class SliceCutter : MonoBehaviour {
 
     public void ChangeText(Text currentSlice) {
         currentSlice.text = $"Координата текущего среза: {AxisName+Coordinate}";
-    }
-
-    public void LightOffAxisMark() {
-        transform.GetChild(AxisNumber).gameObject.GetComponent<Image>().color = Color.grey;
     }
 }

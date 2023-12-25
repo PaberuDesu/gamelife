@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638125906492958338
-    m_Hash: 599159656
+      ticks: 638389571754746705
+    m_Hash: 3497739086
   m_LockFileStatus:
     m_FilePath: C:/Users/pasha/gamelifesaved/game life code/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638125907474399099
-    m_Hash: 3799860606
+      ticks: 638389571754746705
+    m_Hash: 822393146
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -241,6 +241,7 @@ m_PackageAssets:
         - 3.0.24
         - 3.0.25
         - 3.0.26
+        - 3.0.27
         compatible:
         - 1.0.2
         - 1.0.6
@@ -282,6 +283,7 @@ m_PackageAssets:
         - 3.0.24
         - 3.0.25
         - 3.0.26
+        - 3.0.27
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -557,6 +559,9 @@ m_PackageAssets:
         - 1.3.7
         - 1.3.8
         - 1.3.9
+        - 1.4.0
+        - 1.4.1
+        - 1.4.2
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -573,6 +578,9 @@ m_PackageAssets:
         - 1.3.7
         - 1.3.8
         - 1.3.9
+        - 1.4.0
+        - 1.4.1
+        - 1.4.2
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -2905,6 +2913,7 @@ m_PackageAssets:
         - 1.10.1
         - 1.11.0
         - 1.12.0
+        - 1.12.1
         compatible:
         - 1.0.1
         - 1.1.0-pre.7
@@ -2931,6 +2940,7 @@ m_PackageAssets:
         - 1.10.1
         - 1.11.0
         - 1.12.0
+        - 1.12.1
         verified: 1.4.3
       dependencies:
       - name: com.unity.modules.unitywebrequest

@@ -135,6 +135,16 @@ public class Paint : MonoBehaviour {
     }
 
     public void PaintToPlay(int x, int y, int ColorID) {_texture.SetPixel(x, y, _colors[ColorID]);}
+
+    public void recolor(int type) {
+        for (int x = 0; x < _textureX; x++) {
+            for (int y = 0; y < _textureY; y++) {
+                if (GameStatusData.All2DCells[x,y] == type)
+                    _texture.SetPixel(x, y, _colors[type]);
+            }
+        }
+        _texture.Apply();
+    }
     
     private void MovePicProcess(Vector2 MoveValue) {
         if (Zoom == minZoom) {
