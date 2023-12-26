@@ -39,7 +39,7 @@ public class SaveData : MonoBehaviour {
     }
 
     public void Save2DField(int SlotNumber) {
-        Field2DData CellData = new Field2DData(new Settings2DData(_settings2D));
+        Field2DData CellData = new Field2DData(new Settings2DData(_settings2D),  _paint);
         File.WriteAllText(Application.streamingAssetsPath + $"/SavedData/Saved2DGameNumber{SlotNumber}.json", JsonUtility.ToJson(CellData));
         SavePhoto2D(SlotNumber);
     }
@@ -97,9 +97,11 @@ public class SaveData : MonoBehaviour {
     public List<int> AllCells = new List<int>();
     public int X_size, Y_size;
     public Settings2DData Settings;
+    public Color[] palette;
     
-    public Field2DData(Settings2DData settings_data) {
+    public Field2DData(Settings2DData settings_data, Paint _paint) {
         Settings = settings_data;
+        palette = _paint._colors;
         X_size = GameStatusData.X_size2D;
         Y_size = GameStatusData.Y_size2D;
         for (byte x = 0; x < X_size; x++) {
@@ -110,6 +112,8 @@ public class SaveData : MonoBehaviour {
     }
 
     public void Apply(Paint _paint) {
+        _paint._colors = palette;
+        _paint.recolorVisualisers();
         GameStatusData.X_size2D = X_size;
         GameStatusData.Y_size2D = Y_size;
         GameStatusData.All2DCells = new byte[X_size, Y_size];
@@ -182,12 +186,9 @@ public class SaveData : MonoBehaviour {
 }
 
 [System.Serializable] public class Settings2DData {
-    //cell types
     public List<CellType> CellTypes = new List<CellType>();
-    //border existance
     public bool BorderExistance;
-    //speed of game
-    public float SimulationSpeed;
+    public float SimulationSpeed;//speed of game
 
     public Settings2DData(Settings2D Settings) {
         //cell types, its born and survive conditions
@@ -195,10 +196,8 @@ public class SaveData : MonoBehaviour {
         CellTypes.Add(new CellType(2, "Parasite Cell", Settings.ParasitismCondition, Settings.ParasiteSurviveCondition));
         CellTypes.Add(new CellType(3, "Mushroom Cell", Settings.MushroomBornCondition, Settings.MushroomSurviveCondition));
         CellTypes.Add(new CellType(4, "Imitator Cell", Settings.ImitatorBornCondition, Settings.ImitatorSurviveCondition));
-        //border existance
         BorderExistance = Settings._isBorderExists;
-        //speed of game
-        SimulationSpeed = Settings.SimulationSpeed;
+        SimulationSpeed = Settings.SimulationSpeed;//speed of game
     }
 
     public void Apply(Settings2D Settings) {

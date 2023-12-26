@@ -22,6 +22,7 @@ public class Paint : MonoBehaviour {
     public int _textureX;
     public int _textureY;
 
+    [SerializeField] private Image[] PaletteVisualiser;
     [SerializeField] private Transform ColorActivator;
     [SerializeField] private Transform ColorActivator_parentsList;
     public Color[] _colors = {Color.white, Color.green, Color.red, new Color(0.6f, 0.3f, 0, 1), Color.magenta};
@@ -144,6 +145,11 @@ public class Paint : MonoBehaviour {
             }
         }
         _texture.Apply();
+    }
+
+    public void recolorVisualisers() {
+        for (int i = 0; i < PaletteVisualiser.Length; i++)
+            PaletteVisualiser[i].color = _colors[i];
     }
     
     private void MovePicProcess(Vector2 MoveValue) {
