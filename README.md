@@ -1,95 +1,112 @@
-# Игра "Жизнь" в 2D- и 3D-режимах
-## Навигация по проекту
-### Код
+# Conway's Game of life in 2D- and 3D-modes
+
+## Project navigation
+
+### Code
+
 > /game life code/Assets/Scripts
-### Для скачивания игры
+
+### Builded game
+
 > /GameLife
-## Описание программы
 
-### Основные сведения
-Игра «Жизнь» - это клеточный автомат, который был придуман математиком Джоном Конвеем в 1970 году. Она представляет собой модель развития популяции клеток на двумерной поверхности.
-Каждая клетка может находиться в одном из двух состояний: живой или мертвой. В зависимости от состояния соседних клеток, клетка может изменить свое состояние на следующем шаге.
+## Program description
 
-В классическую версию этой игры была добавлена возможность переключения между двумерным и трехмерным режимами.
-В трехмерном режиме игрок может наблюдать за развитием популяции клеток в трехмерном пространстве.
+### Basic info
 
-### Типы клеток
-Правила были изменены таким образом, что каждая клетка может находиться в одном из пяти состояний: пустой, обычной клетки, паразита, гриба или стволовой клетки.
-В зависимости от состояния соседних клеток, клетка может изменить свое состояние на следующем шаге.
+The game of life is a cellular automata invented by mathematician John Conway in 1970. It is a model of cell population growth on a 2D-field.
+Each cell can be alive or dead. Depending on the state of cells nearby, the cell may change its state in the next step.
 
-Вышеперечисленные типы клеток рождаются и выживают по заданным игроком правилам. Если присвоить всем типам клеток номера по следующему принципу: 
-*пустая* — 0, *обычная* — 1, *паразит* — 2, *гриб* — 3, *стволовая* — 4, — то соседи для проверки условий рождения и выживания клеток считаются следующим образом:
-- для обычной клетки: (1)-(2)+(4)
-- для паразита: (1)+(3)+(4)
-- для гриба: (0)+(3)
-- для стволовой клетки: (1)+(2)+(3)+(4)
+The classic version of this game has been updated with the ability to switch between two-dimensional and three-dimensional modes.
+In three-dimensional mode, the player can observe the development of a population of cells in three-dimensional space.
 
-У типов клеток (2), (3), (4) есть свои особенности, отличающие их от других. Например, (2) отнимает единицу из списка соседей клеток (1) рядом с ней, 
-так как это паразит, отнимающий питательные вещества у обычных клеток. Помимо этого (2) — единственный тип клетки, который не появляется на пустом месте, 
-а мутирует из клетки типа (1). (3) рождается и выживает в свободных условиях, то есть, если рядом определенное количество пустых клеток и клеток грибов. 
-Самая необычная клетка — клетка (4), так как эта клетка, будучи неспособной выжить, может превратиться в другую клетку, чтобы продолжить существовать на поле.
+### Cell types
 
-### Возможности игрока
-Игрок может:
-- влиять на развитие популяции, изменяя начальное расположение клеток и правила, по которым клетки рождаются и выживают и наблюдая за тем, как они взаимодействуют друг с другом.
-- изменять в настройках размер поля, скорость симуляции и ограниченность поля.
-> Если поле ограничено, то симуляция происходит в замкнутом поле в форме прямоугольника или параллелепипеда. При этом у клеток, находящихся возле стены, максимальное количество соседей
-меньше, чем у других. В противном случае клетка у стены считает своим соседом каждую клетку возле противоположной стены, если клетки этих типов могут взаимодействовать.
-- изменять скорость симуляции в настройках или в процессе игры.
-- сохранять состояние поля и правила и загружать сохраненную информацию.
-- использовать зум на 2д-поле и двигаться вдоль поля
-- рисовать на двумерном поле.
-- создать срез трехмерного поля по определенной координате и вставить двумерное поле в качестве среза внутрь трехмерного.
+The rules have been changed so that each cell can be in one of five states: an empty place, a regular cell, a parasite, a fungus or a stem cell.
+As in the classic version depending on the state of cells nearby, the cell may change its state in the next step.
 
-### Общие технические сведения
-Была создана иконка приложения, позволяющая отличить его от других и отражающая его суть.
+The above types of cells can born and survive according to the rules set by the player. If you give all cell types numbers:
+_empty_ — 0, _regular_ — 1, _parasite_ — 2, _fungus_ — 3, _stem cell_ — 4, — then the neighbors for the conditions check are considered as follows:
 
-Проект выполнен на базе движка Unity с использованием языка С#.
+- for a regular cell: (1)-(2)+(4)
+- for a parasite: (1)+(3)+(4)
+- for a fungus: (0)+(3)
+- for a stem cell: (1)+(2)+(3)+(4)
 
-Сам игровой процесс происходит следующим образом: создается копия массива, хранящего информацию о состоянии поля. Во избежание ошибок, связанных с последовательностью обработки клеток на поле, 
-каждая клетка ищет соседей в старом массиве, а записывает свое новое состояние в новый массив. Подсчет количества соседей зависит от типа клетки. Принцип подсчета соседей для каждого типа клеток 
-уже был описан выше.
+Cell types (2), (3), (4) have their own traits distinguishing them from others. For example (2) subtracts one from the number of neighbors of (1) next to it
+because it is a parasite that takes away nutrients from regular cells. (2) is the only type that can't appear from nothing but mutates from a cell (1).
+(3) borns and stays alive depending on empty space. This means that it can live if there are enough space and fungi nearby. The most strange cell is (4)
+because if this cell can't survive it turns into the cell of another type that can live in current environment.
 
-### Сохранение
-Сохранение состояния поля и настроек происходит так: сначала создаются сериализуемые классы, один из которых содержит информацию о поле, а другой содержит информацию о настройках, в том числе еще 
-четыре класса, каждый из которых хранит информацию о настройках для одного из типов клеток. Далее сериализуемые классы помещаются в *JSON*-файл. Таким образом, этот файл хранит всю необходимую 
-информацию для восстановления состояния поля и настроек игры. Далее перезаписывается картинка, на которой изображено игровое поле. Также эта картинка сразу устанавливается в соответствующий слот сохранения.
+### Player's possibilities
 
-Для каждого из режимов игры, 2D и 3D, существует четыре таких слота, с которыми можно взаимодействовать из главного меню без возможности сохранения или нажав специальную кнопку. В последнем случае игру 
-можно как загрузить, так и сохранить.
+The player can:
 
-При загрузке игры *JSON*-файл сериализуется и преобразуется обратно в экземпляры классов, содержащих всю информацию об игре. Далее применяются все указанные настройки и производится проверка на соответствие 
-и замена каждой клетки поля. При этом все поле приобретает состояние, указанное в JSON-файле.
+- influence the development of a population by changing the initial location of cells and the rules by which cells are born and survive and by observing how they interact with each other.
+- change the field size, simulation speed, and field limitations in the settings.
+  > If the field is limited, then the simulation takes place in a closed field that has form of a rectangle or a parallelepiped. At the same time, the cells
+  > located near the wall have the maximum number of neighbors more than other cells. Else the cell located next to the wall counts some cells next to the
+  > opposite wall as the neighbours.
+- change simulation speed.
+- save field and rools (and color palette in 2D) and load this data.
+- use zoom on 2D-field, move along it and change color palette
+- draw on 2D-field.
+- create a slice of a 3D-field at a certain coordinate or insert a 2D-field as a slice inside a 3D one.
 
-### Взаимодействие 2D и 3D
-Переход от 3D- к 2D-режиму осуществляется несколькими способами:
-- создание среза
-> В этом случае пользователь выбирает ось и координату для среза, после чего создается новая текстура, представляющая двумерный срез трехмерного поля по данной координате и являющаяся готовым к запуску игры 
-полем.
-- возврат к предыдущему состоянию поля.
-> В данном случае поле запускается в том состоянии, в котором оно было при последнем изменении пользователем. Если же пользователь еще не запускал 2D-поле, то создастся пустое поле размером 10*10 клеток.
+### General technical data
 
-### Особенности 2D-поля
-Если выбран 2D-режим, то клетки представляют собой не объекты как в 3D-режиме, а пиксели на двумерном поле-текстуре. Приближение и движение вдоль поля при этом на самом деле меняют размер и положение 
-всего холста, который ограничен маской для стабильного положения на экране. Такой способ работы с двумерным полем облегчает сохранение игры, так как картинка, прикрепляемая к сохраненной игре, 
-представляет собой само поле, чего нельзя сказать о трехмерном поле, где эта картинка рендерится через отдельную предназначенную для этого камеру. Эти картинки нужны для того, чтобы отличить 
-сохраненные поля друг от друга, не загружая их для этого.
+The project is based on the Unity and C#.
 
-В 2D-режиме можно вставить двумерное поле внутрь трехмерного.
+The gameplay works like this: the array that stores information about the state of the field has a copy. To avoid errors related to the sequence of
+processing cells on the field, each cell searches for neighbors in the old array, and writes its new state to the new array. Counting the number of neighbors
+depends on the type of cell. The principle of counting neighbors for each type of cell has already been described above.
 
-Выбор типа клетки в 2D-режиме представляет собой выбор одного из цветов палитры, каждый из которых соответствует одному из типов клетки.
+### Save and load
 
-Создание новых клеток производится через отслеживание точки текстуры, на которую наведен курсор. Если нажата левая кнопка мыши, то в этой точке пиксель изменяет цвет на выбранный пользователем, 
-а значение ID клетки в массиве, соответствующей данной точке, изменяется на ID, соответствующий данному цвету.
+Saving the state of the field and settings occurs as follows: first, serializable classes are created, one of this classes contains information about the
+field, and the other contains information about the settings, including 4 more classes that contain data about cell types settings. Next, the serializable
+classes are placed in a _JSON_-file. So, this file contains all the necessary info to restore the state of the field and game settings. Next, the picture
+for save slot is rewrited. It is the photo of the field.
 
-### Особенности 3D-поля
-В 3D-режиме помимо послойного рисования есть два режима создания новых клеток. При создании клетки с помощью одного из этих способов в истории изменения клеток поля появляется соответствующая запись. 
+For each game mode (2D and 3D) there are four save slots, that can be called from main menu without possibility to save or from game.
 
-Первый способ долгий, но точный: пользователь должен вручную задать координаты клетки, которую он хочет изменить, и новый тип клетки.
+When the saved game is loading, the _JSON_-file is serialized and unpacked to objects that contain data about game. Next, all the settings are applied
+and the field is rewrited to correspond the _JSON_-file.
 
-Второй тип больше похож на взаимодействие с двумерным полем. Строится луч из камеры через позицию курсора. Клетка создается в том случае, если луч сталкивается с непустой клеткой поля. Пользователь 
-выбирает тип клетки, которую хочет создать. Далее нужно нажать ctrl и левую кнопку мыши. Если тип клетки, в которую врезался луч, не совпадает с типом, выбранным пользователем, то эта клетка заменяется 
-на выбранную. Если же типы совпадают, то отслеживается, в какую из шести граней врезался луч, после чего создается новая клетка таким образом, чтобы она касалась этой грани своей гранью.
+### 2D and 3D interactions
 
-Если нажать клавишу «E» при редактировании 3D-поля, будет активирован режим, в котором отсутствует большая часть интерфейса, что увеличивает обзор, и появится возможность двигать и вращать камеру. 
-Этот режим будет активен, пока снова не будет нажата та же кнопка.
+The transition from 3D- to 2D-mode is carried out in several ways:
+
+- creating a slice
+  > In this case, the user selects the axis and coordinate for the slice and then a new texture is created that is a 2D-slice of a 3D-field at this
+  > coordinate and is a field ready to start the game.
+- return to the previous state of the field.
+  > In this case, the field is started in the state it was in when the user last changed it. If the user has not launched the 2D field yet, an empty field of
+  > 10\*10 cells will be created.
+
+### Features of the 2D field
+
+If 2D mode is selected, then the cells are not objects as in 3D, but pixels on a texture. Zooming and moving along the field actually changes the size and
+position of the entire canvas, which is limited by a mask for a stable position on the screen. This way of working with a 2D-field makes it easier to save
+the game, since the picture attached to the saved game is the field itself. This isn't true for a 3D-field, where this picture is rendered through a separate
+camera that made for this purpose. These images are needed in order to distinguish the saved fields from each other without downloading games.
+
+Selecting a cell type in 2D-mode is a selection of one of the colors of the palette, each of which corresponds to one of the cell types. Colors of the
+palette are changable. Player saves and loads the palette with all the game data.
+
+The creation of new cells is performed by tracking the point of the texture on which the cursor is hovered. If the left mouse button is pressed, then the pixel at this point changes color to the one selected by the user, and the value of the cell ID in the array changes to the ID corresponding to this color.
+
+### Features of the 3D field
+
+In 3D mode, in addition to layer-by-layer drawing, there are two modes for creating new cells. When creating a cell using one of these methods, a
+corresponding note appears in the history of cell changes in the field.
+
+The first method is long but precise: the user must manually set the coordinates of the cell he wants to change and the new cell type.
+
+The second type is more like main way of interacting with a 2D-field. The ray from the camera passes through the cursor position. A cell is created if the
+ray collides with a non-empty cell of the field. User chooses cell type to create. Then he presses "ctrl" and left mouse button. If the type of cell into
+which the ray crashed doesn't match the type selected by the user, then this cell is replaced with the selected one. Else program tracks which of the six
+faces the ray has crashed into, and then a new cell is created so that it touches this face with its face.
+
+If you press the "E" key while editing the 3D field, a mode in which most of the interface is missing will be activated. It increases the view, and it will
+be possible to move and rotate the camera. This mode will be active until the same button is pressed again.
