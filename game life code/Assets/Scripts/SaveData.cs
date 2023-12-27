@@ -11,6 +11,7 @@ public class SaveData : MonoBehaviour {
     [SerializeField] TakeAPhoto take_a_photo;
     [SerializeField] ReloadPhotos _photoReloader;
 
+
     private void Start() {
         if (MainMenuLogic._isChosen2D) {
             if (MainMenuLogic.data_slot_to_load >= 0)
@@ -58,6 +59,13 @@ public class SaveData : MonoBehaviour {
     
     public void SavePhoto2D(int SlotNumber) {
         File.WriteAllBytes(Application.dataPath + $"/Resources/Image{SlotNumber}of2D.png", _paint._texture.EncodeToPNG());
+
+        int colorNum = 5;
+        Texture2D texPalette = new Texture2D(colorNum, 1);
+        for (int i=0; i<colorNum; i++)
+            texPalette.SetPixel(i, 1, _paint._colors[i]);
+        File.WriteAllBytes(Application.dataPath + $"/Resources/Palette{SlotNumber}.png", texPalette.EncodeToPNG());
+        
         _photoReloader.ReloadPhoto2D(SlotNumber);
     }
 }
