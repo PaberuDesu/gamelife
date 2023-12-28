@@ -17,13 +17,13 @@ public class SaveData : MonoBehaviour {
             if (MainMenuLogic.data_slot_to_load >= 0)
                 Load2DField(MainMenuLogic.data_slot_to_load);
             else
-                GameStatusData.All2DCells = new byte[GameStatusData.X_size2D, GameStatusData.Y_size2D];
+                GameStatusData.All2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
         }
         else {
             if (MainMenuLogic.data_slot_to_load >= 0)
                 LoadField(MainMenuLogic.data_slot_to_load);
             else
-                GameStatusData.AllCells = new byte[GameStatusData.X_size, GameStatusData.Y_size, GameStatusData.Z_size];
+                GameStatusData.AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
         }
     }
 
@@ -77,9 +77,9 @@ public class SaveData : MonoBehaviour {
     
     public FieldData(SettingsData settings_data) {
         Settings = settings_data;
-        X_size = GameStatusData.X_size;
-        Y_size = GameStatusData.Y_size;
-        Z_size = GameStatusData.Z_size;
+        X_size = GameStatusData.size3D[0];
+        Y_size = GameStatusData.size3D[1];
+        Z_size = GameStatusData.size3D[2];
         for (byte x = 0; x < X_size; x++) {
             for (byte y = 0; y < Y_size; y++) {
                 for (byte z = 0; z < Z_size; z++) {
@@ -91,9 +91,9 @@ public class SaveData : MonoBehaviour {
     }
 
     public void Apply() {
-        GameStatusData.X_size = X_size;
-        GameStatusData.Y_size = Y_size;
-        GameStatusData.Z_size = Z_size;
+        GameStatusData.size3D[0] = X_size;
+        GameStatusData.size3D[1] = Y_size;
+        GameStatusData.size3D[2] = Z_size;
         pregameLogic.ClearField();
         foreach (Cell cell in AllCells) {
             pregameLogic.Create(cell.x, cell.y, cell.z, cell.ID);
@@ -110,8 +110,8 @@ public class SaveData : MonoBehaviour {
     public Field2DData(Settings2DData settings_data, Paint _paint) {
         Settings = settings_data;
         palette = _paint._colors;
-        X_size = GameStatusData.X_size2D;
-        Y_size = GameStatusData.Y_size2D;
+        X_size = GameStatusData.size2D[0];
+        Y_size = GameStatusData.size2D[1];
         for (byte x = 0; x < X_size; x++) {
             for (byte y = 0; y < Y_size; y++) {
                 AllCells.Add(GameStatusData.All2DCells[x,y]);
@@ -122,8 +122,8 @@ public class SaveData : MonoBehaviour {
     public void Apply(Paint _paint) {
         _paint._colors = palette;
         _paint.recolorVisualisers();
-        GameStatusData.X_size2D = X_size;
-        GameStatusData.Y_size2D = Y_size;
+        GameStatusData.size2D[0] = X_size;
+        GameStatusData.size2D[1] = Y_size;
         GameStatusData.All2DCells = new byte[X_size, Y_size];
         _paint.GetNewSize();
         for (int i = 0; i < X_size * Y_size; i++) {

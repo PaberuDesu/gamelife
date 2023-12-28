@@ -50,7 +50,7 @@ public class pregameLogic : MonoBehaviour {
             Vector3 coordinates = hit.collider.transform.position;
             if (GameStatusData.AllCells[(int) coordinates.x, (int) coordinates.y, (int) coordinates.z] == SelectedCellType)
                 coordinates += hit.normal;
-            if (coordinates.x >= 0 && coordinates.x < GameStatusData.X_size && coordinates.y >= 0 && coordinates.y < GameStatusData.Y_size && coordinates.z >= 0 && coordinates.z < GameStatusData.Z_size)
+            if (coordinates.x >= 0 && coordinates.x < GameStatusData.size3D[0] && coordinates.y >= 0 && coordinates.y < GameStatusData.size3D[1] && coordinates.z >= 0 && coordinates.z < GameStatusData.size3D[2])
                 Create((int) coordinates.x, (int) coordinates.y, (int) coordinates.z);
             Invoke("WaitForChangeNext", 0.1f);
         }
@@ -133,7 +133,7 @@ public class pregameLogic : MonoBehaviour {
 
     public static void CutField() {
         foreach(Transform child in GameStatusData.CellsParent) {
-            if (child.transform.position.x >= GameStatusData.X_size || child.transform.position.y >= GameStatusData.Y_size || child.transform.position.z >= GameStatusData.Z_size)
+            if (child.transform.position.x >= GameStatusData.size3D[0] || child.transform.position.y >= GameStatusData.size3D[1] || child.transform.position.z >= GameStatusData.size3D[2])
                 Destroy(child.gameObject);
         }
     }
@@ -141,6 +141,6 @@ public class pregameLogic : MonoBehaviour {
     public static void ClearField() {
         foreach(Transform child in GameStatusData.CellsParent)
             Destroy(child.gameObject);
-        GameStatusData.AllCells = new byte[GameStatusData.X_size, GameStatusData.Y_size, GameStatusData.Z_size];
+        GameStatusData.AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
     }
 }

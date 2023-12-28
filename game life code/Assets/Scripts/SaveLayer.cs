@@ -9,11 +9,11 @@ public class SaveLayer : MonoBehaviour {
         for (int width = 0; width < paint._textureX; width++) {
             for (int height = 0; height < paint._textureY; height++) {
                 int PixelID = GetID(paint._texture.GetPixel(width, height));
-                if (axis == 0 && coord < GameStatusData.X_size && height < GameStatusData.Y_size && width < GameStatusData.Z_size)
+                if (axis == 0 && coord < GameStatusData.size3D[0] && height < GameStatusData.size3D[1] && width < GameStatusData.size3D[2])
                     pregameLogic.Create(coord, height, width, PixelID);
-                else if (axis == 1 && width < GameStatusData.X_size && coord < GameStatusData.Y_size && height < GameStatusData.Z_size)
+                else if (axis == 1 && width < GameStatusData.size3D[0] && coord < GameStatusData.size3D[1] && height < GameStatusData.size3D[2])
                     pregameLogic.Create(width, coord, height, PixelID);
-                else if (axis == 2 && width < GameStatusData.X_size && height < GameStatusData.Y_size && coord < GameStatusData.Z_size)
+                else if (axis == 2 && width < GameStatusData.size3D[0] && height < GameStatusData.size3D[1] && coord < GameStatusData.size3D[2])
                     pregameLogic.Create(width, height, coord, PixelID);
             }
         }

@@ -20,7 +20,7 @@ public class SliceCutter : MonoBehaviour {
             ChangeAxis();
             ReplaceText();
             try {
-                int size = AxisNumber == 0 ? GameStatusData.X_size : (AxisNumber == 1 ? GameStatusData.Y_size : GameStatusData.Z_size);
+                int size = AxisNumber == 0 ? GameStatusData.size3D[0] : (AxisNumber == 1 ? GameStatusData.size3D[1] : GameStatusData.size3D[2]);
                 if (!(Coordinate < size && Coordinate >=0)) {
                     Coordinate = 0;
                     ReplaceText();
@@ -40,7 +40,7 @@ public class SliceCutter : MonoBehaviour {
 
     public void ChangeCoordinate(string text_coordinate) {
         try {
-            int size = AxisNumber == 0 ? GameStatusData.X_size : (AxisNumber == 1 ? GameStatusData.Y_size : GameStatusData.Z_size);
+            int size = AxisNumber == 0 ? GameStatusData.size3D[0] : (AxisNumber == 1 ? GameStatusData.size3D[1] : GameStatusData.size3D[2]);
             int UncheckedCoord = int.Parse(text_coordinate);
             if (UncheckedCoord < size && UncheckedCoord >=0) {
                 Coordinate = UncheckedCoord;

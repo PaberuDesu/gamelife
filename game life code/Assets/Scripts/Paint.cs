@@ -37,8 +37,8 @@ public class Paint : MonoBehaviour {
     private bool _isPaintable = false;
 
     private void Awake() {
-        _textureX = GameStatusData.Z_size;
-        _textureY = GameStatusData.Y_size;
+        _textureX = GameStatusData.size3D[2];
+        _textureY = GameStatusData.size3D[1];
         _texture = new Texture2D(_textureX, _textureY);
         _texture.wrapMode =TextureWrapMode.Clamp;
         _texture.filterMode = FilterMode.Point;
@@ -54,18 +54,18 @@ public class Paint : MonoBehaviour {
 
     public void Resize() {
         Zoom = minZoom;
-        _textureX = SliceCutter.AxisNumber == 0 ? GameStatusData.Z_size : GameStatusData.X_size;
-        _textureY = SliceCutter.AxisNumber == 1 ? GameStatusData.Z_size : GameStatusData.Y_size;
+        _textureX = SliceCutter.AxisNumber == 0 ? GameStatusData.size3D[2] : GameStatusData.size3D[0];
+        _textureY = SliceCutter.AxisNumber == 1 ? GameStatusData.size3D[2] : GameStatusData.size3D[1];
         SetNormalSize();
         _texture.Resize(_textureX, _textureY);
-        GameStatusData.X_size2D = _textureX;
-        GameStatusData.Y_size2D = _textureY;
+        GameStatusData.size2D[0] = _textureX;
+        GameStatusData.size2D[1] = _textureY;
         GameStatusData.All2DCells = new byte[_textureX, _textureY];
     }
 
     public void GetNewSize() {
-        _textureX = GameStatusData.X_size2D;
-        _textureY = GameStatusData.Y_size2D;
+        _textureX = GameStatusData.size2D[0];
+        _textureY = GameStatusData.size2D[1];
         Zoom = minZoom;
         SetNormalSize();
         _texture.Resize(_textureX, _textureY);
@@ -75,8 +75,8 @@ public class Paint : MonoBehaviour {
         Zoom = minZoom;
         int OldTextureX = _textureX;
         int OldTextureY = _textureY;
-        _textureX = GameStatusData.X_size2D;
-        _textureY = GameStatusData.Y_size2D;
+        _textureX = GameStatusData.size2D[0];
+        _textureY = GameStatusData.size2D[1];
         SetNormalSize();
         _texture.Resize(_textureX, _textureY);
         int axis = SliceCutter.AxisNumber;
@@ -121,12 +121,12 @@ public class Paint : MonoBehaviour {
     public void SetPaintable(bool _isOn) {_isPaintable = _isOn;}
 
     private void PaintWithMouse() {
-        int x = (int) Mathf.Floor((Input.mousePosition.x - (canvasCenter.x * Screen.width) - _rect.offsetMin.x) / ScaleProportion.x / canvasSize.x / Screen.width / Zoom * GameStatusData.X_size2D + (GameStatusData.X_size2D)/2);
-        int y = (int) Mathf.Floor((Input.mousePosition.y - (canvasCenter.y * Screen.height) - _rect.offsetMin.y) / ScaleProportion.y / canvasSize.y / Screen.height / Zoom * GameStatusData.Y_size2D + (GameStatusData.Y_size2D)/2);
+        int x = (int) Mathf.Floor((Input.mousePosition.x - (canvasCenter.x * Screen.width) - _rect.offsetMin.x) / ScaleProportion.x / canvasSize.x / Screen.width / Zoom * GameStatusData.size2D[0] + (GameStatusData.size2D[0])/2);
+        int y = (int) Mathf.Floor((Input.mousePosition.y - (canvasCenter.y * Screen.height) - _rect.offsetMin.y) / ScaleProportion.y / canvasSize.y / Screen.height / Zoom * GameStatusData.size2D[1] + (GameStatusData.size2D[1])/2);
         if (x < 0) x = 0;
-        if (x > GameStatusData.X_size2D - 1) x = GameStatusData.X_size2D - 1;
+        if (x > GameStatusData.size2D[0] - 1) x = GameStatusData.size2D[0] - 1;
         if (y < 0) y = 0;
-        if (y > GameStatusData.Y_size2D - 1) y = GameStatusData.Y_size2D - 1;
+        if (y > GameStatusData.size2D[1] - 1) y = GameStatusData.size2D[1] - 1;
         CurrentCoordOut.text = $"Координата курсора: ({x};{y})";
         if (Input.GetKey(KeyCode.Mouse0)) {
             _texture.SetPixel(x, y, _colors[_activeColorNumber]);
@@ -220,8 +220,8 @@ public class Paint : MonoBehaviour {
     }
 
     private void SetNormalSize() {
-        float x = GameStatusData.X_size2D;
-        float y = GameStatusData.Y_size2D;
+        float x = GameStatusData.size2D[0];
+        float y = GameStatusData.size2D[1];
         if (x < y) ScaleProportion = new Vector2(x/y, 1);
         else ScaleProportion = new Vector2(1, y/x);
         transform.localScale = minZoom * ScaleProportion;

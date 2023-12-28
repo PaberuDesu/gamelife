@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,24 +10,24 @@ public class gameLogic3D : MonoBehaviour {
     public GameObject GameOver;
 
     public void StartGame() {
-        RememberedAllCells = new byte[GameStatusData.X_size, GameStatusData.Y_size, GameStatusData.Z_size];
+        RememberedAllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
         StartCoroutine(GameCycle());
     }
 
     IEnumerator GameCycle() {
-        AllCells = new byte[GameStatusData.X_size, GameStatusData.Y_size, GameStatusData.Z_size];
+        AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
 
-        for (byte x = 0; x < GameStatusData.X_size; x++) {
-            for (byte y = 0; y < GameStatusData.Y_size; y++) {
-                for (byte z = 0; z < GameStatusData.Z_size; z++) {
+        for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
+            for (byte y = 0; y < GameStatusData.size3D[1]; y++) {
+                for (byte z = 0; z < GameStatusData.size3D[2]; z++) {
                     AllCells[x,y,z] = GameStatusData.AllCells[x,y,z];
                 }
             }
         }
         
-        for (byte x = 0; x < GameStatusData.X_size; x++) {
-            for (byte y = 0; y < GameStatusData.Y_size; y++) {
-                for (byte z = 0; z < GameStatusData.Z_size; z++) {
+        for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
+            for (byte y = 0; y < GameStatusData.size3D[1]; y++) {
+                for (byte z = 0; z < GameStatusData.size3D[2]; z++) {
                     GameObject New_cell;
                     byte[] neighbour_counter = checkNeighbours(x, y, z);
                     //logic of count neighbours for each cell type
@@ -118,9 +117,9 @@ public class gameLogic3D : MonoBehaviour {
 
         bool EqualityShort = true, EqualityLong = true;
         try {
-            for (byte x = 0; x < GameStatusData.X_size; x++) {
-                for (byte y = 0; y < GameStatusData.Y_size; y++) {
-                    for (byte z = 0; z < GameStatusData.Z_size; z++) {
+            for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
+                for (byte y = 0; y < GameStatusData.size3D[1]; y++) {
+                    for (byte z = 0; z < GameStatusData.size3D[2]; z++) {
                         if (!(GameStatusData.AllCells[x,y,z] == AllCells[x,y,z]))
                             EqualityShort = false;
                         if (!(RememberedAllCells[x,y,z] == AllCells[x,y,z]))
@@ -155,7 +154,7 @@ public class gameLogic3D : MonoBehaviour {
                             catch{};
                         }
                         else
-                            neighbour_counter[GameStatusData.AllCells[(x + x_neigbourhood + GameStatusData.X_size)%GameStatusData.X_size, (y + y_neigbourhood + GameStatusData.Y_size)%GameStatusData.Y_size, (z + z_neigbourhood + GameStatusData.Z_size)%GameStatusData.Z_size]]++;
+                            neighbour_counter[GameStatusData.AllCells[(x + x_neigbourhood + GameStatusData.size3D[0])%GameStatusData.size3D[0], (y + y_neigbourhood + GameStatusData.size3D[1])%GameStatusData.size3D[1], (z + z_neigbourhood + GameStatusData.size3D[2])%GameStatusData.size3D[2]]]++;
                     }
                 }
             }

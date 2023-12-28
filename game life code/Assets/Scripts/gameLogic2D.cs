@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,21 +11,21 @@ public class gameLogic2D : MonoBehaviour {
     public GameObject GameOver;
 
     public void StartGame() {
-        RememberedAll2DCells = new byte[GameStatusData.X_size2D, GameStatusData.Y_size2D];
+        RememberedAll2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
         StartCoroutine(GameCycle());
     }
 
     IEnumerator GameCycle() {
-        All2DCells = new byte[GameStatusData.X_size2D, GameStatusData.Y_size2D];
+        All2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
 
-        for (byte x = 0; x < GameStatusData.X_size2D; x++) {
-            for (byte y = 0; y < GameStatusData.Y_size2D; y++) {
+        for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
+            for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
                 All2DCells[x,y] = GameStatusData.All2DCells[x,y];
             }
         }
         
-        for (byte x = 0; x < GameStatusData.X_size2D; x++) {
-            for (byte y = 0; y < GameStatusData.Y_size2D; y++) {
+        for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
+            for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
                 byte[] neighbour_counter = checkNeighbours(x, y);
                 //logic of count neighbours for each cell type
                 int CellsNeighbours = neighbour_counter[1] - neighbour_counter[2] + neighbour_counter[4];
@@ -105,8 +104,8 @@ public class gameLogic2D : MonoBehaviour {
         }
 
         try {
-            for (byte x = 0; x < GameStatusData.X_size2D; x++) {
-                for (byte y = 0; y < GameStatusData.Y_size2D; y++) {
+            for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
+                for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
                     bool EqualityShort = GameStatusData.All2DCells[x,y] == All2DCells[x,y];
                     bool EqualityLong = RememberedAll2DCells[x,y] == All2DCells[x,y];
                     if (!EqualityLong && !EqualityShort)
@@ -138,7 +137,7 @@ public class gameLogic2D : MonoBehaviour {
                         catch{;}
                     }
                     else
-                        neighbour_counter[GameStatusData.All2DCells[(x + x_neigbourhood + GameStatusData.X_size2D)%GameStatusData.X_size2D, (y + y_neigbourhood + GameStatusData.Y_size2D)%GameStatusData.Y_size2D]]++;
+                        neighbour_counter[GameStatusData.All2DCells[(x + x_neigbourhood + GameStatusData.size2D[0])%GameStatusData.size2D[0], (y + y_neigbourhood + GameStatusData.size2D[1])%GameStatusData.size2D[1]]]++;
                 }
             }
         }
