@@ -6,8 +6,8 @@ public class SaveLayer : MonoBehaviour {
     public void Save() {
         int axis = SliceCutter.AxisNumber;
         int coord = SliceCutter.Coordinate;
-        for (int width = 0; width < paint._textureX; width++) {
-            for (int height = 0; height < paint._textureY; height++) {
+        for (int width = 0; width < paint._textureScale[0]; width++) {
+            for (int height = 0; height < paint._textureScale[1]; height++) {
                 int PixelID = GetID(paint._texture.GetPixel(width, height));
                 if (axis == 0 && coord < GameStatusData.size3D[0] && height < GameStatusData.size3D[1] && width < GameStatusData.size3D[2])
                     pregameLogic.Create(coord, height, width, PixelID);

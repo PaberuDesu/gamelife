@@ -2,18 +2,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MoveTo2DMode : MonoBehaviour {
-    [SerializeField] GameObject _canvas3D;
-    [SerializeField] GameObject _canvas2D;
-    [SerializeField] InputField _coordField;
+    [SerializeField] private GameObject _canvas3D;
+    [SerializeField] private GameObject _canvas2D;
+    [SerializeField] private pregameLogic _3dPregame;
 
     private void Awake() {
         if (MainMenuLogic._isChosen2D)
-            Activate2DMode();
+            _canvas2D.SetActive(true);
+        else _canvas3D.SetActive(true);
     }
-
-    public void Activate2DMode() {
-        _canvas3D.SetActive(false);
-        _canvas2D.SetActive(true);
-        _coordField.text = "";
+    private void Start() {
+        if (MainMenuLogic._isChosen2D)
+            _3dPregame.enabled = false;
     }
 }

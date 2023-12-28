@@ -33,7 +33,7 @@ namespace Settings {
         private int neighboursCount;
 
         private void Awake() {
-            neighboursCount = Mathf.RoundToInt(Mathf.Pow(3, dimensions));
+            neighboursCount = (int) Mathf.Pow(3, dimensions);
             BornCondition = new bool[neighboursCount];
             SurviveCondition = new bool[neighboursCount];
             ParasitismCondition = new bool[neighboursCount];
