@@ -48,7 +48,6 @@ public class Settings2D : SettingsClass {
                 if (sizes[i] > 0)
                     GameStatusData.size2D[i] = sizes[i];
             }
-            paint.CutField();
             byte[,] All2DCells = new byte[GameStatusData.size2D[0],GameStatusData.size2D[1]];
             for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
                 for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
@@ -57,6 +56,7 @@ public class Settings2D : SettingsClass {
                 }
             }
             GameStatusData.All2DCells = All2DCells;
+            paint.CutField();
         }
     }
 }

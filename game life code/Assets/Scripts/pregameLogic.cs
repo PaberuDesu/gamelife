@@ -7,20 +7,20 @@ public class pregameLogic : MonoBehaviour {
     [field: SerializeField] public GameObject mushroomPreinstance{get;private set;}
     [field: SerializeField] public GameObject imitatorPreinstance{get;private set;}
 
-    [SerializeField] Transform CellsParentPreinstance;
+    [SerializeField] private Transform CellsParentPreinstance;
 
-    [SerializeField] MessageCenter message_center;
+    [SerializeField] private MessageCenter message_center;
 
     public int SelectedCellType = 1;
-    string X_text, Y_text, Z_text;
+    private string X_text, Y_text, Z_text;
     
     private bool _isChangingCellInView = false;
 
     private void Awake() {
-        GameStatusData.cell = cellPreinstance;
-        GameStatusData.parasite = parasitePreinstance;
-        GameStatusData.mushroom = mushroomPreinstance;
-        GameStatusData.imitator = imitatorPreinstance;
+        GameStatusData.cellTypes[0] = cellPreinstance;
+        GameStatusData.cellTypes[1] = parasitePreinstance;
+        GameStatusData.cellTypes[2] = mushroomPreinstance;
+        GameStatusData.cellTypes[3] = imitatorPreinstance;
         GameStatusData.CellsParent = CellsParentPreinstance;
     }
 
@@ -29,17 +29,11 @@ public class pregameLogic : MonoBehaviour {
             ChangeCellInView();
     }
 
-    public void Change_x(string input) {
-        X_text = input;
-    }
+    public void Change_x(string input) {X_text = input;}
 
-    public void Change_y(string input) {
-        Y_text = input;
-    }
+    public void Change_y(string input) {Y_text = input;}
 
-    public void Change_z(string input) {
-        Z_text = input;
-    }
+    public void Change_z(string input) {Z_text = input;}
 
     private void ChangeCellInView() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -82,53 +76,18 @@ public class pregameLogic : MonoBehaviour {
 
     public static void Create(int x, int y, int z, int cell_type) {
         GameObject New_cell;
-        switch (cell_type) {
-            case 0:
-                DeleteCell(x, y, z);
-                break;
-            case 1:
-                if (GameStatusData.AllCells[x,y,z] > 0)
-                    DeleteCell(x, y, z);
-                New_cell = Instantiate(GameStatusData.cell, new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
-                New_cell.name = $"cell({x}, {y}, {z})";
-                break;
-            case 2:
-                if (GameStatusData.AllCells[x,y,z] > 0)
-                    DeleteCell(x, y, z);
-                New_cell = Instantiate(GameStatusData.parasite, new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
-                New_cell.name = $"parasite({x}, {y}, {z})";
-                break;
-            case 3:
-                if (GameStatusData.AllCells[x,y,z] > 0)
-                    DeleteCell(x, y, z);
-                New_cell = Instantiate(GameStatusData.mushroom, new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
-                New_cell.name = $"mushroom({x}, {y}, {z})";
-                break;
-            case 4:
-                if (GameStatusData.AllCells[x,y,z] > 0)
-                    DeleteCell(x, y, z);
-                New_cell = Instantiate(GameStatusData.imitator, new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
-                New_cell.name = $"imitator({x}, {y}, {z})";
-                break;
+        if (GameStatusData.AllCells[x,y,z] > 0)
+            DeleteCell(x, y, z);
+        if (cell_type > 0) {
+            New_cell = Instantiate(GameStatusData.cellTypes[cell_type-1], new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
+            New_cell.name = $"{GameStatusData.CellNames[cell_type-1]}({x}, {y}, {z})";
         }
         GameStatusData.AllCells[x,y,z] = Convert.ToByte(cell_type);
     }
 
     static void DeleteCell(int x, int y, int z) {
-        switch (GameStatusData.AllCells[x,y,z]) {
-            case 1:
-                Destroy(GameObject.Find($"cell({x}, {y}, {z})"));
-                break;
-            case 2:
-                Destroy(GameObject.Find($"parasite({x}, {y}, {z})"));
-                break;
-            case 3:
-                Destroy(GameObject.Find($"mushroom({x}, {y}, {z})"));
-                break;
-            case 4:
-                Destroy(GameObject.Find($"imitator({x}, {y}, {z})"));
-                break;
-        }
+        if (GameStatusData.AllCells[x,y,z] > 0)
+            Destroy(GameObject.Find($"{GameStatusData.CellNames[GameStatusData.AllCells[x,y,z] - 1]}({x}, {y}, {z})"));
     }
 
     public static void CutField() {

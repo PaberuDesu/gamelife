@@ -2,10 +2,10 @@ using System.Collections;
 using UnityEngine;
 
 public class gameLogic2D : MonoBehaviour {
-    [SerializeField] Settings2D Settings;
-    [SerializeField] Paint _paint;
-    byte[,] All2DCells;
-    byte[,] RememberedAll2DCells;
+    [SerializeField] private Settings2D Settings;
+    [SerializeField] private Paint _paint;
+    private byte[,] All2DCells;
+    private byte[,] RememberedAll2DCells;
     public byte counter = 0;
 
     public GameObject GameOver;
@@ -15,7 +15,7 @@ public class gameLogic2D : MonoBehaviour {
         StartCoroutine(GameCycle());
     }
 
-    IEnumerator GameCycle() {
+    private IEnumerator GameCycle() {
         All2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
 
         for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
@@ -28,75 +28,64 @@ public class gameLogic2D : MonoBehaviour {
             for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
                 byte[] neighbour_counter = checkNeighbours(x, y);
                 //logic of count neighbours for each cell type
-                int CellsNeighbours = neighbour_counter[1] - neighbour_counter[2] + neighbour_counter[4];
-                int ParasitesNeighbours = neighbour_counter[1] + neighbour_counter[3] + neighbour_counter[4];
-                int MushroomsNeighbours = neighbour_counter[0] + neighbour_counter[3];
-                int ImitatorsNeighbours = neighbour_counter[1] + neighbour_counter[2] + neighbour_counter[3] + neighbour_counter[4];
+                int[] CountNeighbours = new int[5];
+                CountNeighbours[0] = 0;
+                CountNeighbours[1] = neighbour_counter[1] - neighbour_counter[2] + neighbour_counter[4];
+                CountNeighbours[2] = neighbour_counter[1] + neighbour_counter[3] + neighbour_counter[4];
+                CountNeighbours[3] = neighbour_counter[0] + neighbour_counter[3];
+                CountNeighbours[4] = neighbour_counter[1] + neighbour_counter[2] + neighbour_counter[3] + neighbour_counter[4];
                 switch (GameStatusData.All2DCells[x,y]) {
                     case 4:
-                        if (!(Settings.ImitatorSurviveCondition[ImitatorsNeighbours])) {
-                            if (CellsNeighbours < 0)
-                                CellsNeighbours = 0;
-                            if (!(Settings.SurviveCondition[CellsNeighbours])) {
-                                if (!(Settings.ParasiteSurviveCondition[ParasitesNeighbours])) {
-                                    if (!(Settings.MushroomSurviveCondition[MushroomsNeighbours])) {
-                                        All2DCells[x,y] = 0;
-                                        _paint.PaintToPlay(x,y,0);
-                                    }
-                                    else {
-                                        All2DCells[x,y] = 3;
-                                        _paint.PaintToPlay(x,y,3);
-                                    }
-                                }
-                                else {
-                                    All2DCells[x,y] = 2;
-                                    _paint.PaintToPlay(x,y,2);
-                                }
-                            }
-                            else {
-                                All2DCells[x,y] = 1;
-                                _paint.PaintToPlay(x,y,1);
-                            }
+                        if (Settings.ImitatorSurviveCondition[CountNeighbours[4]]) break;
+
+                        if (CountNeighbours[1] < 0)
+                            CountNeighbours[1] = 0;
+
+                        if (Settings.SurviveCondition[CountNeighbours[1]]) {
+                            CreateCell(x,y,1);
+                            break;
                         }
+                        if (Settings.ParasiteSurviveCondition[CountNeighbours[2]]) {
+                            CreateCell(x,y,2);
+                            break;
+                        }
+                        if (Settings.MushroomSurviveCondition[CountNeighbours[3]]) {
+                            CreateCell(x,y,3);
+                            break;
+                        }
+                        CreateCell(x,y,0);
                         break;
                     case 3:
-                        if (!(Settings.MushroomSurviveCondition[MushroomsNeighbours])) {
-                            All2DCells[x,y] = 0;
-                            _paint.PaintToPlay(x,y,0);
+                        if (!(Settings.MushroomSurviveCondition[CountNeighbours[3]])) {
+                            CreateCell(x,y,0);
                         }
                         break;
                     case 2:
-                        if (!(Settings.ParasiteSurviveCondition[ParasitesNeighbours])) {
-                            All2DCells[x,y] = 0;
-                            _paint.PaintToPlay(x,y,0);
+                        if (!(Settings.ParasiteSurviveCondition[CountNeighbours[2]])) {
+                            CreateCell(x,y,0);
                         }
                         break;
                     case 1:
-                        if (CellsNeighbours < 0)
-                            CellsNeighbours = 0;
-                        if (Settings.ParasitismCondition[ParasitesNeighbours]) {
-                            All2DCells[x,y] = 2;
-                            _paint.PaintToPlay(x,y,2);
+                        if (CountNeighbours[1] < 0)
+                            CountNeighbours[1] = 0;
+                        if (Settings.ParasitismCondition[CountNeighbours[2]]) {
+                            CreateCell(x,y,2);
                         }
-                        else if (!(Settings.SurviveCondition[CellsNeighbours])) {
-                            All2DCells[x,y] = 0;
-                            _paint.PaintToPlay(x,y,0);
+                        else if (!(Settings.SurviveCondition[CountNeighbours[1]])) {
+                            CreateCell(x,y,0);
                         }
                         break;
                     case 0:
-                        if (CellsNeighbours < 0)
-                            CellsNeighbours = 0;
-                        if (Settings.BornCondition[CellsNeighbours]) {
-                            All2DCells[x,y] = 1;
-                            _paint.PaintToPlay(x,y,1);
+                        if (CountNeighbours[1] < 0)
+                            CountNeighbours[1] = 0;
+                        if (Settings.BornCondition[CountNeighbours[1]]) {
+                            CreateCell(x,y,1);
                         }
-                        else if (Settings.MushroomBornCondition[MushroomsNeighbours]) {
-                            All2DCells[x,y] = 3;
-                            _paint.PaintToPlay(x,y,3);
+                        else if (Settings.MushroomBornCondition[CountNeighbours[3]]) {
+                            CreateCell(x,y,3);
                         }
-                        else if (Settings.ImitatorBornCondition[ImitatorsNeighbours]) {
-                            All2DCells[x,y] = 4;
-                            _paint.PaintToPlay(x,y,4);
+                        else if (Settings.ImitatorBornCondition[CountNeighbours[4]]) {
+                            CreateCell(x,y,4);
                         }
                         break;
                 }
@@ -127,7 +116,7 @@ public class gameLogic2D : MonoBehaviour {
         StartCoroutine(GameCycle());
     }
 
-    byte[] checkNeighbours(byte x, byte y) {
+    private byte[] checkNeighbours(byte x, byte y) {
         byte[] neighbour_counter = new byte[5];
         for (sbyte x_neigbourhood = -1; x_neigbourhood <= 1; x_neigbourhood++) {
             for (sbyte y_neigbourhood = -1; y_neigbourhood <= 1; y_neigbourhood++) {
@@ -142,5 +131,10 @@ public class gameLogic2D : MonoBehaviour {
             }
         }
         return neighbour_counter;
+    }
+
+    private void CreateCell(byte x, byte y, byte type) {
+        All2DCells[x,y] = type;
+        _paint.PaintToPlay(x,y,type);
     }
 }

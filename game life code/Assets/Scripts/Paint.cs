@@ -84,7 +84,7 @@ public class Paint : MonoBehaviour {
                 }
                 else if (axis >= 0) {
                     _texture.SetPixel(width, height, _colors[GameStatusData.All2DCells[width, height]]);
-                    newAll2DCells[width, height] = GameStatusData.All2DCells[width, height];
+                    newAll2DCells[width, height] = 0;
                 }
             }
         }
