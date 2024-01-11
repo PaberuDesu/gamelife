@@ -4,20 +4,16 @@ using UnityEngine.UI;
 
 namespace Settings {
     abstract public class SettingsClass : MonoBehaviour {
-        public bool[] BornCondition;
-        public bool[] SurviveCondition;
-        public bool[] ParasitismCondition;
-        public bool[] ParasiteSurviveCondition;
-        public bool[] MushroomBornCondition;
-        public bool[] MushroomSurviveCondition;
-        public bool[] ImitatorBornCondition;
-        public bool[] ImitatorSurviveCondition;
+        public bool[][] BornConditions;
+        public bool[][] SurviveConditions;
 
-        protected abstract Transform _bornConditionChanger{get;}
-        protected abstract Transform _surviveConditionChanger{get;}
-        protected abstract Image _borderExistsIndicator{get;}
-        protected abstract GameObject _settingsPanel{get;}
-        protected abstract Slider _speedSlider{get;}
+        [SerializeField] protected Text[] ScaleChangers;
+
+        public Image BorderExistsIndicator;
+        public Transform BornConditionChanger;
+        public Transform SurviveConditionChanger;
+        public Slider SpeedSlider;
+        [SerializeField] protected GameObject SettingsPanel;
 
         public bool _isBorderExists = false;
         public float MinimumSimulationSpeed = 0.1f;
@@ -34,18 +30,20 @@ namespace Settings {
 
         private void Awake() {
             neighboursCount = (int) Mathf.Pow(3, dimensions);
-            BornCondition = new bool[neighboursCount];
-            SurviveCondition = new bool[neighboursCount];
-            ParasitismCondition = new bool[neighboursCount];
-            ParasiteSurviveCondition = new bool[neighboursCount];
-            MushroomBornCondition = new bool[neighboursCount];
-            MushroomSurviveCondition = new bool[neighboursCount];
-            ImitatorBornCondition = new bool[neighboursCount];
-            ImitatorSurviveCondition = new bool[neighboursCount];
+
+            int cellTypeCount = 4;
+            BornConditions = new bool[cellTypeCount][];
+            for (int i = 0; i < cellTypeCount; i++) {
+                BornConditions[i] = new bool[neighboursCount];
+            }
+            SurviveConditions = new bool[cellTypeCount][];
+            for (int i = 0; i < cellTypeCount; i++) {
+                SurviveConditions[i] = new bool[neighboursCount];
+            }
 
             MaximumAbs = step * (transform.childCount - 1) / 2;
             remain_of_step = MaximumAbs % step;
-            _settingsPanel.SetActive(false);
+            SettingsPanel.SetActive(false);
         }
 
         public void ChangeModeByButton(int MoveMultiplier) {
@@ -60,79 +58,35 @@ namespace Settings {
                 }
                 SelectedCellType += MoveMultiplier;
             }
-            switch (SelectedCellType) {
-                case 1:
-                    change_buttons_colors(BornCondition, SurviveCondition);
-                    break;
-                case 2:
-                    change_buttons_colors(ParasitismCondition, ParasiteSurviveCondition);
-                    break;
-                case 3:
-                    change_buttons_colors(MushroomBornCondition, MushroomSurviveCondition);
-                    break;
-                case 4:
-                    change_buttons_colors(ImitatorBornCondition, ImitatorSurviveCondition);
-                    break;
-            }
+            change_buttons_colors(BornConditions[SelectedCellType-1], SurviveConditions[SelectedCellType-1]);
         }
 
         public void change_buttons_colors(bool[] AppearCondition, bool[] DisappearCondition) {
             for (byte i = 0; i < neighboursCount; i++) {
-                Image button = _bornConditionChanger.GetChild(i).gameObject.GetComponent<Image>();
+                Image button = BornConditionChanger.GetChild(i).gameObject.GetComponent<Image>();
                 button.color = AppearCondition[i] ? Color.green : Color.red;
             }
             for (byte i = 0; i < neighboursCount; i++) {
-                Image button = _surviveConditionChanger.GetChild(i).gameObject.GetComponent<Image>();
+                Image button = SurviveConditionChanger.GetChild(i).gameObject.GetComponent<Image>();
                 button.color = DisappearCondition[i] ? Color.green : Color.red;
             }
         }
 
         public void SetBorder() {
             _isBorderExists = !_isBorderExists;
-            _borderExistsIndicator.color = _isBorderExists ? Color.green : Color.red;
+            BorderExistsIndicator.color = _isBorderExists ? Color.green : Color.red;
         }
 
         public void SetBornCondition(int neighbour_count) {
-            Image button = _bornConditionChanger.GetChild(neighbour_count).gameObject.GetComponent<Image>();
-            switch (SelectedCellType) {
-                case 1:
-                    BornCondition[neighbour_count] = !BornCondition[neighbour_count];
-                    button.color = BornCondition[neighbour_count] ? Color.green : Color.red;
-                    break;
-                case 2:
-                    ParasitismCondition[neighbour_count] = !ParasitismCondition[neighbour_count];
-                    button.color = ParasitismCondition[neighbour_count] ? Color.green : Color.red;
-                    break;
-                case 3:
-                    MushroomBornCondition[neighbour_count] = !MushroomBornCondition[neighbour_count];
-                    button.color = MushroomBornCondition[neighbour_count] ? Color.green : Color.red;
-                    break;
-                case 4:
-                    ImitatorBornCondition[neighbour_count] = !ImitatorBornCondition[neighbour_count];
-                    button.color = ImitatorBornCondition[neighbour_count] ? Color.green : Color.red;
-                    break;
-            }
+            Image button = BornConditionChanger.GetChild(neighbour_count).gameObject.GetComponent<Image>();
+            BornConditions[SelectedCellType-1][neighbour_count] = !BornConditions[SelectedCellType-1][neighbour_count];
+            button.color = BornConditions[SelectedCellType-1][neighbour_count] ? Color.green : Color.red;
         }
+
         public void SetSurviveCondition(int neighbour_count) {
-            Image button = _surviveConditionChanger.GetChild(neighbour_count).gameObject.GetComponent<Image>();
-            switch (SelectedCellType) {
-                case 1:
-                    SurviveCondition[neighbour_count] = !SurviveCondition[neighbour_count];
-                    button.color = SurviveCondition[neighbour_count] ? Color.green : Color.red;
-                    break;
-                case 2:
-                    ParasiteSurviveCondition[neighbour_count] = !ParasiteSurviveCondition[neighbour_count];
-                    button.color = ParasiteSurviveCondition[neighbour_count] ? Color.green : Color.red;
-                    break;
-                case 3:
-                    MushroomSurviveCondition[neighbour_count] = !MushroomSurviveCondition[neighbour_count];
-                    button.color = MushroomSurviveCondition[neighbour_count] ? Color.green : Color.red;
-                    break;
-                case 4:
-                    ImitatorSurviveCondition[neighbour_count] = !ImitatorSurviveCondition[neighbour_count];
-                    button.color = ImitatorSurviveCondition[neighbour_count] ? Color.green : Color.red;
-                    break;
-            }
+            Image button = SurviveConditionChanger.GetChild(neighbour_count).gameObject.GetComponent<Image>();
+            SurviveConditions[SelectedCellType-1][neighbour_count] = !SurviveConditions[SelectedCellType-1][neighbour_count];
+            button.color = SurviveConditions[SelectedCellType-1][neighbour_count] ? Color.green : Color.red;
         }
 
         public abstract void ChangeScale();
@@ -141,6 +95,6 @@ namespace Settings {
             logger.text = GameStatusData.WrittenSize(dimensions);
         }
 
-        public void SetSpeed() {SimulationSpeed = MinimumSimulationSpeed + (_speedSlider.value * 10);}
+        public void SetSpeed() {SimulationSpeed = MinimumSimulationSpeed + (SpeedSlider.value * 10);}
     }
 }

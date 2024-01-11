@@ -23694,7 +23694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 60
-  turnSpeed: 60
+  turnSpeed: 100
   turnLimit: 60
 --- !u!114 &963194230
 MonoBehaviour:
@@ -26542,9 +26542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806850efebb971846a9164d68fb542fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Settings: {fileID: 1753758871}
   counter: 0
   GameOver: {fileID: 1673419806}
+  Settings: {fileID: 1753758871}
 --- !u!114 &1057189553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33905,10 +33905,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f82f8793e623c34e9d36c97cdb086ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Settings: {fileID: 1846512942}
-  _paint: {fileID: 1197724290}
   counter: 0
   GameOver: {fileID: 1141766299}
+  Settings: {fileID: 1846512942}
+  _paint: {fileID: 1197724290}
 --- !u!114 &1458798122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40496,27 +40496,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765a09f87881f514781fadc0e05f0ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BornCondition: 000000000000000000000000000000000000000000000000000000
-  SurviveCondition: 000000000000000000000000000000000000000000000000000000
-  ParasitismCondition: 000000000000000000000000000000000000000000000000000000
-  ParasiteSurviveCondition: 000000000000000000000000000000000000000000000000000000
-  MushroomBornCondition: 000000000000000000000000000000000000000000000000000000
-  MushroomSurviveCondition: 000000000000000000000000000000000000000000000000000000
-  ImitatorBornCondition: 000000000000000000000000000000000000000000000000000000
-  ImitatorSurviveCondition: 000000000000000000000000000000000000000000000000000000
-  _isBorderExists: 0
-  MinimumSimulationSpeed: 0.1
-  SimulationSpeed: 0.1
-  SelectedCellType: 1
-  BorderExistsIndicator: {fileID: 2489489}
-  BornConditionChanger: {fileID: 1211374028}
-  SurviveConditionChanger: {fileID: 1894057636}
   ScaleChangers:
   - {fileID: 168487298}
   - {fileID: 2136907685}
   - {fileID: 2107138952}
+  BorderExistsIndicator: {fileID: 2489489}
+  BornConditionChanger: {fileID: 1211374028}
+  SurviveConditionChanger: {fileID: 1894057636}
   SpeedSlider: {fileID: 1126762263}
   SettingsPanel: {fileID: 1728385238}
+  _isBorderExists: 0
+  MinimumSimulationSpeed: 0.1
+  SimulationSpeed: 0.1
+  SelectedCellType: 1
 --- !u!114 &1753758872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43267,27 +43259,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf22af2b75a7d547a557513ae69490e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BornCondition: 000000000000000000
-  SurviveCondition: 000000000000000000
-  ParasitismCondition: 000000000000000000
-  ParasiteSurviveCondition: 000000000000000000
-  MushroomBornCondition: 000000000000000000
-  MushroomSurviveCondition: 000000000000000000
-  ImitatorBornCondition: 000000000000000000
-  ImitatorSurviveCondition: 000000000000000000
+  ScaleChangers:
+  - {fileID: 778152626}
+  - {fileID: 332134591}
+  BorderExistsIndicator: {fileID: 904590193}
+  BornConditionChanger: {fileID: 928004948}
+  SurviveConditionChanger: {fileID: 136267706}
+  SpeedSlider: {fileID: 1029079808}
+  SettingsPanel: {fileID: 1201967627}
   _isBorderExists: 0
   MinimumSimulationSpeed: 0.1
   SimulationSpeed: 0.1
   SelectedCellType: 1
-  BorderExistsIndicator: {fileID: 904590193}
-  BornConditionChanger: {fileID: 928004948}
-  SurviveConditionChanger: {fileID: 136267706}
-  ScaleChangers:
-  - {fileID: 778152626}
-  - {fileID: 332134591}
-  SpeedSlider: {fileID: 1029079808}
   paint: {fileID: 1197724290}
-  SettingsPanel: {fileID: 1201967627}
 --- !u!1 &1848547898
 GameObject:
   m_ObjectHideFlags: 0

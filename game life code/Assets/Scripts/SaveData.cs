@@ -144,44 +144,21 @@ public class SaveData : MonoBehaviour {
     public float SimulationSpeed;
 
     public SettingsData(SettingsForModes Settings) {
-        //cell types, its born and survive conditions
-        CellTypes.Add(new CellType(1, "Common Cell", Settings.BornCondition, Settings.SurviveCondition));
-        CellTypes.Add(new CellType(2, "Parasite Cell", Settings.ParasitismCondition, Settings.ParasiteSurviveCondition));
-        CellTypes.Add(new CellType(3, "Mushroom Cell", Settings.MushroomBornCondition, Settings.MushroomSurviveCondition));
-        CellTypes.Add(new CellType(4, "Imitator Cell", Settings.ImitatorBornCondition, Settings.ImitatorSurviveCondition));
-        //border existance
+        for (int i = 0; i < 4; i++)
+            CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], Settings.BornConditions[i], Settings.SurviveConditions[i]));
         BorderExistance = Settings._isBorderExists;
-        //speed of game
         SimulationSpeed = Settings.SimulationSpeed;
     }
 
     public void Apply(SettingsForModes Settings) {
         foreach (CellType cell in CellTypes) {
-            switch (cell.name) {
-                case "Common Cell":
-                    Settings.BornCondition = cell.BornConditions;
-                    Settings.SurviveCondition = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == 1)
+            for (int i = 0; i < 4; i++) {
+                if (cell.name == GameStatusData.CellNames[i]) {
+                    Settings.BornConditions[i] = cell.BornConditions;
+                    Settings.SurviveConditions[i] = cell.SurviveConditions;
+                    if (Settings.SelectedCellType == i+1)
                         Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
-                    break;
-                case "Parasite Cell":
-                    Settings.ParasitismCondition = cell.BornConditions;
-                    Settings.ParasiteSurviveCondition = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == 2)
-                        Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
-                    break;
-                case "Mushroom Cell":
-                    Settings.MushroomBornCondition = cell.BornConditions;
-                    Settings.MushroomSurviveCondition = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == 3)
-                        Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
-                    break;
-                case "Imitator Cell":
-                    Settings.ImitatorBornCondition = cell.BornConditions;
-                    Settings.ImitatorSurviveCondition = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == 4)
-                        Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
-                    break;
+                }
             }
         }
 
@@ -196,45 +173,24 @@ public class SaveData : MonoBehaviour {
 [System.Serializable] public class Settings2DData {
     public List<CellType> CellTypes = new List<CellType>();
     public bool BorderExistance;
-    public float SimulationSpeed;//speed of game
+    public float SimulationSpeed;
 
     public Settings2DData(Settings2D Settings) {
-        //cell types, its born and survive conditions
-        CellTypes.Add(new CellType(1, "Common Cell", Settings.BornCondition, Settings.SurviveCondition));
-        CellTypes.Add(new CellType(2, "Parasite Cell", Settings.ParasitismCondition, Settings.ParasiteSurviveCondition));
-        CellTypes.Add(new CellType(3, "Mushroom Cell", Settings.MushroomBornCondition, Settings.MushroomSurviveCondition));
-        CellTypes.Add(new CellType(4, "Imitator Cell", Settings.ImitatorBornCondition, Settings.ImitatorSurviveCondition));
+        for (int i = 0; i < 4; i++)
+            CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], Settings.BornConditions[i], Settings.SurviveConditions[i]));
         BorderExistance = Settings._isBorderExists;
-        SimulationSpeed = Settings.SimulationSpeed;//speed of game
+        SimulationSpeed = Settings.SimulationSpeed;
     }
 
     public void Apply(Settings2D Settings) {
         foreach (CellType cell in CellTypes) {
-            switch (cell.name) {
-                case "Common Cell":
-                    Settings.BornCondition = cell.BornConditions;
-                    Settings.SurviveCondition = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == 1)
+            for (int i = 0; i < 4; i++) {
+                if (cell.name == GameStatusData.CellNames[i]) {
+                    Settings.BornConditions[i] = cell.BornConditions;
+                    Settings.SurviveConditions[i] = cell.SurviveConditions;
+                    if (Settings.SelectedCellType == i+1)
                         Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
-                    break;
-                case "Parasite Cell":
-                    Settings.ParasitismCondition = cell.BornConditions;
-                    Settings.ParasiteSurviveCondition = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == 2)
-                        Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
-                    break;
-                case "Mushroom Cell":
-                    Settings.MushroomBornCondition = cell.BornConditions;
-                    Settings.MushroomSurviveCondition = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == 3)
-                        Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
-                    break;
-                case "Imitator Cell":
-                    Settings.ImitatorBornCondition = cell.BornConditions;
-                    Settings.ImitatorSurviveCondition = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == 4)
-                        Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
-                    break;
+                }
             }
         }
 

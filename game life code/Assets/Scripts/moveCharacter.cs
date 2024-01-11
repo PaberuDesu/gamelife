@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class moveCharacter : MonoBehaviour
 {
-    public byte movementSpeed = 60;
-    public byte turnSpeed = 100;
-    public byte turnLimit = 60;
-    Rigidbody _rb;
+    [SerializeField] private byte movementSpeed;
+    [SerializeField] private byte turnSpeed;
+    [SerializeField] private byte turnLimit;
+    private Rigidbody _rb;
 
     private void Start() {
         _rb = GetComponent<Rigidbody>();
@@ -19,13 +19,12 @@ public class moveCharacter : MonoBehaviour
     public void Move()
     {
         Vector3 movement = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")) * movementSpeed * Time.deltaTime;
-
         transform.position += movement;
     }
 
     public void Rotate()
     {
-        float X = Input.GetAxis("Mouse Y") * turnSpeed * Time.deltaTime;
+        float X = -Input.GetAxis("Mouse Y") * turnSpeed * Time.deltaTime;
         float Y = Input.GetAxis("Mouse X") * turnSpeed * Time.deltaTime;
 
         float X_current_rotation = transform.localEulerAngles.x;

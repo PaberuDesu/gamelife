@@ -4,23 +4,23 @@ using UnityEngine;
 public class gameLogic2D : MonoBehaviour {
     [SerializeField] private Settings2D Settings;
     [SerializeField] private Paint _paint;
-    private byte[,] All2DCells;
-    private byte[,] RememberedAll2DCells;
-    public byte counter = 0;
+    private byte[,] AllCells;
+    private byte[,] RememberedAllCells;
 
+    public byte counter = 0;
     public GameObject GameOver;
 
     public void StartGame() {
-        RememberedAll2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
+        RememberedAllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
         StartCoroutine(GameCycle());
     }
 
     private IEnumerator GameCycle() {
-        All2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
+        AllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
 
         for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
             for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
-                All2DCells[x,y] = GameStatusData.All2DCells[x,y];
+                AllCells[x,y] = GameStatusData.All2DCells[x,y];
             }
         }
         
@@ -36,56 +36,48 @@ public class gameLogic2D : MonoBehaviour {
                 CountNeighbours[4] = neighbour_counter[1] + neighbour_counter[2] + neighbour_counter[3] + neighbour_counter[4];
                 switch (GameStatusData.All2DCells[x,y]) {
                     case 4:
-                        if (Settings.ImitatorSurviveCondition[CountNeighbours[4]]) break;
+                        if (Settings.SurviveConditions[3][CountNeighbours[4]]) break;
 
                         if (CountNeighbours[1] < 0)
                             CountNeighbours[1] = 0;
 
-                        if (Settings.SurviveCondition[CountNeighbours[1]]) {
-                            CreateCell(x,y,1);
-                            break;
+                        bool created = false;
+                        for (byte i = 1; i < 4; i++) {
+                            if (Settings.SurviveConditions[i-1][CountNeighbours[i]]) {
+                                CreateCell(x,y,i);
+                                created = true;
+                                break;
+                            }
                         }
-                        if (Settings.ParasiteSurviveCondition[CountNeighbours[2]]) {
-                            CreateCell(x,y,2);
-                            break;
-                        }
-                        if (Settings.MushroomSurviveCondition[CountNeighbours[3]]) {
-                            CreateCell(x,y,3);
-                            break;
-                        }
-                        CreateCell(x,y,0);
+                        if (!created) CreateCell(x,y,0);
                         break;
                     case 3:
-                        if (!(Settings.MushroomSurviveCondition[CountNeighbours[3]])) {
+                        if (!(Settings.SurviveConditions[2][CountNeighbours[3]]))
                             CreateCell(x,y,0);
-                        }
                         break;
                     case 2:
-                        if (!(Settings.ParasiteSurviveCondition[CountNeighbours[2]])) {
+                        if (!(Settings.SurviveConditions[1][CountNeighbours[2]]))
                             CreateCell(x,y,0);
-                        }
                         break;
                     case 1:
                         if (CountNeighbours[1] < 0)
                             CountNeighbours[1] = 0;
-                        if (Settings.ParasitismCondition[CountNeighbours[2]]) {
+                        
+                        if (Settings.BornConditions[1][CountNeighbours[2]])
                             CreateCell(x,y,2);
-                        }
-                        else if (!(Settings.SurviveCondition[CountNeighbours[1]])) {
+                        else if (!(Settings.SurviveConditions[0][CountNeighbours[1]]))
                             CreateCell(x,y,0);
-                        }
                         break;
                     case 0:
                         if (CountNeighbours[1] < 0)
                             CountNeighbours[1] = 0;
-                        if (Settings.BornCondition[CountNeighbours[1]]) {
-                            CreateCell(x,y,1);
-                        }
-                        else if (Settings.MushroomBornCondition[CountNeighbours[3]]) {
-                            CreateCell(x,y,3);
-                        }
-                        else if (Settings.ImitatorBornCondition[CountNeighbours[4]]) {
-                            CreateCell(x,y,4);
+                        
+                        byte[] bornableTypes = {1,3,4};
+                        foreach (byte i in bornableTypes) {
+                            if (Settings.BornConditions[i-1][CountNeighbours[i]]) {
+                                CreateCell(x,y,i);
+                                break;
+                            }
                         }
                         break;
                 }
@@ -93,10 +85,13 @@ public class gameLogic2D : MonoBehaviour {
         }
 
         try {
+            bool EqualityShort = true, EqualityLong = true;
             for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
                 for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
-                    bool EqualityShort = GameStatusData.All2DCells[x,y] == All2DCells[x,y];
-                    bool EqualityLong = RememberedAll2DCells[x,y] == All2DCells[x,y];
+                    if (!(GameStatusData.All2DCells[x,y] == AllCells[x,y]))
+                        EqualityShort = false;
+                    if (!(RememberedAllCells[x,y] == AllCells[x,y]))
+                        EqualityLong = false;
                     if (!EqualityLong && !EqualityShort)
                         throw new System.Exception();
                 } 
@@ -105,11 +100,11 @@ public class gameLogic2D : MonoBehaviour {
             StopCoroutine(GameCycle());
         }
         catch{;}
-        GameStatusData.All2DCells = All2DCells;
+        GameStatusData.All2DCells = AllCells;
         counter++;
         if (counter == 100) {
             counter = 0;
-            RememberedAll2DCells = All2DCells;
+            RememberedAllCells = AllCells;
         }
         _paint._texture.Apply();
         yield return new WaitForSeconds(0.1f / Settings.SimulationSpeed);
@@ -134,7 +129,7 @@ public class gameLogic2D : MonoBehaviour {
     }
 
     private void CreateCell(byte x, byte y, byte type) {
-        All2DCells[x,y] = type;
+        AllCells[x,y] = type;
         _paint.PaintToPlay(x,y,type);
     }
 }

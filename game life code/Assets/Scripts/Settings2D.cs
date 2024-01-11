@@ -3,32 +3,9 @@ using UnityEngine.UI;
 using Settings;
 
 public class Settings2D : SettingsClass {
-    public Image BorderExistsIndicator;
-    public Transform BornConditionChanger;
-    public Transform SurviveConditionChanger;
-    [SerializeField] private Text[] ScaleChangers;
-    public Slider SpeedSlider;
-
     [SerializeField] private Paint paint;
-    [SerializeField] private GameObject SettingsPanel;
 
-    protected override int dimensions {get {
-        return 2;}}
-
-    protected override Transform _bornConditionChanger {get {
-        return BornConditionChanger;}}
-
-    protected override Transform _surviveConditionChanger {get {
-        return SurviveConditionChanger;}}
-
-    protected override Image _borderExistsIndicator {get {
-        return BorderExistsIndicator;}}
-
-    protected override GameObject _settingsPanel {get {
-        return SettingsPanel;}}
-
-    protected override Slider _speedSlider {get {
-            return SpeedSlider;}}
+    protected override int dimensions {get {return 2;}}
 
     public override void ChangeScale() {
         int[] sizes = new int[dimensions];

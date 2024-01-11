@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class gameLogic3D : MonoBehaviour {
     [SerializeField] private SettingsForModes Settings;
-    byte[,,] AllCells;
-    byte[,,] RememberedAllCells;
-    public byte counter = 0;
+    private byte[,,] AllCells;
+    private byte[,,] RememberedAllCells;
 
+    public byte counter = 0;
     public GameObject GameOver;
 
     public void StartGame() {
@@ -39,58 +39,53 @@ public class gameLogic3D : MonoBehaviour {
 
                     switch (GameStatusData.AllCells[x,y,z]) {
                         case 4:
-                            if (Settings.ImitatorSurviveCondition[CountNeighbours[4]]) break;
+                            if (Settings.SurviveConditions[3][CountNeighbours[4]]) break;
 
                             Destroy(GameObject.Find($"{GameStatusData.CellNames[3]}({x}, {y}, {z})"));
                             if (CountNeighbours[1] < 0)
                                 CountNeighbours[1] = 0;
 
-                            if (Settings.SurviveCondition[CountNeighbours[1]]) {
-                                CreateCell(x,y,z,1);
-                                break;
+                            bool created = false;
+                            for (byte i = 1; i < 4; i++) {
+                                if (Settings.SurviveConditions[i-1][CountNeighbours[i]]) {
+                                    CreateCell(x,y,z,i);
+                                    created = true;
+                                    break;
+                                }
                             }
-                            if (Settings.ParasiteSurviveCondition[CountNeighbours[2]]) {
-                                CreateCell(x,y,z,2);
-                                break;
-                            }
-                            if (Settings.MushroomSurviveCondition[CountNeighbours[3]]) {
-                                CreateCell(x,y,z,3);
-                                break;
-                            }
-                            AllCells[x,y,z] = 0;
+                            if (!created) AllCells[x,y,z] = 0;
                             break;
                         case 3:
-                            if (!(Settings.MushroomSurviveCondition[CountNeighbours[3]]))
+                            if (!(Settings.SurviveConditions[2][CountNeighbours[3]]))
                                 DeleteCell(x,y,z,3);
                             break;
                         case 2:
-                            if (!(Settings.ParasiteSurviveCondition[CountNeighbours[2]]))
+                            if (!(Settings.SurviveConditions[1][CountNeighbours[2]]))
                                 DeleteCell(x,y,z,2);
                             break;
                         case 1:
                             if (CountNeighbours[1] < 0)
                                 CountNeighbours[1] = 0;
-                            if (Settings.ParasitismCondition[CountNeighbours[2]]) {
+
+                            if (Settings.BornConditions[1][CountNeighbours[2]]) {
                                 Destroy(GameObject.Find($"{GameStatusData.CellNames[0]}({x}, {y}, {z})"));
                                 CreateCell(x,y,z,2);
                                 break;
                             }
-                            if (!(Settings.SurviveCondition[CountNeighbours[1]]))
+                            if (!(Settings.SurviveConditions[0][CountNeighbours[1]]))
                                 DeleteCell(x,y,z,1);
                             break;
                         case 0:
                             if (CountNeighbours[1] < 0)
                                 CountNeighbours[1] = 0;
-                            if (Settings.BornCondition[CountNeighbours[1]]) {
-                                CreateCell(x,y,z,1);
-                                break;
+
+                            byte[] bornableTypes = {1,3,4};
+                            foreach (byte i in bornableTypes) {
+                                if (Settings.BornConditions[i-1][CountNeighbours[i]]) {
+                                    CreateCell(x,y,z,i);
+                                    break;
+                                }
                             }
-                            if (Settings.MushroomBornCondition[CountNeighbours[3]]) {
-                                CreateCell(x,y,z,3);
-                                break;
-                            }
-                            if (Settings.ImitatorBornCondition[CountNeighbours[4]])
-                                CreateCell(x,y,z,4);
                             break;
                     }
                 }
