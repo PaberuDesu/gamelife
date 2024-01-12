@@ -72,6 +72,11 @@ For each game mode (2D and 3D) there are four save slots, that can be called fro
 
 When the saved game is loading, the _JSON_-file is serialized and unpacked to objects that contain data about game. Next, all the settings are applied
 and the field is rewrited to correspond the _JSON_-file.
+>2D save/load menu
+  ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/2D_save.jpg)
+
+>3D save/load menu
+  ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/3D_save.jpg)
 
 ### 2D and 3D interactions
 
@@ -95,6 +100,7 @@ Selecting a cell type in 2D-mode is a selection of one of the colors of the pale
 palette are changable. Player saves and loads the palette with all the game data.
 
 The creation of new cells is performed by tracking the point of the texture on which the cursor is hovered. If the left mouse button is pressed, then the pixel at this point changes color to the one selected by the user, and the value of the cell ID in the array changes to the ID corresponding to this color.
+![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/2D_mode.jpg)
 
 ### Features of the 3D field
 
@@ -110,3 +116,4 @@ faces the ray has crashed into, and then a new cell is created so that it touche
 
 If you press the "E" key while editing the 3D field, a mode in which most of the interface is missing will be activated. It increases the view, and it will
 be possible to move and rotate the camera. This mode will be active until the same button is pressed again.
+![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/3D_mode.jpg)
