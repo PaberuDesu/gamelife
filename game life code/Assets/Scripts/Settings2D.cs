@@ -25,14 +25,14 @@ public class Settings2D : SettingsClass {
                 if (sizes[i] > 0)
                     GameStatusData.size2D[i] = sizes[i];
             }
-            byte[,] All2DCells = new byte[GameStatusData.size2D[0],GameStatusData.size2D[1]];
+            byte[,] AllCells = new byte[GameStatusData.size2D[0],GameStatusData.size2D[1]];
             for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
                 for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
-                    try{All2DCells[x,y] = GameStatusData.All2DCells[x,y];}
-                    catch{All2DCells[x,y] = 0;}
+                    try{AllCells[x,y] = GameStatusData.All2DCells[x,y];}
+                    catch{AllCells[x,y] = 0;}
                 }
             }
-            GameStatusData.All2DCells = All2DCells;
+            GameStatusData.All2DCells = AllCells;
             paint.CutField();
         }
     }

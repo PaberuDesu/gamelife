@@ -75,21 +75,17 @@ public class Paint : MonoBehaviour {
         SetNormalSize();
         _texture.Resize(_textureScale[0], _textureScale[1]);
         int axis = SliceCutter.AxisNumber;
-        byte[,] newAll2DCells = new byte[_textureScale[0], _textureScale[1]];
         for (int width = 0; width < _textureScale[0]; width++) {
             for (int height = 0; height < _textureScale[1]; height++) {
                 if (width >= OldTexture[0] || height >= OldTexture[1]) {
                     _texture.SetPixel(width, height, _colors[0]);
-                    newAll2DCells[width, height] = 0;
                 }
                 else if (axis >= 0) {
                     _texture.SetPixel(width, height, _colors[GameStatusData.All2DCells[width, height]]);
-                    newAll2DCells[width, height] = 0;
                 }
             }
         }
         _texture.Apply();
-        GameStatusData.All2DCells = newAll2DCells;
     }
 
     private void Update() {
