@@ -10,9 +10,15 @@ public class gameLogic2D : MonoBehaviour {
     public byte counter = 0;
     public GameObject GameOver;
 
+    private bool _isFrameChanged = false;
+
     public void StartGame() {
         RememberedAllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
         StartCoroutine(GameCycle());
+    }
+
+    private void Update() {
+        _isFrameChanged = true;
     }
 
     private IEnumerator GameCycle() {
@@ -106,7 +112,12 @@ public class gameLogic2D : MonoBehaviour {
             counter = 0;
             RememberedAllCells = AllCells;
         }
-        _paint._texture.Apply();
+
+        if (_isFrameChanged) {
+            _paint._texture.Apply();
+            _isFrameChanged = false;
+        }
+        
         yield return new WaitForSeconds(0.1f / Settings.SimulationSpeed);
         StartCoroutine(GameCycle());
     }
