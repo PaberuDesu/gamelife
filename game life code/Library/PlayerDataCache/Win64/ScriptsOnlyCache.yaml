@@ -152,9 +152,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4386}
     - Class: 114
-      Script: {instanceID: 4492}
+      Script: {instanceID: 4494}
     - Class: 114
-      Script: {instanceID: 4538}
+      Script: {instanceID: 4540}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -222,8 +222,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3422}
     - Class: 114
       Script: {instanceID: 3622}
-    - Class: 114
-      Script: {instanceID: 3754}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -429,7 +427,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: d94d0b1d2f30a850f57406856fd819be
+      Hash: 08b2a7d321dd985e0072fa46787d5b0b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Paint
@@ -687,7 +685,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 2fbfdb80117d336002f511d6ada8f424
+      Hash: 66576f0e2d45711db631e37270270503
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsForModes
@@ -711,7 +709,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: 81fe81e59a90896b43378a2fc901159c
+      Hash: 5f238704650e7a399489e1640f8d466e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MoveTo2DMode
@@ -747,7 +745,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 5f9271cff7550ce21b06750ca44e29ed
+      Hash: 049f611013cd3aeac2d4d7b512fbddda
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Settings2D
@@ -783,7 +781,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 4f7b18729ba41912f8db5e0b32084ad5
+      Hash: 326bf3ec37aabb85fa520c3e8edb2219
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: gameLogic3D

@@ -34,22 +34,21 @@ public class gameLogic2D : MonoBehaviour {
             for (byte y = 0; y < GameStatusData.size2D[1]; y++) {
                 byte[] neighbour_counter = checkNeighbours(x, y);
                 //logic of count neighbours for each cell type
-                int[] CountNeighbours = new int[5];
-                CountNeighbours[0] = 0;
-                CountNeighbours[1] = neighbour_counter[1] - neighbour_counter[2] + neighbour_counter[4];
-                CountNeighbours[2] = neighbour_counter[1] + neighbour_counter[3] + neighbour_counter[4];
-                CountNeighbours[3] = neighbour_counter[0] + neighbour_counter[3];
-                CountNeighbours[4] = neighbour_counter[1] + neighbour_counter[2] + neighbour_counter[3] + neighbour_counter[4];
+                int[] CountNeighbours = new int[4];
+                CountNeighbours[0] = neighbour_counter[1] - neighbour_counter[2] + neighbour_counter[4];
+                CountNeighbours[1] = neighbour_counter[1] + neighbour_counter[3] + neighbour_counter[4];
+                CountNeighbours[2] = neighbour_counter[0] + neighbour_counter[3];
+                CountNeighbours[3] = neighbour_counter[1] + neighbour_counter[2] + neighbour_counter[3] + neighbour_counter[4];
                 switch (GameStatusData.All2DCells[x,y]) {
                     case 4:
-                        if (Settings.SurviveConditions[3][CountNeighbours[4]]) break;
+                        if (Settings.SurviveConditions[3][CountNeighbours[3]]) break;
 
-                        if (CountNeighbours[1] < 0)
-                            CountNeighbours[1] = 0;
+                        if (CountNeighbours[0] < 0)
+                            CountNeighbours[0] = 0;
 
                         bool created = false;
                         for (byte i = 1; i < 4; i++) {
-                            if (Settings.SurviveConditions[i-1][CountNeighbours[i]]) {
+                            if (Settings.SurviveConditions[i-1][CountNeighbours[i-1]]) {
                                 CreateCell(x,y,i);
                                 created = true;
                                 break;
@@ -58,29 +57,29 @@ public class gameLogic2D : MonoBehaviour {
                         if (!created) CreateCell(x,y,0);
                         break;
                     case 3:
-                        if (!(Settings.SurviveConditions[2][CountNeighbours[3]]))
+                        if (!(Settings.SurviveConditions[2][CountNeighbours[2]]))
                             CreateCell(x,y,0);
                         break;
                     case 2:
-                        if (!(Settings.SurviveConditions[1][CountNeighbours[2]]))
+                        if (!(Settings.SurviveConditions[1][CountNeighbours[1]]))
                             CreateCell(x,y,0);
                         break;
                     case 1:
-                        if (CountNeighbours[1] < 0)
-                            CountNeighbours[1] = 0;
+                        if (CountNeighbours[0] < 0)
+                            CountNeighbours[0] = 0;
                         
-                        if (Settings.BornConditions[1][CountNeighbours[2]])
+                        if (Settings.BornConditions[1][CountNeighbours[1]])
                             CreateCell(x,y,2);
-                        else if (!(Settings.SurviveConditions[0][CountNeighbours[1]]))
+                        else if (!(Settings.SurviveConditions[0][CountNeighbours[0]]))
                             CreateCell(x,y,0);
                         break;
                     case 0:
-                        if (CountNeighbours[1] < 0)
-                            CountNeighbours[1] = 0;
+                        if (CountNeighbours[0] < 0)
+                            CountNeighbours[0] = 0;
                         
                         byte[] bornableTypes = {1,3,4};
                         foreach (byte i in bornableTypes) {
-                            if (Settings.BornConditions[i-1][CountNeighbours[i]]) {
+                            if (Settings.BornConditions[i-1][CountNeighbours[i-1]]) {
                                 CreateCell(x,y,i);
                                 break;
                             }

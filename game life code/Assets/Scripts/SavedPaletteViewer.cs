@@ -6,6 +6,11 @@ public class SavedPaletteViewer : MonoBehaviour, IPointerEnterHandler, IPointerE
 {
     [SerializeField] private GameObject palette;
 
+    private void OnEnable() {
+        palette.SetActive(false);
+        palette.transform.localScale = new Vector3(1, 0, 1);
+    }
+
     public void OnPointerEnter(PointerEventData eventData) {
         StopAllCoroutines();
         StartCoroutine(Activate());
