@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BackToMenu
     - ChooseBut
+    - ClearCanvas
     - ColorChoose
     - Gamemodes
     - MainMenuLogic
@@ -19,14 +20,13 @@ ScriptsOnlyBuild:
     - SettingsForModes
     - SliceCutter
     - TakeAPhoto
+    - escape
     - gameLogic2D
     - gameLogic3D
     - moveCharacter
     - pregameLogic
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.Timeline.Editor.dll:
-    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -84,79 +84,83 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1472}
+      Script: {instanceID: 1478}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1606}
+      Script: {instanceID: 1612}
     - Class: 114
-      Script: {instanceID: 1626}
+      Script: {instanceID: 1632}
     - Class: 114
-      Script: {instanceID: 1670}
+      Script: {instanceID: 1676}
     - Class: 114
-      Script: {instanceID: 1680}
+      Script: {instanceID: 1686}
     - Class: 114
-      Script: {instanceID: 1766}
+      Script: {instanceID: 1772}
     - Class: 114
-      Script: {instanceID: 1900}
+      Script: {instanceID: 1906}
     - Class: 114
-      Script: {instanceID: 2042}
+      Script: {instanceID: 2048}
     - Class: 114
-      Script: {instanceID: 2338}
+      Script: {instanceID: 2344}
     - Class: 114
-      Script: {instanceID: 2346}
+      Script: {instanceID: 2352}
     - Class: 114
-      Script: {instanceID: 2350}
+      Script: {instanceID: 2356}
     - Class: 114
-      Script: {instanceID: 2458}
+      Script: {instanceID: 2464}
     - Class: 114
-      Script: {instanceID: 2624}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 2632}
+      Script: {instanceID: 2638}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2674}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 2896}
+      Script: {instanceID: 2902}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3154}
-    - Class: 114
-      Script: {instanceID: 3358}
+      Script: {instanceID: 3160}
     - Class: 114
       Script: {instanceID: 3364}
     - Class: 114
-      Script: {instanceID: 3422}
+      Script: {instanceID: 3370}
     - Class: 114
-      Script: {instanceID: 3438}
+      Script: {instanceID: 3428}
     - Class: 114
-      Script: {instanceID: 3508}
+      Script: {instanceID: 3444}
     - Class: 114
-      Script: {instanceID: 3540}
+      Script: {instanceID: 3514}
     - Class: 114
-      Script: {instanceID: 3622}
+      Script: {instanceID: 3546}
     - Class: 114
-      Script: {instanceID: 3754}
+      Script: {instanceID: 3628}
     - Class: 114
-      Script: {instanceID: 3824}
+      Script: {instanceID: 3760}
     - Class: 114
-      Script: {instanceID: 3836}
+      Script: {instanceID: 3830}
     - Class: 114
-      Script: {instanceID: 3888}
+      Script: {instanceID: 3842}
     - Class: 114
-      Script: {instanceID: 3992}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 4144}
+      Script: {instanceID: 3998}
     - Class: 114
-      Script: {instanceID: 4354}
+      Script: {instanceID: 4150}
     - Class: 114
-      Script: {instanceID: 4386}
+      Script: {instanceID: 4360}
     - Class: 114
-      Script: {instanceID: 4494}
+      Script: {instanceID: 4392}
     - Class: 114
-      Script: {instanceID: 4540}
+      Script: {instanceID: 4500}
+    - Class: 114
+      Script: {instanceID: 4546}
+    - Class: 114
+      Script: {instanceID: 37618}
+    - Class: 114
+      Script: {instanceID: 135782}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,39 +195,39 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1472}
+      Script: {instanceID: 1478}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1626}
+      Script: {instanceID: 1632}
     - Class: 114
-      Script: {instanceID: 1680}
+      Script: {instanceID: 1686}
     - Class: 114
-      Script: {instanceID: 1766}
+      Script: {instanceID: 1772}
     - Class: 114
-      Script: {instanceID: 2042}
+      Script: {instanceID: 2048}
     - Class: 114
-      Script: {instanceID: 2106}
+      Script: {instanceID: 2112}
     - Class: 114
-      Script: {instanceID: 2338}
+      Script: {instanceID: 2344}
     - Class: 114
-      Script: {instanceID: 2346}
+      Script: {instanceID: 2352}
     - Class: 114
-      Script: {instanceID: 2458}
+      Script: {instanceID: 2464}
     - Class: 114
-      Script: {instanceID: 2624}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 2896}
+      Script: {instanceID: 2902}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 3182}
+      Script: {instanceID: 3188}
     - Class: 114
-      Script: {instanceID: 3422}
+      Script: {instanceID: 3428}
     - Class: 114
-      Script: {instanceID: 3622}
+      Script: {instanceID: 3628}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -793,6 +797,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ColorChoose
+  - hash:
+      serializedVersion: 2
+      Hash: f9413a09dc638926d3b781d76f867f18
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: escape
+  - hash:
+      serializedVersion: 2
+      Hash: 4d72bc3ef5adc19d1352d7738ca65273
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ClearCanvas
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

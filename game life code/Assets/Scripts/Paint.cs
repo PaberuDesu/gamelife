@@ -34,6 +34,7 @@ public class Paint : MonoBehaviour {
 
     private bool _isOnCanvas = false;
     private bool _isPaintable = false;
+    private bool _isSliderDragged = false;
 
     private void Awake() {
         _textureScale = new int[] {GameStatusData.size3D[2],GameStatusData.size3D[1]};
@@ -94,14 +95,14 @@ public class Paint : MonoBehaviour {
             canvasCenter = (_rectMask.anchorMin + _rectMask.anchorMax) / 2;
             screenScale = new Vector2(Screen.width, Screen.height);
         }
-        if (_isOnCanvas) ChangeZoomParameter();
-        if (_isPaintable) PaintWithMouse();
+        if (_isOnCanvas && !_isSliderDragged) ChangeZoomParameter();
+        if (_isPaintable && !_isSliderDragged) PaintWithMouse();
         MovePicProcess(_rect.offsetMin + (MovePicDirection * Time.deltaTime));
     }
 
     public void SetOnOrOutOfCanvas(bool _isOn) {_isOnCanvas = _isOn;}
-
     public void SetPaintable(bool _isOn) {_isPaintable = _isOn;}
+    public void SetSliderDragged(bool _isOn) {_isSliderDragged = _isOn;}
 
     private void PaintWithMouse() {
         int x = (int) Mathf.Floor((Input.mousePosition.x - (canvasCenter.x * Screen.width) - _rect.offsetMin.x) / ScaleProportion.x / canvasSize.x / Screen.width / Zoom * GameStatusData.size2D[0] + (GameStatusData.size2D[0])/2  + (GameStatusData.size2D[0]) % 2 / 2f);
@@ -197,6 +198,16 @@ public class Paint : MonoBehaviour {
                     _texture.SetPixel(width, height, _colors[GameStatusData.AllCells[width, height, coord]]);
                     GameStatusData.All2DCells[width, height] = GameStatusData.AllCells[width, height, coord];
                 }
+            }
+        }
+        _texture.Apply();
+    }
+
+    public void Clear() {
+        for (int width = 0; width < _textureScale[0]; width++) {
+            for (int height = 0; height < _textureScale[1]; height++) {
+                _texture.SetPixel(width, height, _colors[0]);
+                GameStatusData.All2DCells[width, height] = 0;
             }
         }
         _texture.Apply();
