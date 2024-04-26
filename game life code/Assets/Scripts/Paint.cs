@@ -111,7 +111,7 @@ public class Paint : MonoBehaviour {
         if (x > GameStatusData.size2D[0] - 1) x = GameStatusData.size2D[0] - 1;
         if (y < 0) y = 0;
         if (y > GameStatusData.size2D[1] - 1) y = GameStatusData.size2D[1] - 1;
-        CurrentCoordOut.text = $"Координата курсора: ({x};{y})";
+        CurrentCoordOut.text = $"Координаты курсора: ({x};{y})";
         if (Input.GetKey(KeyCode.Mouse0)) {
             _texture.SetPixel(x, y, _colors[_activeColorNumber]);
             GameStatusData.All2DCells[x, y] = Convert.ToByte(_activeColorNumber);

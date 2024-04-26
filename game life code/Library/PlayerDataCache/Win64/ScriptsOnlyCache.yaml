@@ -102,65 +102,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2048}
     - Class: 114
-      Script: {instanceID: 2344}
+      Script: {instanceID: 2144}
     - Class: 114
-      Script: {instanceID: 2352}
+      Script: {instanceID: 2346}
     - Class: 114
-      Script: {instanceID: 2356}
+      Script: {instanceID: 2354}
     - Class: 114
-      Script: {instanceID: 2464}
+      Script: {instanceID: 2358}
     - Class: 114
-      Script: {instanceID: 2630}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 2638}
+      Script: {instanceID: 2632}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2640}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2676}
     - Class: 114
-      Script: {instanceID: 2902}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 3056}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 3162}
     - Class: 114
-      Script: {instanceID: 3370}
+      Script: {instanceID: 3366}
     - Class: 114
-      Script: {instanceID: 3428}
+      Script: {instanceID: 3372}
     - Class: 114
-      Script: {instanceID: 3444}
+      Script: {instanceID: 3430}
     - Class: 114
-      Script: {instanceID: 3514}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 3546}
+      Script: {instanceID: 3516}
     - Class: 114
-      Script: {instanceID: 3628}
+      Script: {instanceID: 3548}
     - Class: 114
-      Script: {instanceID: 3760}
+      Script: {instanceID: 3630}
     - Class: 114
-      Script: {instanceID: 3830}
+      Script: {instanceID: 3716}
     - Class: 114
-      Script: {instanceID: 3842}
+      Script: {instanceID: 3764}
     - Class: 114
-      Script: {instanceID: 3894}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 3998}
+      Script: {instanceID: 3846}
     - Class: 114
-      Script: {instanceID: 4150}
+      Script: {instanceID: 3898}
     - Class: 114
-      Script: {instanceID: 4360}
+      Script: {instanceID: 4002}
     - Class: 114
-      Script: {instanceID: 4392}
+      Script: {instanceID: 4154}
     - Class: 114
-      Script: {instanceID: 4500}
+      Script: {instanceID: 4364}
     - Class: 114
-      Script: {instanceID: 4546}
+      Script: {instanceID: 4396}
     - Class: 114
-      Script: {instanceID: 37618}
+      Script: {instanceID: 4504}
     - Class: 114
-      Script: {instanceID: 135782}
+      Script: {instanceID: 4550}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -209,25 +209,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2112}
     - Class: 114
-      Script: {instanceID: 2344}
+      Script: {instanceID: 2346}
     - Class: 114
-      Script: {instanceID: 2352}
+      Script: {instanceID: 2354}
     - Class: 114
-      Script: {instanceID: 2464}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 2630}
+      Script: {instanceID: 2632}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 2902}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3162}
     - Class: 114
-      Script: {instanceID: 3188}
+      Script: {instanceID: 3190}
     - Class: 114
-      Script: {instanceID: 3428}
+      Script: {instanceID: 3430}
     - Class: 114
-      Script: {instanceID: 3628}
+      Script: {instanceID: 3630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -365,6 +365,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChooseBut
+  - hash:
+      serializedVersion: 2
+      Hash: f9413a09dc638926d3b781d76f867f18
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: escape
   - hash:
       serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
@@ -655,6 +661,12 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: 4d72bc3ef5adc19d1352d7738ca65273
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ClearCanvas
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -797,18 +809,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ColorChoose
-  - hash:
-      serializedVersion: 2
-      Hash: f9413a09dc638926d3b781d76f867f18
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: escape
-  - hash:
-      serializedVersion: 2
-      Hash: 4d72bc3ef5adc19d1352d7738ca65273
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ClearCanvas
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
