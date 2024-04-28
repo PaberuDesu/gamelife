@@ -367,7 +367,7 @@ ScriptsOnlyBuild:
     className: ChooseBut
   - hash:
       serializedVersion: 2
-      Hash: f9413a09dc638926d3b781d76f867f18
+      Hash: 0b35d0198e1ac319578bf3619e7180f8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: escape
@@ -813,4 +813,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/pasha/gamelifesaved/GameLife/game life 3d.exe
+  playerPath: C:/Users/pasha/gamelife/GameLife/game life 3d.exe
