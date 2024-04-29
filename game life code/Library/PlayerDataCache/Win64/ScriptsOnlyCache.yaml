@@ -703,7 +703,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 66576f0e2d45711db631e37270270503
+      Hash: 2fb258dcec232c118958bce5c9b03d7f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsForModes

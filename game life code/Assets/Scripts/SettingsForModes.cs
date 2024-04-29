@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using Settings;
 
 public class SettingsForModes : SettingsClass {
+    [SerializeField] private Transform camera_area;
+    
     private const int maxArea = 3000;
 
     protected override int dimensions {get {return 3;}}
@@ -25,6 +27,7 @@ public class SettingsForModes : SettingsClass {
                 if (sizes[i] > 0)
                     GameStatusData.size3D[i] = sizes[i];
             }
+            FixCamera(sizes[0], sizes[1], sizes[2]);
             pregameLogic.CutField();
             byte[,,] AllCells = new byte[GameStatusData.size3D[0],GameStatusData.size3D[1],GameStatusData.size3D[2]];
             for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
@@ -37,5 +40,13 @@ public class SettingsForModes : SettingsClass {
             }
             GameStatusData.AllCells = AllCells;
         }
+    }
+
+    public void FixCamera(int x, int y, int z) {
+        int average = (x+y+z)/3;
+        camera_area.localScale = new Vector3(Mathf.Max(x, average), Mathf.Max(y, average), Mathf.Max(z, average));
+        Transform cam_transform = camera_area.GetChild(0);
+        cam_transform.LookAt(new Vector3(x/2, y/2, z/2));
+        cam_transform.GetComponent<Camera>().orthographicSize = 2 * ((x+y+z)/3);
     }
 }

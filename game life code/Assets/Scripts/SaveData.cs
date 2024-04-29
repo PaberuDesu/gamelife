@@ -35,7 +35,7 @@ public class SaveData : MonoBehaviour {
 
     public void LoadField(int SlotNumber) {
         FieldData CellData = JsonUtility.FromJson<FieldData>(File.ReadAllText(Application.streamingAssetsPath + $"/SavedData/SavedGameNumber{SlotNumber}.json"));
-        CellData.Apply();
+        CellData.Apply(Settings);
         CellData.Settings.Apply(Settings);
     }
 
@@ -90,10 +90,11 @@ public class SaveData : MonoBehaviour {
         }
     }
 
-    public void Apply() {
+    public void Apply(SettingsForModes settings) {
         GameStatusData.size3D[0] = X_size;
         GameStatusData.size3D[1] = Y_size;
         GameStatusData.size3D[2] = Z_size;
+        settings.FixCamera(X_size, Y_size, Z_size);
         pregameLogic.ClearField();
         foreach (Cell cell in AllCells) {
             pregameLogic.Create(cell.x, cell.y, cell.z, cell.ID);
