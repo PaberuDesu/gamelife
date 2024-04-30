@@ -36,19 +36,19 @@ public class Paint : MonoBehaviour {
     private bool _isPaintable = false;
     private bool _isSliderDragged = false;
 
+    [SerializeField] private GameObject canvas2D;
+
     private void Awake() {
-        _textureScale = new int[] {GameStatusData.size3D[2],GameStatusData.size3D[1]};
+        GameStatusData.size2D = new int[] {10,10};
+        if (MainMenuLogic._isChosen2D) _textureScale = GameStatusData.size2D;
+        else _textureScale = new int[] {GameStatusData.size3D[2],GameStatusData.size3D[1]};
         _texture = new Texture2D(_textureScale[0], _textureScale[1]);
         _texture.wrapMode = TextureWrapMode.Clamp;
         _texture.filterMode = FilterMode.Point;
         _material.mainTexture = _texture;
         _texture.Apply();
-
-        if (MainMenuLogic._isChosen2D && MainMenuLogic.data_slot_to_load >= 0) {
-            GetNewSize();
-            _texture.Apply();
-        }
-        else DrawSlice();
+        if (!(MainMenuLogic._isChosen2D && MainMenuLogic.data_slot_to_load >= 0)) Clear();
+        if (!MainMenuLogic._isChosen2D) canvas2D.SetActive(false);
     }
 
     public void Resize() {
@@ -56,9 +56,9 @@ public class Paint : MonoBehaviour {
         int x = SliceCutter.AxisNumber == 0 ? GameStatusData.size3D[2] : GameStatusData.size3D[0];
         int y = SliceCutter.AxisNumber == 1 ? GameStatusData.size3D[2] : GameStatusData.size3D[1];
         _textureScale = new int[] {x,y};
+        GameStatusData.size2D = _textureScale;
         SetNormalSize();
         _texture.Resize(_textureScale[0], _textureScale[1]);
-        GameStatusData.size2D = _textureScale;
         GameStatusData.All2DCells = new byte[_textureScale[0], _textureScale[1]];
     }
 

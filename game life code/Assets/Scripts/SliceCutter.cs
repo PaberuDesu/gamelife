@@ -7,11 +7,24 @@ public class SliceCutter : MonoBehaviour {
     public static string AxisName = "X";
     private static string[] Axises = {"X", "Y", "Z"};
     public static int Coordinate = 0;
+    [SerializeField] private Transform visualizer = null;
 
-    private void Start() {ChangeAxis();}
+    public void OnEnable() {
+        AxisNumber = 0;
+        Coordinate = 0;
+        ChangeAxis();
+    }
 
     private void ReplaceText() {
         Slice.text = $"Координата среза: {AxisName+Coordinate}";
+
+        if (visualizer == null) return;
+        Vector3 scale = new Vector3(GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]);
+        scale[AxisNumber] = 1;
+        visualizer.localScale = scale;
+        Vector3 position = (scale - Vector3.one)/2;
+        position[AxisNumber] = Coordinate;
+        visualizer.position = position;
     }
 
     public void ChangeAxis(int axis_number) {
@@ -32,8 +45,7 @@ public class SliceCutter : MonoBehaviour {
 
     public void ChangeAxis() {
         for (int _axis = 0; _axis < 3; _axis++)
-            transform.GetChild(_axis).gameObject.GetComponent<Image>().color = Color.grey;
-        transform.GetChild(AxisNumber).gameObject.GetComponent<Image>().color = Color.white;
+            transform.GetChild(_axis).gameObject.GetComponent<Image>().color = _axis == AxisNumber ? Color.white : Color.grey;
         AxisName = Axises[AxisNumber];
         ReplaceText();
     }

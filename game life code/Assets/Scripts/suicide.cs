@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class suicide : MonoBehaviour
 {
-    private void Awake() {
+    private void Start() {
        StartCoroutine(Countdown());
     }
 

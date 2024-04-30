@@ -45,8 +45,9 @@ public class SettingsForModes : SettingsClass {
     public void FixCamera(int x, int y, int z) {
         int average = (x+y+z)/3;
         camera_area.localScale = new Vector3(Mathf.Max(x, average), Mathf.Max(y, average), Mathf.Max(z, average));
-        Transform cam_transform = camera_area.GetChild(0);
-        cam_transform.LookAt(new Vector3(x/2, y/2, z/2));
-        cam_transform.GetComponent<Camera>().orthographicSize = 2 * ((x+y+z)/3);
+        foreach (Transform cam_transform in camera_area) {
+            cam_transform.LookAt(new Vector3(x/2, y/2, z/2));
+            cam_transform.GetComponent<Camera>().orthographicSize = 2 * ((x+y+z)/3);
+        }
     }
 }

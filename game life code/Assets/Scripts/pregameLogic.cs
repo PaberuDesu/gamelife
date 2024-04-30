@@ -17,6 +17,7 @@ public class pregameLogic : MonoBehaviour {
     private bool _isChangingCellInView = false;
 
     private void Awake() {
+        GameStatusData.size3D = new int[] {10,10,10};
         GameStatusData.cellTypes[0] = cellPreinstance;
         GameStatusData.cellTypes[1] = parasitePreinstance;
         GameStatusData.cellTypes[2] = mushroomPreinstance;
