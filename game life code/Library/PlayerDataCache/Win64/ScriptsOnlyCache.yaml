@@ -5,7 +5,9 @@ ScriptsOnlyBuild:
     - ChooseBut
     - ClearCanvas
     - ColorChoose
+    - DropdownCloser
     - Gamemodes
+    - InputCleaner
     - MainMenuLogic
     - MessageCenter
     - ModeChanger
@@ -21,6 +23,7 @@ ScriptsOnlyBuild:
     - SliceCutter
     - TakeAPhoto
     - escape
+    - escapeSliceMenu
     - gameLogic2D
     - gameLogic3D
     - moveCharacter
@@ -117,59 +120,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2356}
     - Class: 114
-      Script: {instanceID: 2464}
+      Script: {instanceID: 2426}
     - Class: 114
-      Script: {instanceID: 2630}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 2638}
+      Script: {instanceID: 2632}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2640}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2676}
     - Class: 114
-      Script: {instanceID: 2902}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 3056}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3370}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3428}
+      Script: {instanceID: 3368}
     - Class: 114
-      Script: {instanceID: 3444}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 3514}
+      Script: {instanceID: 3432}
     - Class: 114
-      Script: {instanceID: 3546}
+      Script: {instanceID: 3448}
     - Class: 114
-      Script: {instanceID: 3628}
+      Script: {instanceID: 3518}
     - Class: 114
-      Script: {instanceID: 3714}
+      Script: {instanceID: 3550}
     - Class: 114
-      Script: {instanceID: 3762}
+      Script: {instanceID: 3632}
     - Class: 114
-      Script: {instanceID: 3832}
+      Script: {instanceID: 3718}
     - Class: 114
-      Script: {instanceID: 3844}
+      Script: {instanceID: 3766}
     - Class: 114
-      Script: {instanceID: 3896}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 4000}
+      Script: {instanceID: 3848}
     - Class: 114
-      Script: {instanceID: 4152}
+      Script: {instanceID: 3900}
     - Class: 114
-      Script: {instanceID: 4362}
+      Script: {instanceID: 4004}
     - Class: 114
-      Script: {instanceID: 4388}
+      Script: {instanceID: 4156}
     - Class: 114
-      Script: {instanceID: 4396}
+      Script: {instanceID: 4366}
     - Class: 114
-      Script: {instanceID: 4504}
+      Script: {instanceID: 4392}
     - Class: 114
-      Script: {instanceID: 4550}
+      Script: {instanceID: 4400}
+    - Class: 114
+      Script: {instanceID: 4508}
+    - Class: 114
+      Script: {instanceID: 4554}
+    - Class: 114
+      Script: {instanceID: 36674}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -222,21 +231,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2352}
     - Class: 114
-      Script: {instanceID: 2464}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 2630}
+      Script: {instanceID: 2632}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 2902}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3188}
+      Script: {instanceID: 3192}
     - Class: 114
-      Script: {instanceID: 3428}
+      Script: {instanceID: 3432}
     - Class: 114
-      Script: {instanceID: 3628}
+      Script: {instanceID: 3632}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -406,6 +415,12 @@ ScriptsOnlyBuild:
     className: MessageCenter
   - hash:
       serializedVersion: 2
+      Hash: e7c85a990b23f6d45ea885df2c789045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: escapeSliceMenu
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -448,7 +463,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 08b2a7d321dd985e0072fa46787d5b0b
+      Hash: 82dae64c2058810d849a7e84e8d22d40
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Paint
@@ -500,6 +515,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 768e0b2401d6f4fdefbb3f86c12c662e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InputCleaner
   - hash:
       serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
@@ -652,7 +673,7 @@ ScriptsOnlyBuild:
     className: SaveLayer
   - hash:
       serializedVersion: 2
-      Hash: aa96ca0a96427ae31be77ebf4b532cab
+      Hash: 4c13413ad202c7926dbf12ce127668b5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SliceCutter
@@ -824,6 +845,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ColorChoose
+  - hash:
+      serializedVersion: 2
+      Hash: 12702cef8e58f4af479b3036d804fa4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DropdownCloser
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

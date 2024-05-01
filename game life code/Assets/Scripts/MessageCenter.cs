@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +6,12 @@ public class MessageCenter : MonoBehaviour
     public GameObject SuccessMessage;
     public GameObject ObjectExistsMessage;
     public GameObject WrongCoordinates;
+
+    private void OnDisable() {
+        foreach (Transform child in transform) {
+            Destroy(child.gameObject);
+        }
+    }
 
     public void Message(byte MessageCode, int x, int y, int z)
     {
