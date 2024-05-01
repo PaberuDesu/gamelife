@@ -61,8 +61,4 @@ public class SliceCutter : MonoBehaviour {
         }
         catch{;}
     }
-
-    public void ChangeText(Text currentSlice) {
-        currentSlice.text = $"Координата текущего среза: {AxisName+Coordinate}";
-    }
 }

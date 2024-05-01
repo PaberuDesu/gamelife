@@ -20,13 +20,9 @@ public class SaveLayer : MonoBehaviour {
     }
 
     private int GetID(Color _pixelColor) {
-        Color _roundedColor = new Color(Round(_pixelColor.r), Round(_pixelColor.g), Round(_pixelColor.b));
         for (int ID = 0; ID < 5; ID++) {
-            if (_roundedColor == paint._colors[ID])
-                return ID;
+            if (_pixelColor == paint._colors[ID]) return ID;
         }
         return 0;
     }
-
-    private float Round(float number) {return Mathf.Floor(number * 10)/ 10;}
 }
