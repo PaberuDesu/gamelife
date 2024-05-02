@@ -54,7 +54,7 @@ public class pregameLogic : MonoBehaviour {
     private void WaitForChangeNext() {_isChangingCellInView = false;}
 
     public void Create() {
-        byte x = 0, y = 0, z = 0;
+        byte x, y, z;
         try {
             x = Convert.ToByte(X_text);
             y = Convert.ToByte(Y_text);
@@ -69,18 +69,16 @@ public class pregameLogic : MonoBehaviour {
     }
 
     public void Create(int x, int y, int z) {
-        if (SelectedCellType > 0)
-            message_center.Message(0, x, y, z);//message: cell has been created
+        if (SelectedCellType > 0) message_center.Message(0, x, y, z);//message: cell has been created
         else message_center.Message(3, x, y, z);//message: cell has been deleted
         Create(x,y,z, SelectedCellType);
     }
 
     public static void Create(int x, int y, int z, int cell_type) {
-        GameObject New_cell;
         if (GameStatusData.AllCells[x,y,z] > 0)
             DeleteCell(x, y, z);
         if (cell_type > 0) {
-            New_cell = Instantiate(GameStatusData.cellTypes[cell_type-1], new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
+            GameObject New_cell = Instantiate(GameStatusData.cellTypes[cell_type-1], new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
             New_cell.name = $"{GameStatusData.CellNames[cell_type-1]}({x}, {y}, {z})";
         }
         GameStatusData.AllCells[x,y,z] = Convert.ToByte(cell_type);

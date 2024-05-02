@@ -16,7 +16,5 @@ public class PanelStabilizer : MonoBehaviour
         }
     }
 
-    private void MakeTrue() {
-        layout.childForceExpandWidth = true;
-    }
+    private void MakeTrue() {layout.childForceExpandWidth = true;}
 }

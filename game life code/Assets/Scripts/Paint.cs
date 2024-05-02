@@ -139,38 +139,31 @@ public class Paint : MonoBehaviour {
     
     private void MovePicProcess(Vector2 MoveValue) {
         if (Zoom == minZoom) {
-            ActivateCertainButton(0, false);
-            ActivateCertainButton(1, false);
-            ActivateCertainButton(2, false);
-            ActivateCertainButton(3, false);
+            for (int i = 0; i<4; i++)
+                ActivateCertainButton(i, false);
             _rect.offsetMin = Vector2.zero;
             _rect.offsetMax = Vector2.zero;
             MovePic(4);
             return;
         }
         Vector2 maskSize = screenScale * canvasSize;
-        Vector2 maxDistance = (new Vector2(transform.localScale.x, transform.localScale.y) - Vector2.one) * maskSize / 2;
-        if (transform.localScale.x < 1) maxDistance.x = 0;
-        if (transform.localScale.y < 1) maxDistance.y = 0;
+        Vector2 maxDistance = new Vector2(transform.localScale.x-1, transform.localScale.y-1) * maskSize / 2;
+        for (int i = 0; i<2; i++)
+            if (transform.localScale[i] < 1) maxDistance[i] = 0;
 
-        if (MoveValue.x < maxDistance.x) ActivateCertainButton(0, MovePicButParent.localScale.x >= 1);
-        if (MoveValue.x > -maxDistance.x) ActivateCertainButton(1, MovePicButParent.localScale.x >= 1);
-        if (MoveValue.y < maxDistance.y) ActivateCertainButton(2, MovePicButParent.localScale.y >= 1);
-        if (MoveValue.y > -maxDistance.y) ActivateCertainButton(3, MovePicButParent.localScale.y >= 1);
-
-        if (MoveValue.x > maxDistance.x) {
-            MoveValue.x = maxDistance.x;
-            ActivateCertainButton(0, false);
-        } else if (MoveValue.x < -maxDistance.x) {
-            MoveValue.x = -maxDistance.x;
-            ActivateCertainButton(1, false);
+        for (int i = 0; i<2; i++) {
+            if (MoveValue[i] < maxDistance[i]) ActivateCertainButton(2*i, MovePicButParent.localScale[i] >= 1);
+            if (MoveValue[i] > -maxDistance[i]) ActivateCertainButton(2*i+1, MovePicButParent.localScale[i] >= 1);
         }
-        if (MoveValue.y > maxDistance.y) {
-            MoveValue.y = maxDistance.y;
-            ActivateCertainButton(2, false);
-        } else if (MoveValue.y < -maxDistance.y) {
-            MoveValue.y = -maxDistance.y;
-            ActivateCertainButton(3, false);
+
+        for (int i = 0; i<2; i++) {
+            if (MoveValue[i] > maxDistance[i]) {
+                MoveValue[i] = maxDistance[i];
+                ActivateCertainButton(2*i, false);
+            } else if (MoveValue[i] < -maxDistance[i]) {
+                MoveValue[i] = -maxDistance[i];
+                ActivateCertainButton(2*i+1, false);
+            }
         }
         _rect.offsetMin = MoveValue;
         _rect.offsetMax = MoveValue;

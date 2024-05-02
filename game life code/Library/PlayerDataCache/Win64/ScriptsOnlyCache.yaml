@@ -1,9 +1,11 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Activator
     - BackToMenu
     - ChooseBut
     - ClearCanvas
+    - CloseAfterClickOutside
     - ColorChoose
     - DropdownCloser
     - EscClosePanel
@@ -166,23 +168,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3852}
     - Class: 114
-      Script: {instanceID: 3904}
+      Script: {instanceID: 3872}
     - Class: 114
-      Script: {instanceID: 4008}
+      Script: {instanceID: 3906}
     - Class: 114
-      Script: {instanceID: 4160}
+      Script: {instanceID: 4010}
     - Class: 114
-      Script: {instanceID: 4370}
+      Script: {instanceID: 4162}
     - Class: 114
-      Script: {instanceID: 4396}
+      Script: {instanceID: 4210}
     - Class: 114
-      Script: {instanceID: 4404}
+      Script: {instanceID: 4374}
     - Class: 114
-      Script: {instanceID: 4512}
+      Script: {instanceID: 4400}
     - Class: 114
-      Script: {instanceID: 4558}
+      Script: {instanceID: 4408}
     - Class: 114
-      Script: {instanceID: 51800}
+      Script: {instanceID: 4516}
+    - Class: 114
+      Script: {instanceID: 4562}
+    - Class: 114
+      Script: {instanceID: 31278}
+    - Class: 114
+      Script: {instanceID: 189536}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -249,7 +257,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 217888}
+      Script: {instanceID: 4210}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -395,7 +403,7 @@ ScriptsOnlyBuild:
     className: ChooseBut
   - hash:
       serializedVersion: 2
-      Hash: 0b35d0198e1ac319578bf3619e7180f8
+      Hash: 754e59857be7da7f7bb93d72f8f914ff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: escape
@@ -767,6 +775,12 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Resize2Dmap
+  - hash:
+      serializedVersion: 2
       Hash: 5f238704650e7a399489e1640f8d466e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -801,6 +815,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EscClosePanel
   - hash:
       serializedVersion: 2
       Hash: 049f611013cd3aeac2d4d7b512fbddda
@@ -860,13 +880,13 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Resize2Dmap
+    className: CloseAfterClickOutside
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 1028c39545bcfa841aaab54121e69a47
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: EscClosePanel
+    className: Activator
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
