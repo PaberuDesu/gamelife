@@ -143,27 +143,26 @@ public class Paint : MonoBehaviour {
                 ActivateCertainButton(i, false);
             _rect.offsetMin = Vector2.zero;
             _rect.offsetMax = Vector2.zero;
-            MovePic(4);
+            MovePic(Vector2.zero);
             return;
         }
         Vector2 maskSize = screenScale * canvasSize;
-        Vector2 maxDistance = new Vector2(transform.localScale.x-1, transform.localScale.y-1) * maskSize / 2;
-        for (int i = 0; i<2; i++)
+        Vector2 maxDistance = (new Vector2(transform.localScale.x-1, transform.localScale.y-1) * maskSize) / 2;
+
+        for (int i = 0; i<2; i++) {
             if (transform.localScale[i] < 1) maxDistance[i] = 0;
-
-        for (int i = 0; i<2; i++) {
-            if (MoveValue[i] < maxDistance[i]) ActivateCertainButton(2*i, MovePicButParent.localScale[i] >= 1);
-            if (MoveValue[i] > -maxDistance[i]) ActivateCertainButton(2*i+1, MovePicButParent.localScale[i] >= 1);
-        }
-
-        for (int i = 0; i<2; i++) {
-            if (MoveValue[i] > maxDistance[i]) {
-                MoveValue[i] = maxDistance[i];
+            int mv = (int) MoveValue[i]*10;
+            int md = (int) maxDistance[i]*10;
+            if (mv >= md) {
+                if (MovePicDirection[i]>0) MovePic(Vector2.zero);
+                if (mv > md) MoveValue[i] = maxDistance[i];
                 ActivateCertainButton(2*i, false);
-            } else if (MoveValue[i] < -maxDistance[i]) {
-                MoveValue[i] = -maxDistance[i];
+            } else ActivateCertainButton(2*i, MovePicButParent.localScale[i] >= 1);
+            if (mv <= -md) {
+                if (MovePicDirection[i]<0) MovePic(Vector2.zero);
+                if (mv < -md) MoveValue[i] = -maxDistance[i];
                 ActivateCertainButton(2*i+1, false);
-            }
+            } else ActivateCertainButton(2*i+1, MovePicButParent.localScale[i] >= 1);
         }
         _rect.offsetMin = MoveValue;
         _rect.offsetMax = MoveValue;
@@ -246,33 +245,33 @@ public class Paint : MonoBehaviour {
                 Mathf.Min(transform.localScale.y, 1),
                 1);
             
-            Vector3 horButScale = new Vector3 (1/MovePicButParent.localScale.x, 1, 1);
-            Vector3 vertButScale = new Vector3 (1, 1/MovePicButParent.localScale.y, 1);
-
-            MovePicButObjectList[0].transform.localScale = horButScale;
-            MovePicButObjectList[1].transform.localScale = horButScale;
-            MovePicButObjectList[2].transform.localScale = vertButScale;
-            MovePicButObjectList[3].transform.localScale = vertButScale;
+            Vector3[] ButScale = new Vector3[]
+                {new Vector3(1/MovePicButParent.localScale.x, 1, 1),
+                new Vector3 (1, 1/MovePicButParent.localScale.y, 1)};
+            
+            for (int i = 0; i<4; i++) {MovePicButObjectList[i].transform.localScale = ButScale[i/2];}
         }
     }
 
-    public void MovePic(int DirectionID) {
-        switch (DirectionID) {
+    public void MovePic(int id) {
+        switch (id) {
             case 0:
-                MovePicDirection = Vector2.left * Screen.width;
+                MovePic(Vector2.left);
                 break;
             case 1:
-                MovePicDirection = Vector2.right * Screen.width;
+                MovePic(Vector2.right);
                 break;
             case 2:
-                MovePicDirection = Vector2.down * Screen.width;
+                MovePic(Vector2.down);
                 break;
             case 3:
-                MovePicDirection = Vector2.up * Screen.width;
+                MovePic(Vector2.up);
                 break;
             case 4:
-                MovePicDirection = Vector2.zero;
+                MovePic(Vector2.zero);
                 break;
         }
     }
+
+    private void MovePic(Vector2 DirectionID) {MovePicDirection = DirectionID * Screen.width;}
 }
