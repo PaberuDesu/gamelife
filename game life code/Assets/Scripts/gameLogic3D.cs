@@ -92,33 +92,34 @@ public class gameLogic3D : MonoBehaviour {
             }
         }
 
-        bool EqualityShort = true, EqualityLong = true;
-        try {
-            for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
-                for (byte y = 0; y < GameStatusData.size3D[1]; y++) {
-                    for (byte z = 0; z < GameStatusData.size3D[2]; z++) {
-                        if (!(GameStatusData.AllCells[x,y,z] == AllCells[x,y,z]))
-                            EqualityShort = false;
-                        if (!(RememberedAllCells[x,y,z] == AllCells[x,y,z]))
-                            EqualityLong = false;
-                        if (!EqualityLong && !EqualityShort)
-                            throw new System.Exception();
-                    }
-                } 
-            }
-            GameOver.SetActive(true);
-            _move.enabled = false;
-            StopCoroutine(GameCycle());
+        bool EqualityShort = true, EqualityLong = true, flag = true;
+        for (byte x = 0; flag && x < GameStatusData.size3D[0]; x++) {
+            for (byte y = 0; flag && y < GameStatusData.size3D[1]; y++) {
+                for (byte z = 0; flag && z < GameStatusData.size3D[2]; z++) {
+                    if (!(GameStatusData.AllCells[x,y,z] == AllCells[x,y,z]))
+                        EqualityShort = false;
+                    if (!(RememberedAllCells[x,y,z] == AllCells[x,y,z]))
+                        EqualityLong = false;
+                    if (!EqualityLong && !EqualityShort)
+                        flag = false;
+                }
+            } 
         }
-        catch{;}
         GameStatusData.AllCells = AllCells;
-        counter++;
-        if (counter == 100) {
-            counter = 0;
-            RememberedAllCells = AllCells;
+
+        if (flag) {
+            _move.enabled = false;
+            GameOver.SetActive(true);
+            StopCoroutine(GameCycle());
+        } else{
+            counter++;
+            if (counter == 100) {
+                counter = 0;
+                RememberedAllCells = AllCells;
+            }
+            yield return new WaitForSeconds(0.1f / Settings.SimulationSpeed);
+            StartCoroutine(GameCycle());
         }
-        yield return new WaitForSeconds(0.1f / Settings.SimulationSpeed);
-        StartCoroutine(GameCycle());
     }
 
     private byte[] checkNeighbours(byte x, byte y, byte z) {

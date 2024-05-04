@@ -25,7 +25,7 @@ public class Paint : MonoBehaviour {
     [SerializeField] private Transform ColorActivator;
     [SerializeField] private Transform ColorActivator_parentsList;
     public Color[] _colors = {Color.white, Color.green, Color.red, new Color(0.6f, 0.3f, 0, 1), Color.magenta};
-    [SerializeField] private int _activeColorNumber = 1;
+    [SerializeField] private byte _activeColorNumber = 1;
     
     [SerializeField] private Text CurrentCoordOut;
 
@@ -40,8 +40,7 @@ public class Paint : MonoBehaviour {
 
     private void Awake() {
         GameStatusData.size2D = new int[] {10,10};
-        if (MainMenuLogic._isChosen2D) _textureScale = GameStatusData.size2D;
-        else _textureScale = new int[] {GameStatusData.size3D[2],GameStatusData.size3D[1]};
+        _textureScale = GameStatusData.size2D;
         _texture = new Texture2D(_textureScale[0], _textureScale[1]);
         _texture.wrapMode = TextureWrapMode.Clamp;
         _texture.filterMode = FilterMode.Point;
@@ -49,52 +48,33 @@ public class Paint : MonoBehaviour {
         _texture.Apply();
         if (!(MainMenuLogic._isChosen2D && MainMenuLogic.data_slot_to_load >= 0)) Clear();
         if (!MainMenuLogic._isChosen2D) canvas2D.SetActive(false);
+        canvasSize = _rectMask.anchorMax - _rectMask.anchorMin;
+        canvasCenter = (_rectMask.anchorMin + _rectMask.anchorMax) / 2;
+        screenScale = new Vector2(Screen.width, Screen.height);
     }
 
     public void Resize() {
-        Zoom = minZoom;
-        int x = SliceCutter.AxisNumber == 0 ? GameStatusData.size3D[2] : GameStatusData.size3D[0];
-        int y = SliceCutter.AxisNumber == 1 ? GameStatusData.size3D[2] : GameStatusData.size3D[1];
-        _textureScale = new int[] {x,y};
-        GameStatusData.size2D = _textureScale;
-        SetNormalSize();
-        _texture.Resize(_textureScale[0], _textureScale[1]);
+        GameStatusData.size2D = new int[] {
+            SliceCutter.AxisNumber == 0 ? GameStatusData.size3D[2] : GameStatusData.size3D[0],
+            SliceCutter.AxisNumber == 1 ? GameStatusData.size3D[2] : GameStatusData.size3D[1]
+        };
+        GetNewSize();
         GameStatusData.All2DCells = new byte[_textureScale[0], _textureScale[1]];
     }
 
-    public void GetNewSize() {
-        _textureScale = GameStatusData.size2D;
-        Zoom = minZoom;
-        SetNormalSize();
-        _texture.Resize(_textureScale[0], _textureScale[1]);
-    }
-
     public void CutField() {
-        Zoom = minZoom;
         int[] OldTexture = _textureScale;
-        _textureScale = GameStatusData.size2D;
-        SetNormalSize();
-        _texture.Resize(_textureScale[0], _textureScale[1]);
-        int axis = SliceCutter.AxisNumber;
-        for (int width = 0; width < _textureScale[0]; width++) {
-            for (int height = 0; height < _textureScale[1]; height++) {
-                if (width >= OldTexture[0] || height >= OldTexture[1]) {
-                    _texture.SetPixel(width, height, _colors[0]);
-                }
-                else if (axis >= 0) {
-                    _texture.SetPixel(width, height, _colors[GameStatusData.All2DCells[width, height]]);
-                }
+        GetNewSize();
+        for (int x = 0; x < _textureScale[0]; x++) {
+            for (int y = 0; y < _textureScale[1]; y++) {
+                if (x >= OldTexture[0] || y >= OldTexture[1]) _texture.SetPixel(x, y, _colors[0]);
+                else _texture.SetPixel(x, y, _colors[GameStatusData.All2DCells[x,y]]);
             }
         }
         _texture.Apply();
     }
 
     private void Update() {
-        if (screenScale.x != Screen.width || screenScale.y != Screen.height) {
-            canvasSize = _rectMask.anchorMax - _rectMask.anchorMin;
-            canvasCenter = (_rectMask.anchorMin + _rectMask.anchorMax) / 2;
-            screenScale = new Vector2(Screen.width, Screen.height);
-        }
         if (_isOnCanvas && !_isSliderDragged) ChangeZoomParameter();
         if (_isPaintable && !_isSliderDragged) PaintWithMouse();
         else CurrentCoordOut.text = "";
@@ -106,16 +86,15 @@ public class Paint : MonoBehaviour {
     public void SetSliderDragged(bool _isOn) {_isSliderDragged = _isOn;}
 
     private void PaintWithMouse() {
-        int x = (int) Mathf.Floor((Input.mousePosition.x - (canvasCenter.x * Screen.width) - _rect.offsetMin.x) / ScaleProportion.x / canvasSize.x / Screen.width / Zoom * GameStatusData.size2D[0] + (GameStatusData.size2D[0])/2  + (GameStatusData.size2D[0]) % 2 / 2f);
-        int y = (int) Mathf.Floor((Input.mousePosition.y - (canvasCenter.y * Screen.height) - _rect.offsetMin.y) / ScaleProportion.y / canvasSize.y / Screen.height / Zoom * GameStatusData.size2D[1] + (GameStatusData.size2D[1])/2 + (GameStatusData.size2D[1]) % 2 / 2f);
-        if (x < 0) x = 0;
-        if (x > GameStatusData.size2D[0] - 1) x = GameStatusData.size2D[0] - 1;
-        if (y < 0) y = 0;
-        if (y > GameStatusData.size2D[1] - 1) y = GameStatusData.size2D[1] - 1;
-        CurrentCoordOut.text = $"{x};{y}";
+        int[] coords = new int[2];
+        for (int i=0; i<2; i++) {
+            coords[i] = (int) Mathf.Floor((Input.mousePosition[i] - (canvasCenter[i] * screenScale[i]) - _rect.offsetMin[i]) / ScaleProportion[i] / canvasSize[i] / screenScale[i] / Zoom * GameStatusData.size2D[i] + (GameStatusData.size2D[i])/2  + (GameStatusData.size2D[i]) % 2 / 2f);
+            if (coords[i] < 0) coords[i] = 0;
+            if (coords[i] > GameStatusData.size2D[i] - 1) coords[i] = GameStatusData.size2D[i] - 1;
+        }
+        CurrentCoordOut.text = $"{coords[0]};{coords[1]}";
         if (Input.GetKey(KeyCode.Mouse0)) {
-            _texture.SetPixel(x, y, _colors[_activeColorNumber]);
-            GameStatusData.All2DCells[x, y] = Convert.ToByte(_activeColorNumber);
+            SetCell(coords[0], coords[1], _activeColorNumber);
             _texture.Apply();
         }
     }
@@ -125,16 +104,14 @@ public class Paint : MonoBehaviour {
     public void recolor(int type) {
         for (int x = 0; x < _textureScale[0]; x++) {
             for (int y = 0; y < _textureScale[1]; y++) {
-                if (GameStatusData.All2DCells[x,y] == type)
-                    _texture.SetPixel(x, y, _colors[type]);
+                if (GameStatusData.All2DCells[x,y] == type) _texture.SetPixel(x, y, _colors[type]);
             }
         }
         _texture.Apply();
     }
 
     public void recolorVisualisers() {
-        for (int i = 0; i < PaletteVisualiser.Length; i++)
-            PaletteVisualiser[i].color = _colors[i];
+        for (int i = 0; i < PaletteVisualiser.Length; i++) PaletteVisualiser[i].color = _colors[i];
     }
     
     private void MovePicProcess(Vector2 MoveValue) {
@@ -170,48 +147,50 @@ public class Paint : MonoBehaviour {
     
     public void ChangeActiveColor(int ColorNumber) {
         ColorActivator.SetParent(ColorActivator_parentsList.GetChild(ColorNumber),false);
-        _activeColorNumber = ColorNumber;
+        _activeColorNumber = Convert.ToByte(ColorNumber);
     }
 
     public void DrawSlice() {
         Resize();
         int axis = SliceCutter.AxisNumber;
         int coord = SliceCutter.Coordinate;
-        for (int width = 0; width < _textureScale[0]; width++) {
-            for (int height = 0; height < _textureScale[1]; height++) {
-                if (axis == 0) {
-                    _texture.SetPixel(width, height, _colors[GameStatusData.AllCells[coord, height, width]]);
-                    GameStatusData.All2DCells[width, height] = GameStatusData.AllCells[coord, height, width];
-                }
-                else if (axis == 1) {
-                    _texture.SetPixel(width, height, _colors[GameStatusData.AllCells[width, coord, height]]);
-                    GameStatusData.All2DCells[width, height] = GameStatusData.AllCells[width, coord, height];
-                }
-                else if (axis == 2) {
-                    _texture.SetPixel(width, height, _colors[GameStatusData.AllCells[width, height, coord]]);
-                    GameStatusData.All2DCells[width, height] = GameStatusData.AllCells[width, height, coord];
-                }
+        for (int x = 0; x < _textureScale[0]; x++) {
+            for (int y = 0; y < _textureScale[1]; y++) {
+                if (axis == 0) SetCell(x, y, GameStatusData.AllCells[coord, y, x]);
+                else if (axis == 1) SetCell(x, y, GameStatusData.AllCells[x, coord, y]);
+                else SetCell(x, y, GameStatusData.AllCells[x, y, coord]);
             }
         }
         _texture.Apply();
     }
 
     public void Clear() {
-        for (int width = 0; width < _textureScale[0]; width++) {
-            for (int height = 0; height < _textureScale[1]; height++) {
-                _texture.SetPixel(width, height, _colors[0]);
-                GameStatusData.All2DCells[width, height] = 0;
+        for (int x = 0; x < _textureScale[0]; x++) {
+            for (int y = 0; y < _textureScale[1]; y++) {
+                SetCell(x, y, 0);
             }
         }
         _texture.Apply();
     }
 
-    private void SetNormalSize() {
+    private void SetCell(int x, int y, byte id) {
+        _texture.SetPixel(x, y, _colors[id]);
+        GameStatusData.All2DCells[x,y] = id;
+    }
+
+    public void GetNewSize() {
+        _textureScale = GameStatusData.size2D;
+        Zoom = minZoom;
         float x = GameStatusData.size2D[0];
         float y = GameStatusData.size2D[1];
         if (x < y) ScaleProportion = new Vector2(x/y, 1);
         else ScaleProportion = new Vector2(1, y/x);
-        transform.localScale = minZoom * ScaleProportion;
+        SetCanvasScale();
+        _texture.Resize(_textureScale[0], _textureScale[1]);
+    }
+
+    private void SetCanvasScale() {
+        transform.localScale = Zoom * ScaleProportion;
         MovePicButParent.localScale = new Vector3 (
                 Mathf.Min(transform.localScale.x, 1),
                 Mathf.Min(transform.localScale.y, 1),
@@ -237,18 +216,11 @@ public class Paint : MonoBehaviour {
                 _rect.offsetMin *= MoveValue;
                 _rect.offsetMax *= MoveValue;
             }
-
-            transform.localScale = Zoom * ScaleProportion;
-
-            MovePicButParent.localScale = new Vector3 (
-                Mathf.Min(transform.localScale.x, 1),
-                Mathf.Min(transform.localScale.y, 1),
-                1);
+            SetCanvasScale();
             
             Vector3[] ButScale = new Vector3[]
                 {new Vector3(1/MovePicButParent.localScale.x, 1, 1),
                 new Vector3 (1, 1/MovePicButParent.localScale.y, 1)};
-            
             for (int i = 0; i<4; i++) {MovePicButObjectList[i].transform.localScale = ButScale[i/2];}
         }
     }
@@ -273,5 +245,5 @@ public class Paint : MonoBehaviour {
         }
     }
 
-    private void MovePic(Vector2 DirectionID) {MovePicDirection = DirectionID * Screen.width;}
+    private void MovePic(Vector2 Direction) {MovePicDirection = Direction * screenScale.x;}
 }

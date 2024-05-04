@@ -487,7 +487,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 82dae64c2058810d849a7e84e8d22d40
+      Hash: 10fc6f197c43413496f2e9a2d848f130
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Paint
