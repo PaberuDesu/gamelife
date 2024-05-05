@@ -16,8 +16,8 @@ namespace Settings {
         [SerializeField] protected GameObject SettingsPanel;
 
         public bool _isBorderExists = false;
-        public float MinimumSimulationSpeed = 0.1f;
-        public float SimulationSpeed = 0.1f;
+        public float MinimumSimulationSpeed = 1f;
+        public float SimulationSpeed = 1f;
 
         public int SelectedCellType = 1;
         protected const short step = 1300;
@@ -46,9 +46,7 @@ namespace Settings {
             SettingsPanel.SetActive(false);
         }
 
-        public void ChangeModeByButton(int MoveMultiplier) {
-            StartCoroutine(ChangeMode(MoveMultiplier));
-        }
+        public void ChangeModeByButton(int MoveMultiplier) {StartCoroutine(ChangeMode(MoveMultiplier));}
 
         private IEnumerator ChangeMode(int MoveMultiplier) {
             if (-MoveMultiplier * transform.localPosition.x != MaximumAbs && Mathf.Abs(transform.localPosition.x % (step)) == remain_of_step) {
@@ -91,9 +89,7 @@ namespace Settings {
 
         public abstract void ChangeScale();
 
-        public void LogScale(Text logger) {
-            logger.text = GameStatusData.WrittenSize(dimensions);
-        }
+        public void LogScale(Text logger) {logger.text = GameStatusData.WrittenSize(dimensions);}
 
         public void SetSpeed() {SimulationSpeed = MinimumSimulationSpeed + (SpeedSlider.value * 10);}
     }

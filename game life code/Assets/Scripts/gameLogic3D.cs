@@ -6,11 +6,25 @@ public class gameLogic3D : MonoBehaviour {
     private byte[,,] AllCells;
     private byte[,,] RememberedAllCells;
 
+    private bool continuing;
     public byte counter = 0;
     public GameObject GameOver;
     [SerializeField] private moveCharacter _move;
+    [SerializeField] private GameObject pregameUI;
+    [SerializeField] private GameObject gameUI;
+    [SerializeField] private Gamemodes gamemodes;
+
+    public void Stop() {continuing = false;}
+
+    private void Update() {if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}}
 
     public void StartGame() {
+        continuing = true;
+        pregameUI.SetActive(false);
+        gameUI.SetActive(true);
+        _move.enabled = true;
+        gamemodes.gamemode = 2;
+        counter = 0;
         RememberedAllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
         StartCoroutine(GameCycle());
     }
@@ -110,8 +124,7 @@ public class gameLogic3D : MonoBehaviour {
         if (flag) {
             _move.enabled = false;
             GameOver.SetActive(true);
-            StopCoroutine(GameCycle());
-        } else{
+        } else if (continuing) {
             counter++;
             if (counter == 100) {
                 counter = 0;
@@ -119,6 +132,11 @@ public class gameLogic3D : MonoBehaviour {
             }
             yield return new WaitForSeconds(0.1f / Settings.SimulationSpeed);
             StartCoroutine(GameCycle());
+        } else {
+            _move.enabled = false;
+            pregameUI.SetActive(true);
+            gameUI.SetActive(false);
+            gamemodes.gamemode = 0;
         }
     }
 

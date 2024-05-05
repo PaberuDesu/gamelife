@@ -34,6 +34,7 @@ public class Paint : MonoBehaviour {
 
     private bool _isOnCanvas = false;
     private bool _isPaintable = false;
+    private bool _isInGame = false;
     private bool _isSliderDragged = false;
 
     [SerializeField] private GameObject canvas2D;
@@ -76,7 +77,7 @@ public class Paint : MonoBehaviour {
 
     private void Update() {
         if (_isOnCanvas && !_isSliderDragged) ChangeZoomParameter();
-        if (_isPaintable && !_isSliderDragged) PaintWithMouse();
+        if (_isPaintable && !_isSliderDragged && !_isInGame) PaintWithMouse();
         else CurrentCoordOut.text = "";
         MovePicProcess(_rect.offsetMin + (MovePicDirection * Time.deltaTime));
     }
@@ -84,6 +85,7 @@ public class Paint : MonoBehaviour {
     public void SetOnOrOutOfCanvas(bool _isOn) {_isOnCanvas = _isOn;}
     public void SetPaintable(bool _isOn) {_isPaintable = _isOn;}
     public void SetSliderDragged(bool _isOn) {_isSliderDragged = _isOn;}
+    public void SetInGame(bool _isOn) {_isInGame = _isOn;}
 
     private void PaintWithMouse() {
         int[] coords = new int[2];

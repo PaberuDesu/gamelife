@@ -7,18 +7,29 @@ public class gameLogic2D : MonoBehaviour {
     private byte[,] AllCells;
     private byte[,] RememberedAllCells;
 
+    private bool continuing;
     public byte counter = 0;
     public GameObject GameOver;
+    [SerializeField] private GameObject pregameUI;
+    [SerializeField] private GameObject gameUI;
 
     private bool _isFrameChanged = false;
 
+    public void Stop() {continuing = false;}
+
     public void StartGame() {
+        continuing = true;
+        pregameUI.SetActive(false);
+        gameUI.SetActive(true);
+        _paint.SetInGame(true);
+        counter = 0;
         RememberedAllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
         StartCoroutine(GameCycle());
     }
 
     private void Update() {
         _isFrameChanged = true;
+        if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}
     }
 
     private IEnumerator GameCycle() {
@@ -110,8 +121,7 @@ public class gameLogic2D : MonoBehaviour {
         if (flag) {
             _paint._texture.Apply();
             GameOver.SetActive(true);
-            StopCoroutine(GameCycle());
-        } else {
+        } else if (continuing) {
             counter++;
             if (counter == 100) {
                 counter = 0;
@@ -119,6 +129,11 @@ public class gameLogic2D : MonoBehaviour {
             }
             yield return new WaitForSeconds(0.1f / Settings.SimulationSpeed);
             StartCoroutine(GameCycle());
+        } else {
+            pregameUI.SetActive(true);
+            gameUI.SetActive(false);
+            _paint._texture.Apply();
+            _paint.SetInGame(false);
         }
     }
 
