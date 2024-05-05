@@ -72,22 +72,19 @@ For each game mode (2D and 3D) there are four save slots, that can be called fro
 
 When the saved game is loading, the _JSON_-file is serialized and unpacked to objects that contain data about game. Next, all the settings are applied
 and the field is rewrited to correspond the _JSON_-file.
->2D save/load menu
-  ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/2D_save.jpg)
 
->3D save/load menu
-  ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/3D_save.jpg)
+> 2D save/load menu
+> ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/2D_save.jpg)
+
+> 3D save/load menu
+> ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/3D_save.jpg)
 
 ### 2D and 3D interactions
 
-The transition from 3D- to 2D-mode is carried out in several ways:
+The transition from 3D- to 2D-mode is moved into separated game mode where player can transport 2D-field into 3D one or make a slice of 3D-field. You can also change game mode without changing the game field.
 
-- creating a slice
-  > In this case, the user selects the axis and coordinate for the slice and then a new texture is created that is a 2D-slice of a 3D-field at this
-  > coordinate and is a field ready to start the game.
-- return to the previous state of the field.
-  > In this case, the field is started in the state it was in when the user last changed it. If the user has not launched the 2D field yet, an empty field of
-  > 10\*10 cells will be created.
+> 3D-2D transition mode
+> ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/3D_2D_transition.jpg)
 
 ### Features of the 2D field
 
@@ -99,7 +96,7 @@ camera that made for this purpose. These images are needed in order to distingui
 Selecting a cell type in 2D-mode is a selection of one of the colors of the palette, each of which corresponds to one of the cell types. Colors of the
 palette are changable. Player saves and loads the palette with all the game data.
 
-The creation of new cells is performed by tracking the point of the texture on which the cursor is hovered. If the left mouse button is pressed, then the pixel at this point changes color to the one selected by the user, and the value of the cell ID in the array changes to the ID corresponding to this color.
+The creation of new cells is performed by tracking the point of the texture on which the cursor is hovered. If the left mouse button is pressed, then the pixel at this point changes color to the one selected by the user, and the value of the cell ID in the array changes to the ID corresponding to this color. You can also pick the fill instrument and turn the bunch of one-type cells into the cells of the other type.
 ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/2D_mode.jpg)
 
 ### Features of the 3D field
