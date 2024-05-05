@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.IO;
 
 public class SaveData : MonoBehaviour {
-    public SettingsForModes Settings;
+    public Settings3D Settings;
     public Settings2D _settings2D;
     [SerializeField] Paint _paint;
     [SerializeField] TakeAPhoto take_a_photo;
@@ -90,7 +90,7 @@ public class SaveData : MonoBehaviour {
         }
     }
 
-    public void Apply(SettingsForModes settings) {
+    public void Apply(Settings3D settings) {
         GameStatusData.size3D[0] = X_size;
         GameStatusData.size3D[1] = Y_size;
         GameStatusData.size3D[2] = Z_size;
@@ -144,14 +144,14 @@ public class SaveData : MonoBehaviour {
     //speed of game
     public float SimulationSpeed;
 
-    public SettingsData(SettingsForModes Settings) {
+    public SettingsData(Settings3D Settings) {
         for (int i = 0; i < 4; i++)
             CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], Settings.BornConditions[i], Settings.SurviveConditions[i]));
         BorderExistance = Settings._isBorderExists;
         SimulationSpeed = Settings.SimulationSpeed;
     }
 
-    public void Apply(SettingsForModes Settings) {
+    public void Apply(Settings3D Settings) {
         foreach (CellType cell in CellTypes) {
             for (int i = 0; i < 4; i++) {
                 if (cell.name == GameStatusData.CellNames[i]) {

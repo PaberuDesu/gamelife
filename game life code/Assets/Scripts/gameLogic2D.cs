@@ -1,23 +1,21 @@
 using System.Collections;
 using UnityEngine;
+using game_logic;
+using Settings;
 
-public class gameLogic2D : MonoBehaviour {
-    [SerializeField] private Settings2D Settings;
+public class gameLogic2D : gameLogic {
     [SerializeField] private Paint _paint;
     private byte[,] AllCells;
     private byte[,] RememberedAllCells;
 
-    private bool continuing;
-    public byte counter = 0;
-    public GameObject GameOver;
-    [SerializeField] private GameObject pregameUI;
-    [SerializeField] private GameObject gameUI;
-
     private bool _isFrameChanged = false;
 
-    public void Stop() {continuing = false;}
+    protected override void Update() {
+        _isFrameChanged = true;
+        if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}
+    }
 
-    public void StartGame() {
+    public override void StartGame() {
         continuing = true;
         pregameUI.SetActive(false);
         gameUI.SetActive(true);
@@ -27,12 +25,7 @@ public class gameLogic2D : MonoBehaviour {
         StartCoroutine(GameCycle());
     }
 
-    private void Update() {
-        _isFrameChanged = true;
-        if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}
-    }
-
-    private IEnumerator GameCycle() {
+    protected override IEnumerator GameCycle() {
         AllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
 
         for (byte x = 0; x < GameStatusData.size2D[0]; x++) {

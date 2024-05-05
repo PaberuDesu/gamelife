@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,6 +37,7 @@ public class Paint : MonoBehaviour {
     private bool _isPaintable = false;
     private bool _isInGame = false;
     private bool _isSliderDragged = false;
+    private Brush brush;
 
     [SerializeField] private GameObject canvas2D;
 
@@ -77,7 +79,7 @@ public class Paint : MonoBehaviour {
 
     private void Update() {
         if (_isOnCanvas && !_isSliderDragged) ChangeZoomParameter();
-        if (_isPaintable && !_isSliderDragged && !_isInGame) PaintWithMouse();
+        if (_isPaintable && !_isSliderDragged && !_isInGame) UseBrush();
         else CurrentCoordOut.text = "";
         MovePicProcess(_rect.offsetMin + (MovePicDirection * Time.deltaTime));
     }
@@ -86,8 +88,14 @@ public class Paint : MonoBehaviour {
     public void SetPaintable(bool _isOn) {_isPaintable = _isOn;}
     public void SetSliderDragged(bool _isOn) {_isSliderDragged = _isOn;}
     public void SetInGame(bool _isOn) {_isInGame = _isOn;}
+    public void SetBrush(int id) {
+        brush = id switch {
+            1 => Brush.Fill,
+            _ => Brush.Quadrangle
+        };
+    }
 
-    private void PaintWithMouse() {
+    private void UseBrush() {
         int[] coords = new int[2];
         for (int i=0; i<2; i++) {
             coords[i] = (int) Mathf.Floor((Input.mousePosition[i] - (canvasCenter[i] * screenScale[i]) - _rect.offsetMin[i]) / ScaleProportion[i] / canvasSize[i] / screenScale[i] / Zoom * GameStatusData.size2D[i] + (GameStatusData.size2D[i])/2  + (GameStatusData.size2D[i]) % 2 / 2f);
@@ -95,10 +103,41 @@ public class Paint : MonoBehaviour {
             if (coords[i] > GameStatusData.size2D[i] - 1) coords[i] = GameStatusData.size2D[i] - 1;
         }
         CurrentCoordOut.text = $"{coords[0]};{coords[1]}";
-        if (Input.GetKey(KeyCode.Mouse0)) {
-            SetCell(coords[0], coords[1], _activeColorNumber);
-            _texture.Apply();
+
+        if(!Input.GetKey(KeyCode.Mouse0)) return;
+        if (brush == Brush.Fill) Fill(coords);
+        else PaintWithMouse(coords);
+    }
+
+    private void PaintWithMouse(int[] coords) {
+        SetCell(coords[0], coords[1], _activeColorNumber);
+        _texture.Apply();
+    }
+
+    private void Fill(int[] coords) {
+        int[] xy;
+        Queue<int[]> cells_nearby = new Queue<int[]>();
+        cells_nearby.Enqueue(coords);
+        byte FillableColorID = GameStatusData.All2DCells[coords[0],coords[1]];
+        if (FillableColorID == _activeColorNumber) return;
+        while(cells_nearby.Count != 0) {
+            xy = cells_nearby.Dequeue();
+            byte ColorID = GameStatusData.All2DCells[xy[0],xy[1]];
+            if (ColorID == FillableColorID) {
+                SetCell(xy[0], xy[1], _activeColorNumber);
+                for (int x_neigbourhood = -1; x_neigbourhood <= 1; x_neigbourhood++) {
+                    for (int y_neigbourhood = -1; y_neigbourhood <= 1; y_neigbourhood++) {
+                        if (Mathf.Abs((x_neigbourhood + y_neigbourhood) % 2) == 1) {
+                            int x = xy[0] + x_neigbourhood;
+                            int y = xy[1] + y_neigbourhood;
+                            if (x >= 0 && x < GameStatusData.size2D[0] && y >= 0 && y < GameStatusData.size2D[1])
+                                cells_nearby.Enqueue(new int[] {x,y});
+                        }
+                    }
+                }
+            }
         }
+        _texture.Apply();
     }
 
     public void PaintToPlay(int x, int y, int ColorID) {_texture.SetPixel(x, y, _colors[ColorID]);}
@@ -248,4 +287,9 @@ public class Paint : MonoBehaviour {
     }
 
     private void MovePic(Vector2 Direction) {MovePicDirection = Direction * screenScale.x;}
+
+    public enum Brush {
+        Quadrangle,
+        Fill
+    }
 }

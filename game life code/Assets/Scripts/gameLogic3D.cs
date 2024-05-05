@@ -1,35 +1,29 @@
 using System.Collections;
 using UnityEngine;
+using game_logic;
+using Settings;
 
-public class gameLogic3D : MonoBehaviour {
-    [SerializeField] private SettingsForModes Settings;
+public class gameLogic3D : gameLogic {
     private byte[,,] AllCells;
     private byte[,,] RememberedAllCells;
 
-    private bool continuing;
-    public byte counter = 0;
-    public GameObject GameOver;
     [SerializeField] private moveCharacter _move;
-    [SerializeField] private GameObject pregameUI;
-    [SerializeField] private GameObject gameUI;
     [SerializeField] private Gamemodes gamemodes;
 
-    public void Stop() {continuing = false;}
+    protected override void Update() {if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}}
 
-    private void Update() {if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}}
-
-    public void StartGame() {
+    public override void StartGame() {
         continuing = true;
         pregameUI.SetActive(false);
         gameUI.SetActive(true);
         _move.enabled = true;
-        gamemodes.gamemode = 2;
+        gamemodes.gameStarted = true;
         counter = 0;
         RememberedAllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
         StartCoroutine(GameCycle());
     }
 
-    private IEnumerator GameCycle() {
+    protected override IEnumerator GameCycle() {
         AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
 
         for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
@@ -136,7 +130,7 @@ public class gameLogic3D : MonoBehaviour {
             _move.enabled = false;
             pregameUI.SetActive(true);
             gameUI.SetActive(false);
-            gamemodes.gamemode = 0;
+            gamemodes.gameStarted = false;
         }
     }
 
