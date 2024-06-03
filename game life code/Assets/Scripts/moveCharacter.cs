@@ -5,6 +5,7 @@ public class moveCharacter : MonoBehaviour
     [SerializeField] private byte movementSpeed;
     [SerializeField] private byte turnSpeed;
     [SerializeField] private byte turnLimit;
+    private const byte turnSpeedModifier = 50;
     private Rigidbody _rb;
 
     private void Start() {_rb = GetComponent<Rigidbody>();}
@@ -19,8 +20,8 @@ public class moveCharacter : MonoBehaviour
     }
 
     public void Rotate() {
-        float X = -Input.GetAxis("Mouse Y") * turnSpeed * Time.deltaTime;
-        float Y = Input.GetAxis("Mouse X") * turnSpeed * Time.deltaTime;
+        float X = -Input.GetAxis("Mouse Y") * turnSpeed * turnSpeedModifier * Time.deltaTime;
+        float Y = Input.GetAxis("Mouse X") * turnSpeed * turnSpeedModifier * Time.deltaTime;
 
         float X_current_rotation = transform.localEulerAngles.x;
         float X_rotate = X_current_rotation + X;

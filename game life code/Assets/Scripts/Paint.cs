@@ -227,7 +227,7 @@ public class Paint : MonoBehaviour {
         if (x < y) ScaleProportion = new Vector2(x/y, 1);
         else ScaleProportion = new Vector2(1, y/x);
         SetCanvasScale();
-        _texture.Resize(_textureScale[0], _textureScale[1]);
+        _texture.Reinitialize(_textureScale[0], _textureScale[1]);
     }
 
     private void SetCanvasScale() {
