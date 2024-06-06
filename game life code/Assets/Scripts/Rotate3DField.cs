@@ -5,9 +5,14 @@ public class OrbitCamera : MonoBehaviour
     [SerializeField] private Transform target;
     private float distance = 0.0f;
     private const float Speed = 6000.0f;
+    private float speedPref = 1.0f;
     
     private float x = 0.0f;
     private float y = 0.0f;
+
+    private void Awake() {
+        speedPref = PlayerPrefs.GetFloat("frs");
+    }
 
     private void OnEnable() {
         transform.localPosition = Vector3.one * 2;
@@ -20,8 +25,9 @@ public class OrbitCamera : MonoBehaviour
 
     private void Update() {
         if (Input.GetMouseButton(1)) {
-            x += Input.GetAxis("Mouse X") * Speed  * Time.deltaTime;
-            y -= Input.GetAxis("Mouse Y") * Speed  * Time.deltaTime;
+            float speedModifier = Speed * speedPref * Time.deltaTime;
+            x += Input.GetAxis("Mouse X") * speedModifier;
+            y -= Input.GetAxis("Mouse Y") * speedModifier;
         }
         UpdateCamera();
     }

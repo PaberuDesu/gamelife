@@ -3,12 +3,17 @@ using UnityEngine;
 public class moveCharacter : MonoBehaviour
 {
     [SerializeField] private byte movementSpeed;
-    [SerializeField] private byte turnSpeed;
+    private float speedPref = 1.0f;
+    [SerializeField] private int turnSpeed;
+    private float turnSpeedPref = 1.0f;
     [SerializeField] private byte turnLimit;
-    private const byte turnSpeedModifier = 50;
     private Rigidbody _rb;
 
-    private void Start() {_rb = GetComponent<Rigidbody>();}
+    private void Start() {
+        _rb = GetComponent<Rigidbody>();
+        speedPref = PlayerPrefs.GetFloat("speed");
+        turnSpeedPref = PlayerPrefs.GetFloat("crs");
+    }
 
     private void Update() {
         Move();
@@ -16,12 +21,13 @@ public class moveCharacter : MonoBehaviour
     }
 
     public void Move() {
-        transform.position += (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")) * movementSpeed * Time.deltaTime;
+        transform.position += (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")) * movementSpeed * speedPref * Time.deltaTime;
     }
 
     public void Rotate() {
-        float X = -Input.GetAxis("Mouse Y") * turnSpeed * turnSpeedModifier * Time.deltaTime;
-        float Y = Input.GetAxis("Mouse X") * turnSpeed * turnSpeedModifier * Time.deltaTime;
+        float turnSpeedModifier = turnSpeed * turnSpeedPref * Time.deltaTime;
+        float X = -Input.GetAxis("Mouse Y") * turnSpeedModifier;
+        float Y = Input.GetAxis("Mouse X") * turnSpeedModifier;
 
         float X_current_rotation = transform.localEulerAngles.x;
         float X_rotate = X_current_rotation + X;

@@ -347,6 +347,7 @@
 "Assets/Scripts/ClearCanvas.cs"
 "Assets/Scripts/CloseAfterClickOutside.cs"
 "Assets/Scripts/ColorChoose.cs"
+"Assets/Scripts/ControlSettings.cs"
 "Assets/Scripts/DropdownCloser.cs"
 "Assets/Scripts/escape.cs"
 "Assets/Scripts/escapeSliceMenu.cs"

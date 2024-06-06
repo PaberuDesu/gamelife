@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuLogic : MonoBehaviour {
     public static int data_slot_to_load;
     public static bool _isChosen2D;
+    [SerializeField] ControlSettings settings;
 
     private void Awake() {
         GameStatusData.AllCells = new byte[10,10,10];
@@ -18,14 +19,17 @@ public class MainMenuLogic : MonoBehaviour {
     }
 
     public void Start2DGame(int SlotNumber) {
-        data_slot_to_load = SlotNumber;
         _isChosen2D = true;
-        SceneManager.LoadScene(1);
+        Begin(SlotNumber);
     }
 
     public void Start3DGame(int SlotNumber) {
-        data_slot_to_load = SlotNumber;
         _isChosen2D = false;
+        Begin(SlotNumber);
+    }
+
+    private void Begin(int SlotNumber) {
+        data_slot_to_load = SlotNumber;
         SceneManager.LoadScene(1);
     }
 
