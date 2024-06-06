@@ -81,7 +81,7 @@ and the field is rewrited to correspond the _JSON_-file.
 
 ### 2D and 3D interactions
 
-The transition from 3D- to 2D-mode is moved into separated game mode where player can transport 2D-field into 3D one or make a slice of 3D-field. You can also change game mode without changing the game field.
+The transition from 3D- to 2D-mode is moved into separated game mode where player can transport 2D-field into 3D one or make a slice of 3D-field. You can also change game mode without changing the game field. You can rotate the 3D-field here with the right mouse button drag.
 
 > 3D-2D transition mode
 > ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/3D_2D_transition.jpg)
@@ -107,7 +107,7 @@ corresponding note appears in the history of cell changes in the field.
 The first method is long but precise: the user must manually set the coordinates of the cell he wants to change and the new cell type.
 
 The second type is more like main way of interacting with a 2D-field. The ray from the camera passes through the cursor position. A cell is created if the
-ray collides with a non-empty cell of the field. User chooses cell type to create. Then he presses "ctrl" and left mouse button. If the type of cell into
+ray collides with a non-empty cell of the field. User chooses cell type to create. Then he presses right mouse button. If the type of cell into
 which the ray crashed doesn't match the type selected by the user, then this cell is replaced with the selected one. Else program tracks which of the six
 faces the ray has crashed into, and then a new cell is created so that it touches this face with its face.
 

@@ -18,7 +18,7 @@ public class escapeSliceMenu : MonoBehaviour
     }
 
     public void SetDimNumAndLeave(bool is2D) {
-        _is2D = is2D;
+        SetDimensionNum(is2D);
         Leave(false);
     }
 

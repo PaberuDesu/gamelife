@@ -15,6 +15,7 @@ ScriptsOnlyBuild:
     - MessageCenter
     - ModeChanger
     - MoveTo2DMode
+    - OrbitCamera
     - Paint
     - PanelStabilizer
     - ReloadPhotos
@@ -35,12 +36,6 @@ ScriptsOnlyBuild:
     - suicide
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -63,6 +58,1102 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
+  serializedClasses:
+    UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
+    - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
+    - UnityEngine.RectOffset
+    UnityEngine.UI:
+    - UnityEngine.EventSystems.EventTrigger/Entry
+    - UnityEngine.EventSystems.EventTrigger/TriggerEvent
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.FontData
+    - UnityEngine.UI.InputField/EndEditEvent
+    - UnityEngine.UI.InputField/OnChangeEvent
+    - UnityEngine.UI.InputField/SubmitEvent
+    - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Slider/SliderEvent
+    - UnityEngine.UI.SpriteState
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start2DGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start2DGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start2DGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: ChooseBut
+    methodName: ChangeCurrentButton
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start3DGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start3DGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: ChooseBut
+    methodName: ChangeCurrentButton
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: ChooseBut
+    methodName: ChangeCurrentButton
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: ChooseBut
+    methodName: ChangeCurrentButton
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start2DGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Exit
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start3DGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start3DGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start2DGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuLogic
+    methodName: Start3DGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: PickColor
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: PickColor
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: PickColor
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: PickColor
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: PickColor
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: ColorChoose
+    methodName: ChangeValue
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBorder
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: MovePic
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: MovePic
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: pregameLogic
+    methodName: Change_x
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: LoadField
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: EscapeSaveMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings3D
+    methodName: ChangeScale
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: LogScale
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: SaveField
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: Save2DField
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: ChangeModeByButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToMenu
+    methodName: ReturnToMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: ModeChanger
+    methodName: ChangeModeByButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetBrush
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Selectable
+    methodName: set_interactable
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Selectable
+    methodName: set_interactable
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: pregameLogic
+    methodName: Create
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetInGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetBrush
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Selectable
+    methodName: set_interactable
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Selectable
+    methodName: set_interactable
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: DrawSlice
+  - assembly: Assembly-CSharp
+    fullTypeName: Resize2Dmap
+    methodName: OnEnable
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: gameLogic3D
+    methodName: StartGame
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SliceCutter
+    methodName: ChangeAxis
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: escapeSliceMenu
+    methodName: SetDimensionNum
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: MovePic
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: MovePic
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: Save2DField
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: Load2DField
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: EscapeSaveMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: SaveField
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: MovePic
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: MovePic
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: SliceCutter
+    methodName: ChangeAxis
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: LogScale
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: SliceCutter
+    methodName: ChangeAxis
+  - assembly: Assembly-CSharp
+    fullTypeName: ClearCanvas
+    methodName: setHolding
+  - assembly: Assembly-CSharp
+    fullTypeName: ClearCanvas
+    methodName: setHolding
+  - assembly: Assembly-CSharp
+    fullTypeName: ClearCanvas
+    methodName: setHolding
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: Escape
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToMenu
+    methodName: ReturnToMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBorder
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: LoadField
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: EscapeSaveMenu
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSpeed
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: CloseAfterClickOutside
+    methodName: setOver
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: pregameLogic
+    methodName: Change_z
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: pregameLogic
+    methodName: Change_y
+  - assembly: Assembly-CSharp
+    fullTypeName: game_logic.gameLogic
+    methodName: Stop
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Gamemodes
+    methodName: ChangeGamemodePregameAndGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSpeed
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetPaintable
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetPaintable
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: LogScale
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: Load2DField
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: EscapeSaveMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: ChangeModeByButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: SaveField
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: escapeSliceMenu
+    methodName: SetDimNumAndLeave
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: game_logic.gameLogic
+    methodName: Stop
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: Save2DField
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: gameLogic2D
+    methodName: StartGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: escapeSliceMenu
+    methodName: SetDimensionNum
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: LoadField
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: EscapeSaveMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: Save2DField
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: ModeChanger
+    methodName: ChangeModeByButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: MovePic
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: MovePic
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetOnOrOutOfCanvas
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: Load2DField
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: EscapeSaveMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: Load2DField
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: EscapeSaveMenu
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: SaveField
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveData
+    methodName: LoadField
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: EscapeSaveMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SaveLayer
+    methodName: Save
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: ChangeActiveColor
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings2D
+    methodName: ChangeScale
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: LogScale
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: escapeSliceMenu
+    methodName: SetDimNumAndLeave
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: escape
+    methodName: Escape
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: ChangeModeByButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: ChangeModeByButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: SliceCutter
+    methodName: ChangeCoordinate
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetSurviveCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings.SettingsClass
+    methodName: SetBornCondition
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -89,6 +1180,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 84
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -98,99 +1191,101 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1476}
+      Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 1520}
+      Script: {instanceID: 1614}
     - Class: 114
-      Script: {instanceID: 1610}
+      Script: {instanceID: 1698}
     - Class: 114
-      Script: {instanceID: 1630}
+      Script: {instanceID: 1716}
     - Class: 114
-      Script: {instanceID: 1674}
+      Script: {instanceID: 1750}
     - Class: 114
-      Script: {instanceID: 1684}
+      Script: {instanceID: 1762}
     - Class: 114
-      Script: {instanceID: 1770}
+      Script: {instanceID: 1826}
     - Class: 114
-      Script: {instanceID: 1904}
+      Script: {instanceID: 1960}
     - Class: 114
-      Script: {instanceID: 1986}
+      Script: {instanceID: 2054}
     - Class: 114
-      Script: {instanceID: 2048}
+      Script: {instanceID: 2182}
     - Class: 114
-      Script: {instanceID: 2134}
+      Script: {instanceID: 2190}
     - Class: 114
-      Script: {instanceID: 2146}
+      Script: {instanceID: 2386}
     - Class: 114
-      Script: {instanceID: 2348}
+      Script: {instanceID: 2394}
     - Class: 114
-      Script: {instanceID: 2356}
-    - Class: 114
-      Script: {instanceID: 2360}
-    - Class: 114
-      Script: {instanceID: 2430}
+      Script: {instanceID: 2398}
     - Class: 114
       Script: {instanceID: 2470}
     - Class: 114
-      Script: {instanceID: 2636}
+      Script: {instanceID: 2496}
     - Class: 114
-      Script: {instanceID: 2644}
+      Script: {instanceID: 2506}
     - Class: 114
-      Script: {instanceID: 2680}
+      Script: {instanceID: 2660}
     - Class: 114
-      Script: {instanceID: 2822}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2830}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2868}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 2912}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 3066}
+      Script: {instanceID: 2890}
+    - Class: 114
+      Script: {instanceID: 2932}
+    - Class: 114
+      Script: {instanceID: 3086}
     - Class: 114
       Script: {instanceID: 3170}
     - Class: 114
-      Script: {instanceID: 3376}
+      Script: {instanceID: 3348}
     - Class: 114
-      Script: {instanceID: 3382}
+      Script: {instanceID: 3354}
     - Class: 114
-      Script: {instanceID: 3440}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 3456}
+      Script: {instanceID: 3436}
     - Class: 114
-      Script: {instanceID: 3526}
+      Script: {instanceID: 3504}
     - Class: 114
-      Script: {instanceID: 3558}
+      Script: {instanceID: 3530}
     - Class: 114
-      Script: {instanceID: 3640}
+      Script: {instanceID: 3604}
     - Class: 114
-      Script: {instanceID: 3726}
+      Script: {instanceID: 3690}
     - Class: 114
-      Script: {instanceID: 3774}
+      Script: {instanceID: 3714}
     - Class: 114
-      Script: {instanceID: 3844}
+      Script: {instanceID: 3734}
     - Class: 114
-      Script: {instanceID: 3856}
+      Script: {instanceID: 3806}
     - Class: 114
-      Script: {instanceID: 3876}
+      Script: {instanceID: 3816}
     - Class: 114
-      Script: {instanceID: 3910}
+      Script: {instanceID: 3830}
     - Class: 114
-      Script: {instanceID: 4014}
+      Script: {instanceID: 3862}
     - Class: 114
-      Script: {instanceID: 4166}
+      Script: {instanceID: 3950}
     - Class: 114
-      Script: {instanceID: 4214}
+      Script: {instanceID: 4090}
     - Class: 114
-      Script: {instanceID: 4378}
+      Script: {instanceID: 4136}
     - Class: 114
-      Script: {instanceID: 4404}
+      Script: {instanceID: 4292}
     - Class: 114
-      Script: {instanceID: 4412}
+      Script: {instanceID: 4316}
     - Class: 114
-      Script: {instanceID: 4520}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 4566}
+      Script: {instanceID: 4434}
+    - Class: 114
+      Script: {instanceID: 4480}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -225,39 +1320,39 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1476}
+      Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 1520}
+      Script: {instanceID: 1614}
     - Class: 114
-      Script: {instanceID: 1684}
+      Script: {instanceID: 1762}
     - Class: 114
-      Script: {instanceID: 1770}
+      Script: {instanceID: 1826}
     - Class: 114
-      Script: {instanceID: 2048}
+      Script: {instanceID: 2150}
     - Class: 114
-      Script: {instanceID: 2112}
+      Script: {instanceID: 2386}
     - Class: 114
-      Script: {instanceID: 2348}
+      Script: {instanceID: 2394}
     - Class: 114
-      Script: {instanceID: 2356}
+      Script: {instanceID: 2496}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2506}
     - Class: 114
-      Script: {instanceID: 2636}
+      Script: {instanceID: 2660}
     - Class: 114
-      Script: {instanceID: 2822}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 2912}
+      Script: {instanceID: 2932}
     - Class: 114
       Script: {instanceID: 3170}
     - Class: 114
-      Script: {instanceID: 3198}
+      Script: {instanceID: 3200}
     - Class: 114
-      Script: {instanceID: 3440}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 3640}
+      Script: {instanceID: 3604}
     - Class: 114
-      Script: {instanceID: 4214}
+      Script: {instanceID: 4136}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -277,618 +1372,666 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: cf9f5cf2c3145a37ac07f00e50e460f9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: AspectRatioFitter
-  - hash:
-      serializedVersion: 2
-      Hash: 5ab533713adae59372fb3e10a585c186
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: AnimationPlayableAsset
-  - hash:
-      serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: 77aaaaa51f7a8d8ff333a879741e47d2
-    assemblyName: Unity.TextMeshPro.dll
-    namespaceName: TMPro
-    className: TMP_InputField
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: SignalAsset
-  - hash:
-      serializedVersion: 2
-      Hash: bcf0faeceb112918eb1dcefb728f56f8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: gameLogic2D
-  - hash:
-      serializedVersion: 2
-      Hash: bcaee4c2a83047257b5f47d6ed264b75
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Toggle
-  - hash:
-      serializedVersion: 2
-      Hash: 0dbc3be398b4869a5c8d0d8481ee402c
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: LayoutElement
-  - hash:
-      serializedVersion: 2
-      Hash: 6bc76e17f0d5e93f3eea7f5a2fe227f3
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Selectable
-  - hash:
-      serializedVersion: 2
-      Hash: 21a9c6dbf300fc1f6dc15ca7e2c39a37
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
-      Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: HorizontalLayoutGroup
-  - hash:
-      serializedVersion: 2
-      Hash: caa533b001ae39b864ba8425019e2268
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Shadow
-  - hash:
-      serializedVersion: 2
-      Hash: 300fd99066f8c288e85f5e81ce65fe34
-    assemblyName: Unity.TextMeshPro.dll
-    namespaceName: TMPro
-    className: TMP_FontAsset
-  - hash:
-      serializedVersion: 2
-      Hash: c97da82ba151f398f29bd41df3c87f74
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ReloadPhotos
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BackToMenu
-  - hash:
-      serializedVersion: 2
-      Hash: 12702cef8e58f4af479b3036d804fa4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DropdownCloser
-  - hash:
-      serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: GroupTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 800c50acba124432abb4cf0d47202e06
-    assemblyName: Unity.TextMeshPro.dll
-    namespaceName: TMPro
-    className: TMP_StyleSheet
-  - hash:
-      serializedVersion: 2
-      Hash: 699619b86d9359741a4f58540298c80b
-    assemblyName: UnityEngine.UI.dll
+      Hash: b5007673bbbdb9d12597a1d8201370f5
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 91d258529db2b5060a913f2afcea1a21
-    assemblyName: UnityEngine.TestRunner.dll
-    namespaceName: UnityEngine.TestTools.TestRunner
-    className: PlaymodeTestsController
+      Hash: 55060a7bf226ac385ce19ebd450f199f
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UIElements
+    className: PanelRaycaster
   - hash:
       serializedVersion: 2
-      Hash: d07f1de0b629473563ac6f7bfb6682ba
-    assemblyName: Assembly-CSharp.dll
+      Hash: 51b80d3734ea86b38e3101db98029e15
+    assemblyName: Unity.Timeline
+    namespaceName: UnityEngine.Timeline
+    className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: dd9dda1dfd39e605c49e72003342ef5d
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 47ee34eb8b6021efa0289dbbb17a5a85
+    assemblyName: Unity.TextMeshPro
+    namespaceName: TMPro
+    className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: a3901985eb076c1c9b7562fca82ca3e0
+    assemblyName: Unity.Timeline
+    namespaceName: UnityEngine.Timeline
+    className: SignalAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 52c53054810e7568fadb638fbd432127
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: gameLogic2D
+  - hash:
+      serializedVersion: 2
+      Hash: 10c17b309bdca62b4d7fbaf113ed4ca0
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: 8dff8e9853297d341afa0c11f9091b59
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: LayoutElement
+  - hash:
+      serializedVersion: 2
+      Hash: 00bbd9db8634496d079d17711b2ff7c4
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: 53e329840e6d03aebec76623c3b054db
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Slider
+  - hash:
+      serializedVersion: 2
+      Hash: 33f160a5c07e580c29aba2bd1e4db811
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 8703b6ae2b0eefd9dafbc44d8d333fb1
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 17f82e3e7d8f8b07a270a4aad9bfe79d
+    assemblyName: Unity.TextMeshPro
+    namespaceName: TMPro
+    className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 2ab38818c006fb059d8c168a1087fcf9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ReloadPhotos
+  - hash:
+      serializedVersion: 2
+      Hash: 061a5d77ce0aa52a60c21c566c6d8af2
+    assemblyName: Unity.AI.Navigation
+    namespaceName: Unity.AI.Navigation
+    className: NavMeshModifierVolume
+  - hash:
+      serializedVersion: 2
+      Hash: 043c89b7848615bcfbd29fa043d67034
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BackToMenu
+  - hash:
+      serializedVersion: 2
+      Hash: 5874b789cd9832847c61ebfa803213af
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UIElements
+    className: PanelEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: d55992199bd2f5a5502658391cdf8ba7
+    assemblyName: Unity.AI.Navigation
+    namespaceName: Unity.AI.Navigation
+    className: NavMeshSurface
+  - hash:
+      serializedVersion: 2
+      Hash: 98aac4923ef3a0552f595e3857502214
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DropdownCloser
+  - hash:
+      serializedVersion: 2
+      Hash: 9dd54ce33440072d6692a67e0c384ad1
+    assemblyName: Unity.Timeline
+    namespaceName: UnityEngine.Timeline
+    className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 0c6de72eaf8c1070da824268c4bfad9d
+    assemblyName: Unity.TextMeshPro
+    namespaceName: TMPro
+    className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 1022e211814048b213484cf5d67286c3
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: ChooseBut
   - hash:
       serializedVersion: 2
-      Hash: 1028c39545bcfa841aaab54121e69a47
-    assemblyName: Assembly-CSharp.dll
+      Hash: 7e93247d600e115dac0cdd880de94e99
+    assemblyName: UnityEngine.TestRunner
+    namespaceName: UnityEngine.TestTools.TestRunner
+    className: PlaymodeTestsController
+  - hash:
+      serializedVersion: 2
+      Hash: 27f76900d2833e1b4e4a9cbd31521db0
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: Activator
   - hash:
       serializedVersion: 2
-      Hash: 754e59857be7da7f7bb93d72f8f914ff
-    assemblyName: Assembly-CSharp.dll
+      Hash: 63138733709728f8aa88c40a44dcfe13
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: escape
   - hash:
       serializedVersion: 2
-      Hash: c1d728126ff1918728036c59106d32b2
-    assemblyName: UnityEngine.UI.dll
+      Hash: 1ab136900c0edaeeb49424c852595030
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: a1aa98c78061c6f03a8c124cda576e67
-    assemblyName: UnityEngine.UI.dll
+      Hash: 540882762544409cc4530e60db00e951
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 871e0dd94419402d6441992c4598687f
-    assemblyName: Assembly-CSharp.dll
+      Hash: c8a332e5d1e5f1db2c5c9be31a2b031b
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: SavedPaletteViewer
   - hash:
       serializedVersion: 2
-      Hash: 72bb16561bfc3043e406551b9ec0f4af
-    assemblyName: Assembly-CSharp.dll
+      Hash: e533e0ed357c56a3f5ad89f426b4eff8
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: MessageCenter
   - hash:
       serializedVersion: 2
-      Hash: e7c85a990b23f6d45ea885df2c789045
-    assemblyName: Assembly-CSharp.dll
+      Hash: 3f2a44ab167068af54c7e66f57cebff0
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: escapeSliceMenu
   - hash:
       serializedVersion: 2
-      Hash: cc4274b586df3c02688bac01b88bd16c
-    assemblyName: UnityEngine.UI.dll
+      Hash: 33656f83bb0079184b2206a69690ec46
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: e987953190eb4c12cf19df790566dc2c
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: fe64a45214940b510a0ec79c96d43498
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 52db48e3be0a2b4f8b06f918fd1ebfbc
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: f336e086360abe49a3323e5f1583c35a
-    assemblyName: Unity.Timeline.dll
+      Hash: f295412bc00b58b9095a71e9764cc886
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: a74405a4829a834d107a0c6e072719ed
-    assemblyName: Unity.Timeline.dll
+      Hash: 04b6685b6f724c0d6024e6b6f96c8202
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 760787567e1b60d64a3e421ab83ee14a
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 9637dcdf3068a91dfe653e61bb82f13d
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.TestRunner.dll
+      Hash: 6ddf94363c6ce4b02d9fdd51290cb0f9
+    assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
-      Hash: ae83e830e7a90c0aff918c4c2e520825
-    assemblyName: UnityEngine.UI.dll
+      Hash: 5a4aa2850fe11587f47e34c270c7fd22
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 10fc6f197c43413496f2e9a2d848f130
-    assemblyName: Assembly-CSharp.dll
+      Hash: c4b804a9fdbe794bf9e581bf2b888b2f
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: Paint
   - hash:
       serializedVersion: 2
-      Hash: f40fedccd4adbc76605bea6d67537e4b
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 3b5263a98bcc71d9a9d1d78a31b34ced
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: a306e12d896ddcca949923c805691027
-    assemblyName: UnityEngine.UI.dll
+      Hash: 28fd3d045acc780719a17f02073eb448
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: InputField
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 8e6dc3d79712ca4934f6d50c80f010b1
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.TestRunner.dll
+      Hash: bf40c7a9dc15bc219687c9838aa9b41f
+    assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 748dd2a2a28da4e618912da5ac45684b
-    assemblyName: UnityEngine.UI.dll
+      Hash: 9104447b683bf70406fa01f12ecb564a
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+      Hash: 4de4d65120391290578244f5213bdf33
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: CloseAfterClickOutside
   - hash:
       serializedVersion: 2
-      Hash: f7858108331b563fb41b80b729297acd
-    assemblyName: UnityEngine.UI.dll
+      Hash: a90f6a00b23520788be7d89ee3b0773d
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Scrollbar
   - hash:
       serializedVersion: 2
-      Hash: 5dea360fb0b147724ac344e6f399c2f3
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 13f262cc0741566a7ab72682984bc3e1
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
+      Hash: febcfbf0a0d85e37808a3740e3c2c6fa
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 768e0b2401d6f4fdefbb3f86c12c662e
-    assemblyName: Assembly-CSharp.dll
+      Hash: 68f2cb287af2eee1f639824485a3402b
+    assemblyName: Unity.AI.Navigation
+    namespaceName: Unity.AI.Navigation
+    className: NavMeshModifier
+  - hash:
+      serializedVersion: 2
+      Hash: 8b46ac8bab53032cbd53e1cf7dd264a2
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: InputCleaner
   - hash:
       serializedVersion: 2
-      Hash: 8e6ceabfd38a184413d69b7db56c89cc
-    assemblyName: UnityEngine.TestRunner.dll
+      Hash: 672716ae97f6ddb615fa5ac3ec9da349
+    assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 0fd6822f6177297bd0eb4d83cc7a9030
-    assemblyName: UnityEngine.UI.dll
+      Hash: a1ac4c50e55874de16eee3db71aa9784
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 69415240821be7986b27e72bf9609a30
-    assemblyName: UnityEngine.UI.dll
+      Hash: 915204dac8acad99f076d6e72ada0a0f
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 4fd8bf02e3089425d3502e26c44ba31a
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 8bbce9932f67ad8e7f4eefec87800f94
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
-    assemblyName: UnityEngine.UI.dll
+      Hash: d41ab9b5ea92474f9c0a6937a0607ce1
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: caa533b001ae39b864ba8425019e2268
-    assemblyName: UnityEngine.UI.dll
+      Hash: 20a120e55ad3ab65556328d5fd8309dd
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
+      Hash: f2305da2400dfe6f069770a1a63f0f7c
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
-    assemblyName: UnityEngine.UI.dll
+      Hash: 4878e735441f4041539853759559c86f
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.TestRunner.dll
+      Hash: 5b8b7230ad968399f6726aa1269dcdcb
+    assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+      Hash: 3f5a8bc7e6a20fb0b83a0affebb37cea
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: MainMenuLogic
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.UI.dll
+      Hash: cf32d98954e63b8e30e9334b152e9b8e
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 18c222bef9ae745ce69ddde9b74337ca
-    assemblyName: UnityEngine.UI.dll
+      Hash: 7bb32d6e4c7614a97d9723ce7e26588c
+    assemblyName: Unity.Timeline
+    namespaceName: UnityEngine.Timeline
+    className: BasicPlayableBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: e8d390bd9ecacc453a7500b90d0c0292
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: da4cc51a02ce84afe2cecd27cfe6997a
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 960935b102b3064f4b924de16426e340
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TextMeshPro
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.TestRunner.dll
+      Hash: 19824dd35debb3fff0983df49f8359ab
+    assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
-      Hash: bd3cf68c8964d3c66d1c43f4f98508c9
-    assemblyName: Unity.Timeline.dll
+      Hash: b2d2a01a2a85d9ed12e80cb33a9a6044
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.UI.dll
+      Hash: afb7b65d28d5a7423e69a1b076be0064
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 87ff43d2baf3385cba327d8f803a4ebb
-    assemblyName: Unity.Timeline.dll
+      Hash: 6a0b5b415c00f783202fd1ae2d556cb2
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 53c87759298cdc9c654d7b622f6e82d1
-    assemblyName: Assembly-CSharp.dll
+      Hash: 990b1a0711e04c211ca94ec9e3ec4453
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: SaveData
   - hash:
       serializedVersion: 2
-      Hash: 702638f194a8fbf4fe8d6cae1af910f5
-    assemblyName: Assembly-CSharp.dll
+      Hash: fb86c842c362500e7ac634fa0615be28
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: moveCharacter
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.TestRunner.dll
+      Hash: 830c3b545f6e6ee60a4cebab90516f2c
+    assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 134322c9293c1896357cce271b819ce4
-    assemblyName: UnityEngine.UI.dll
+      Hash: d0cdd713f9bf4e6a625d9e7804deca42
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: e4ee626a6b08a867dadd208b423808d8
-    assemblyName: Assembly-CSharp.dll
+      Hash: 056fb7e7aaabbad6080050e07278b58f
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: pregameLogic
   - hash:
       serializedVersion: 2
-      Hash: a81d4c2c1cf3ad164d277d927a193679
-    assemblyName: UnityEngine.UI.dll
+      Hash: 5ebc58ec194dd44630b25fcc270ad4af
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: a5781dc71a671b1ad2b38de19f24b71f
-    assemblyName: Unity.Timeline.dll
+      Hash: fb79e95da8891fc7ac6c36ca6967af23
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: e15b9e7e05ec3caf35aef15db45c5de6
-    assemblyName: Assembly-CSharp.dll
+      Hash: a23804ea7de1c79271e2300b6b610dfb
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: SaveLayer
   - hash:
       serializedVersion: 2
-      Hash: 4c13413ad202c7926dbf12ce127668b5
-    assemblyName: Assembly-CSharp.dll
+      Hash: 818f64cfa56ce28bb436ef48f644887c
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: SliceCutter
   - hash:
       serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
+      Hash: 4728e3d21cc2a12e391e71ec9b7eed0b
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: aba7b2852ef61d175dd9602e7723d5e5
-    assemblyName: UnityEngine.UI.dll
+      Hash: b747f5d40674055dd70e18552f1b0447
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 4d72bc3ef5adc19d1352d7738ca65273
-    assemblyName: Assembly-CSharp.dll
+      Hash: f9a862391f0d0cc1987d75a68a5262cf
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: ClearCanvas
   - hash:
       serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
+      Hash: d0392b7f3f52d5af537ade186b4f51f1
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 3165968ba45c74472d279ba04455fccb
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: cc5992f62cb58221a2e52ab13e61c697
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: OrbitCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 185e7bacfbbc5defefa609c70f7ff4ce
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 908b3077da284d11de0450423ca1808e
-    assemblyName: Unity.Timeline.dll
+      Hash: 682dfc653b22feea53b38adb3bc66414
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: 040dd48e3a027d5424519a5fa2009df4
-    assemblyName: UnityEngine.UI.dll
+      Hash: d5cd7f207e91ca8336c65a577a6fb2a0
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 18c222bef9ae745ce69ddde9b74337ca
-    assemblyName: UnityEngine.UI.dll
+      Hash: 7053e305cdc1eb560f4c3be49d3b5136
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 0fb27be807aa299702f28ad0bcad1f46
-    assemblyName: Unity.Timeline.dll
+      Hash: 042785b832afb73fd0585521aa7baf43
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 2fb258dcec232c118958bce5c9b03d7f
-    assemblyName: Assembly-CSharp.dll
+      Hash: 78f9928fe3be6d7939d7adf2c07e1f78
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: Settings3D
   - hash:
       serializedVersion: 2
-      Hash: ef5c43f921427d03730f6ea4c848f07d
-    assemblyName: UnityEngine.UI.dll
+      Hash: 1a680d9a08de79b0d2c779e78c9843b4
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: fd54b7e108b580f1d55d29c5e19039c6
-    assemblyName: Assembly-CSharp.dll
+      Hash: ba894541e0d5a5c146c9541aed7e4f5a
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: PanelStabilizer
   - hash:
       serializedVersion: 2
-      Hash: 87ad3705a58f19c47136728d4a6e9c47
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: c933b590b3badb5918fa01e73cd5cc0c
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+      Hash: e6d1d91d38b0030263353f5ff1d35d48
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: Resize2Dmap
   - hash:
       serializedVersion: 2
-      Hash: 5f238704650e7a399489e1640f8d466e
-    assemblyName: Assembly-CSharp.dll
+      Hash: afbf1b64f6facb86ec3e406bdb1b7c8f
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: MoveTo2DMode
   - hash:
       serializedVersion: 2
-      Hash: ec98e0cd8bf07eb9e287037348389028
-    assemblyName: Assembly-CSharp.dll
+      Hash: a1dd1fa41ea9b19477e7380287861de2
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: ModeChanger
   - hash:
       serializedVersion: 2
-      Hash: 6980e81ddc615a861309d2d659cc3760
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: e7e95903ca66d58e1a7cbd71f824e16d
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: fd68d84f33fad85aac38f2739c0ee270
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 9078325c2a6f6a2d9612ade897511860
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: 7f4e85c693c6d1c7338db60a1e2d105c
-    assemblyName: Assembly-CSharp.dll
+      Hash: 100df6fd1fddf340ffc7f4fa797aba97
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: Gamemodes
   - hash:
       serializedVersion: 2
-      Hash: e7a73f5f78ba6445195ec23b74a1ce2d
-    assemblyName: Unity.TextMeshPro.dll
+      Hash: 1553f209ae0b2d5d3a35685fca55f9c3
+    assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+      Hash: 1be45d5e96f20208809693d054b8b915
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: EscClosePanel
   - hash:
       serializedVersion: 2
-      Hash: 049f611013cd3aeac2d4d7b512fbddda
-    assemblyName: Assembly-CSharp.dll
+      Hash: de7121e5fb8168671ad66a47358a6572
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: Settings2D
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+      Hash: 0f38ee2cda27676ab06a6176cb977726
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: suicide
   - hash:
       serializedVersion: 2
-      Hash: 8220b46879dc5e37db1b940c938f5744
-    assemblyName: Unity.Timeline.dll
+      Hash: ff76cf6cf52b4db7b95af6ffadca9288
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+      Hash: c130e8fff8f3a8d5d675158ff4037f31
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: TakeAPhoto
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.Timeline.dll
+      Hash: 0b63f6d3335e11939ce8790b904c8691
+    assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 7ab0e790220bdca831fdd886b339039d
-    assemblyName: UnityEngine.UI.dll
+      Hash: 8dc40a01667ca02b3354a4e7a61be082
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: abf1930d8126d0b2e00e9449129a0190
-    assemblyName: UnityEngine.UI.dll
+      Hash: 4fcf0bb4aff1d14a1dfcdedc4b07bd05
+    assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 9f8f78783f79d906fd281be267181c0c
-    assemblyName: Assembly-CSharp.dll
+      Hash: fece3c05a9d0c62a6e775ac8f979db02
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: gameLogic3D
   - hash:
       serializedVersion: 2
-      Hash: 0f2766ea504fe59283a673961a3f3601
-    assemblyName: Assembly-CSharp.dll
+      Hash: 8a2f78c25d5e92eb97ee5544a162a2e9
+    assemblyName: Unity.AI.Navigation
+    namespaceName: Unity.AI.Navigation
+    className: NavMeshLink
+  - hash:
+      serializedVersion: 2
+      Hash: c0ecce583860676ab123a08d19553e1c
+    assemblyName: Assembly-CSharp
     namespaceName: 
     className: ColorChoose
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/pasha/gamelife/GameLife/game life 3d.exe
+  playerPath: D:/gitProjects/gamelife/GameLife/game life 3d.exe

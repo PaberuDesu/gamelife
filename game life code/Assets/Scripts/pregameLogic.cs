@@ -26,8 +26,7 @@ public class pregameLogic : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Mouse0))
-            ChangeCellInView();
+        if (Input.GetMouseButton(1)) ChangeCellInView();
     }
 
     public void Change_x(string input) {X_text = input;}
