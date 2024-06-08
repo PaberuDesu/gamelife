@@ -26,7 +26,7 @@ public class pregameLogic : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetMouseButton(1)) ChangeCellInView();
+        if (Input.GetMouseButton(1)) ChangeCellInView(Input.GetKey(KeyCode.LeftControl));
     }
 
     public void Change_x(string input) {X_text = input;}
@@ -35,14 +35,14 @@ public class pregameLogic : MonoBehaviour {
 
     public void Change_z(string input) {Z_text = input;}
 
-    private void ChangeCellInView() {
+    private void ChangeCellInView(bool changeOnlyEmptyCells) {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         LayerMask mask = LayerMask.GetMask("Default");
         if (Physics.Raycast(ray, out hit, 35, mask) && !_isChangingCellInView) {
             _isChangingCellInView = true;
             Vector3 coordinates = hit.collider.transform.position;
-            if (GameStatusData.AllCells[(int) coordinates.x, (int) coordinates.y, (int) coordinates.z] == SelectedCellType)
+            if (GameStatusData.AllCells[(int) coordinates.x, (int) coordinates.y, (int) coordinates.z] == SelectedCellType || changeOnlyEmptyCells)
                 coordinates += hit.normal;
             if (coordinates.x >= 0 && coordinates.x < GameStatusData.size3D[0] && coordinates.y >= 0 && coordinates.y < GameStatusData.size3D[1] && coordinates.z >= 0 && coordinates.z < GameStatusData.size3D[2])
                 Create((int) coordinates.x, (int) coordinates.y, (int) coordinates.z);

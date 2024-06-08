@@ -37,7 +37,7 @@ public class Paint : MonoBehaviour {
     private bool _isPaintable = false;
     private bool _isInGame = false;
     private bool _isSliderDragged = false;
-    private Brush brush;
+    public Brush brush;
 
     [SerializeField] private GameObject canvas2D;
 

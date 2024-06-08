@@ -109,7 +109,7 @@ The first method is long but precise: the user must manually set the coordinates
 The second type is more like main way of interacting with a 2D-field. The ray from the camera passes through the cursor position. A cell is created if the
 ray collides with a non-empty cell of the field. User chooses cell type to create. Then he presses right mouse button. If the type of cell into
 which the ray crashed doesn't match the type selected by the user, then this cell is replaced with the selected one. Else program tracks which of the six
-faces the ray has crashed into, and then a new cell is created so that it touches this face with its face.
+faces the ray has crashed into, and then a new cell is created so that it touches this face with its face. If player holds the left control button, then no matter what is the cell type, new cell will be created next to the cell that player clicked on.
 
 If you press the "E" key while editing the 3D field, a mode in which most of the interface is missing will be activated. It increases the view, and it will
 be possible to move and rotate the camera. This mode will be active until the same button is pressed again.
