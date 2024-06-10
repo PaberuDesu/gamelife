@@ -96,7 +96,7 @@ camera that made for this purpose. These images are needed in order to distingui
 Selecting a cell type in 2D-mode is a selection of one of the colors of the palette, each of which corresponds to one of the cell types. Colors of the
 palette are changable. Player saves and loads the palette with all the game data.
 
-The creation of new cells is performed by tracking the point of the texture on which the cursor is hovered. If the left mouse button is pressed, then the pixel at this point changes color to the one selected by the user, and the value of the cell ID in the array changes to the ID corresponding to this color. You can also pick the fill instrument and turn the bunch of one-type cells into the cells of the other type.
+The creation of new cells is performed by tracking the point of the texture on which the cursor is hovered. If the left mouse button is pressed, then the pixel at this point changes color to the one selected by the user, and the value of the cell ID in the array changes to the ID corresponding to this color. You can also pick the fill instrument and turn the bunch of one-type cells into the cells of the other type. You can change size and shape of the brush.
 ![Alt-Текст](https://github.com/PaberuDesu/gamelifesaved/blob/main/Screenshots/2D_mode.jpg)
 
 ### Features of the 3D field

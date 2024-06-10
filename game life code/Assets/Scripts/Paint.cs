@@ -38,6 +38,8 @@ public class Paint : MonoBehaviour {
     private bool _isInGame = false;
     private bool _isSliderDragged = false;
     public Brush brush;
+    private int brushSize;
+    private int brushShapeID;
 
     [SerializeField] private GameObject canvas2D;
 
@@ -88,11 +90,20 @@ public class Paint : MonoBehaviour {
     public void SetPaintable(bool _isOn) {_isPaintable = _isOn;}
     public void SetSliderDragged(bool _isOn) {_isSliderDragged = _isOn;}
     public void SetInGame(bool _isOn) {_isInGame = _isOn;}
-    public void SetBrush(int id) {
+    public void SetBrushType(int id) {
+        if (id < 0) id = brushShapeID;
         brush = id switch {
-            1 => Brush.Fill,
+            1 => Brush.Circle,
+            2 => Brush.Fill,
             _ => Brush.Quadrangle
         };
+    }
+
+    public void SetBrushSize(Slider slider) {brushSize = (int) slider.value;}
+
+    public void SetBrushShape(int shapeID) {
+        brushShapeID = shapeID;
+        SetBrushType(brushShapeID);
     }
 
     private void UseBrush() {
@@ -106,12 +117,31 @@ public class Paint : MonoBehaviour {
 
         if(!Input.GetKey(KeyCode.Mouse0)) return;
         if (brush == Brush.Fill) Fill(coords);
-        else PaintWithMouse(coords);
+        else if (brush == Brush.Quadrangle) DrawQuadrangle(coords);
+        else DrawCircle(coords);
+        _texture.Apply();
     }
 
-    private void PaintWithMouse(int[] coords) {
-        SetCell(coords[0], coords[1], _activeColorNumber);
-        _texture.Apply();
+    private void DrawQuadrangle(int[] coords) {
+        for (int x = Mathf.Max(coords[0] - brushSize, 0); x < Mathf.Min(coords[0] + brushSize + 1, _textureScale[0]); x++) {
+            for (int y = Mathf.Max(coords[1] - brushSize, 0); y < Mathf.Min(coords[1] + brushSize + 1, _textureScale[1]); y++) {
+                SetCell(x, y, _activeColorNumber);
+            }
+        }
+    }
+
+    private void DrawCircle(int[] coords) {
+        for (int x = Mathf.Max(coords[0] - brushSize, 0); x < Mathf.Min(coords[0] + brushSize + 1, _textureScale[0]); x++) {
+            for (int y = Mathf.Max(coords[1] - brushSize, 0); y < Mathf.Min(coords[1] + brushSize + 1, _textureScale[1]); y++) {
+                int circleMetamorphoseSize = 3;
+
+                float x2 = Mathf.Pow(x - coords[0], 2);
+                float y2 = Mathf.Pow(y - coords[1], 2);
+                float r2 = Mathf.Pow(brushSize,2);
+                if (((x2 == r2) || (y2 == r2)) && brushSize > circleMetamorphoseSize) continue;
+                if (x2 + y2 <= r2) SetCell(x, y, _activeColorNumber);
+            }
+        }
     }
 
     private void Fill(int[] coords) {
@@ -137,7 +167,6 @@ public class Paint : MonoBehaviour {
                 }
             }
         }
-        _texture.Apply();
     }
 
     public void PaintToPlay(int x, int y, int ColorID) {_texture.SetPixel(x, y, _colors[ColorID]);}
@@ -241,29 +270,29 @@ public class Paint : MonoBehaviour {
     private void ActivateCertainButton(int number, bool Activity) {MovePicButObjectList[number].SetActive(Activity);}
 
     private void ChangeZoomParameter() {
-        float CurrentZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 100;
+        float DeltaZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 100;
+        if (DeltaZoom == 0) return;
+        
         float previousZoom = Zoom;
-        if (CurrentZoom != 0) {
-            if (Zoom + CurrentZoom <= maxZoom && Zoom + CurrentZoom >= minZoom)
-                Zoom += CurrentZoom;
-            else if (Zoom + CurrentZoom > maxZoom && Zoom < maxZoom)
-                Zoom = maxZoom;
-            else if (Zoom + CurrentZoom < minZoom && Zoom > minZoom)
-                Zoom = minZoom;
-            else return;
+        if (Zoom + DeltaZoom <= maxZoom && Zoom + DeltaZoom >= minZoom)
+            Zoom += DeltaZoom;
+        else if (Zoom + DeltaZoom > maxZoom && Zoom < maxZoom)
+            Zoom = maxZoom;
+        else if (Zoom + DeltaZoom < minZoom && Zoom > minZoom)
+            Zoom = minZoom;
+        else return;
 
-            if (previousZoom != 1) {
-                float MoveValue = (Zoom - 1) / (previousZoom - 1);
-                _rect.offsetMin *= MoveValue;
-                _rect.offsetMax *= MoveValue;
-            }
-            SetCanvasScale();
-            
-            Vector3[] ButScale = new Vector3[]
-                {new Vector3(1/MovePicButParent.localScale.x, 1, 1),
-                new Vector3 (1, 1/MovePicButParent.localScale.y, 1)};
-            for (int i = 0; i<4; i++) {MovePicButObjectList[i].transform.localScale = ButScale[i/2];}
+        if (previousZoom != 1) {
+            float MoveValue = (Zoom - 1) / (previousZoom - 1);
+            _rect.offsetMin *= MoveValue;
+            _rect.offsetMax *= MoveValue;
         }
+        SetCanvasScale();
+            
+        Vector3[] ButScale = new Vector3[]
+            {new Vector3(1/MovePicButParent.localScale.x, 1, 1),
+            new Vector3 (1, 1/MovePicButParent.localScale.y, 1)};
+        for (int i = 0; i<4; i++) {MovePicButObjectList[i].transform.localScale = ButScale[i/2];}
     }
 
     public void MovePic(int id) {
@@ -290,6 +319,7 @@ public class Paint : MonoBehaviour {
 
     public enum Brush {
         Quadrangle,
+        Circle,
         Fill
     }
 }

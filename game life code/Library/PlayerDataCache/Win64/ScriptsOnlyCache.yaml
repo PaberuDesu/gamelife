@@ -489,13 +489,16 @@ ScriptsOnlyBuild:
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
-    methodName: SetBrush
+    methodName: SetBrushType
   - assembly: UnityEngine.UI
     fullTypeName: UnityEngine.UI.Selectable
     methodName: set_interactable
   - assembly: UnityEngine.UI
     fullTypeName: UnityEngine.UI.Selectable
     methodName: set_interactable
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: Paint
     methodName: ChangeActiveColor
@@ -543,13 +546,28 @@ ScriptsOnlyBuild:
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
-    methodName: SetBrush
+    methodName: SetBrushSize
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: CloseAfterClickOutside
+    methodName: setOver
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetSliderDragged
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetBrushType
   - assembly: UnityEngine.UI
     fullTypeName: UnityEngine.UI.Selectable
     methodName: set_interactable
   - assembly: UnityEngine.UI
     fullTypeName: UnityEngine.UI.Selectable
     methodName: set_interactable
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: Settings.SettingsClass
     methodName: SetSurviveCondition
@@ -926,6 +944,15 @@ ScriptsOnlyBuild:
     fullTypeName: game_logic.gameLogic
     methodName: Stop
   - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetBrushShape
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Selectable
+    methodName: set_interactable
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Selectable
+    methodName: set_interactable
+  - assembly: Assembly-CSharp
     fullTypeName: Settings.SettingsClass
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
@@ -967,6 +994,15 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Paint
+    methodName: SetBrushShape
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Selectable
+    methodName: set_interactable
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Selectable
+    methodName: set_interactable
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
