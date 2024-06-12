@@ -1,327 +1,313 @@
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1718028256495407, "dur":855, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1718028256496273, "dur":95, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1718028256496404, "dur":341, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1718028256499503, "dur":77, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":0, "ts":1718028256496766, "dur":3486, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1718028256500253, "dur":444872, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1718028256945126, "dur":270, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1718028256945551, "dur":880, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1718028256496863, "dur":3396, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1718028256500261, "dur":18746, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1718028256519074, "dur":70, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1718028256519153, "dur":50, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":1, "ts":1718028256519204, "dur":56, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":1, "ts":1718028256519329, "dur":103, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256519592, "dur":86, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256519679, "dur":116, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256519841, "dur":248, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256520090, "dur":190, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256519072, "dur":1291, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1718028256520767, "dur":231487, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1718028256756030, "dur":56, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\WinPlayerBuildProgram\\boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1718028256756029, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d_Data/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1718028256756105, "dur":488, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1718028256756597, "dur":120, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1718028256756735, "dur":1224, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256758003, "dur":410, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1718028256758430, "dur":14258, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256772727, "dur":126, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1718028256772875, "dur":4961, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ContentLoadModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256777888, "dur":242, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1718028256778148, "dur":1053, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1718028256779249, "dur":236, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1718028256779505, "dur":1867, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber0.json" }}
-,{ "pid":12345, "tid":1, "ts":1718028256781398, "dur":1744, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/level1" }}
-,{ "pid":12345, "tid":1, "ts":1718028256783158, "dur":161958, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256496866, "dur":3398, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256500267, "dur":822, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256501089, "dur":17958, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256519067, "dur":174, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config" }}
-,{ "pid":12345, "tid":2, "ts":1718028256519052, "dur":190, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":2, "ts":1718028256540463, "dur":119786, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":2, "ts":1718028256660284, "dur":82439, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256743329, "dur":4390, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256747808, "dur":1334, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256749204, "dur":973, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256750196, "dur":246, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256750460, "dur":1347, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256751850, "dur":246, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256752117, "dur":1230, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256753391, "dur":239, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256753647, "dur":1093, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256754777, "dur":175, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256754985, "dur":1308, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256756336, "dur":156, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256756519, "dur":2067, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256758633, "dur":172, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256758823, "dur":14204, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256773066, "dur":3524, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1718028256776625, "dur":1703, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1718028256779074, "dur":1678, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/SavedGameNumber3.json" }}
-,{ "pid":12345, "tid":2, "ts":1718028256780780, "dur":1458, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":2, "ts":1718028256782270, "dur":1029, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":2, "ts":1718028256783312, "dur":161797, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256496941, "dur":3340, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256500284, "dur":738, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256501023, "dur":18033, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256519059, "dur":221, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":3, "ts":1718028256519281, "dur":154, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256540483, "dur":119576, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":3, "ts":1718028256660108, "dur":82666, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256743232, "dur":5914, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256749239, "dur":1710, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256751082, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256751180, "dur":1174, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256752398, "dur":112, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256752529, "dur":1481, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256754083, "dur":1074, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256755239, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256755318, "dur":1476, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256756836, "dur":276, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1718028256757129, "dur":1936, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256759177, "dur":18324, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256777601, "dur":1431, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1718028256779174, "dur":1552, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber3.json" }}
-,{ "pid":12345, "tid":3, "ts":1718028256780761, "dur":5485, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":3, "ts":1718028256786260, "dur":158845, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256496956, "dur":3331, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256500290, "dur":799, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256501090, "dur":17949, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256519043, "dur":173, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":4, "ts":1718028256533275, "dur":11860, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":4, "ts":1718028256545169, "dur":88, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config" }}
-,{ "pid":12345, "tid":4, "ts":1718028256545168, "dur":89, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":4, "ts":1718028256624674, "dur":34825, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":4, "ts":1718028256659534, "dur":489, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\WindowsPlayer.exe" }}
-,{ "pid":12345, "tid":4, "ts":1718028256659534, "dur":490, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d.exe" }}
-,{ "pid":12345, "tid":4, "ts":1718028256660052, "dur":83665, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d.exe" }}
-,{ "pid":12345, "tid":4, "ts":1718028256743740, "dur":80, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256744317, "dur":1592, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256746010, "dur":1234, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256747367, "dur":1035, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256748519, "dur":1399, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256749999, "dur":1344, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256751420, "dur":141, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256751580, "dur":1098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256752724, "dur":141, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256752902, "dur":1319, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256754259, "dur":137, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256754414, "dur":1040, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256755497, "dur":491, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256756019, "dur":1348, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.PropertiesModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256757472, "dur":1651, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256759165, "dur":9872, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256769068, "dur":8660, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256777783, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256777883, "dur":1225, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1718028256779178, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1718028256779263, "dur":2084, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber1.json" }}
-,{ "pid":12345, "tid":4, "ts":1718028256781378, "dur":1620, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/level1.resS" }}
-,{ "pid":12345, "tid":4, "ts":1718028256783012, "dur":162110, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1718028256496898, "dur":3375, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1718028256500278, "dur":699, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1718028256500978, "dur":18098, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1718028256519081, "dur":167, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":5, "ts":1718028256540471, "dur":119023, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":5, "ts":1718028256659537, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":5, "ts":1718028256742757, "dur":44096, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":5, "ts":1718028256786906, "dur":158192, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256496996, "dur":3304, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256500302, "dur":788, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256501091, "dur":17939, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256519034, "dur":143, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":6, "ts":1718028256533376, "dur":8780, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":6, "ts":1718028256542190, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":6, "ts":1718028256542292, "dur":5903, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256648708, "dur":5637, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":6, "ts":1718028256654376, "dur":89, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":6, "ts":1718028256654466, "dur":4862, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256659919, "dur":83794, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":6, "ts":1718028256744295, "dur":2237, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256746584, "dur":218, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256746823, "dur":842, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256747763, "dur":1286, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256749144, "dur":912, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Unity.AI.Navigation.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256750101, "dur":1231, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256751378, "dur":176, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256751585, "dur":1022, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256752647, "dur":216, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256752906, "dur":1217, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256754162, "dur":235, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256754418, "dur":1005, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256755557, "dur":1628, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256757283, "dur":1795, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256759165, "dur":18451, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256777664, "dur":99, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1718028256777782, "dur":1299, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1718028256779256, "dur":1580, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber2.json" }}
-,{ "pid":12345, "tid":6, "ts":1718028256780864, "dur":861, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":6, "ts":1718028256781758, "dur":1304, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/level0" }}
-,{ "pid":12345, "tid":6, "ts":1718028256783072, "dur":162045, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256496989, "dur":3305, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256500298, "dur":865, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256501163, "dur":17858, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256519039, "dur":201, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
-,{ "pid":12345, "tid":7, "ts":1718028256519026, "dur":215, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":7, "ts":1718028256519242, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256540303, "dur":2801, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":7, "ts":1718028256543138, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":7, "ts":1718028256543240, "dur":105450, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256651796, "dur":2991, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":7, "ts":1718028256654821, "dur":951, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":7, "ts":1718028256654819, "dur":953, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":7, "ts":1718028256659763, "dur":96111, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":7, "ts":1718028256755921, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256756013, "dur":1391, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1718028256757449, "dur":82, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256757547, "dur":15148, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1718028256772732, "dur":120, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256772871, "dur":5339, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1718028256778261, "dur":105, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1718028256778385, "dur":894, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1718028256779331, "dur":3582, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/sharedassets1.assets.resS" }}
-,{ "pid":12345, "tid":7, "ts":1718028256782928, "dur":162162, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1718028256497021, "dur":3285, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1718028256500310, "dur":480, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1718028256500791, "dur":18421, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1718028256519215, "dur":220, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":8, "ts":1718028256519436, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1718028256624695, "dur":30858, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":8, "ts":1718028256655585, "dur":843, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":8, "ts":1718028256655584, "dur":845, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":8, "ts":1718028256656429, "dur":3301, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1718028256659777, "dur":192638, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":8, "ts":1718028256852456, "dur":92632, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256497046, "dur":3267, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256500315, "dur":68, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256500383, "dur":18684, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256519083, "dur":167, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config" }}
-,{ "pid":12345, "tid":9, "ts":1718028256519071, "dur":180, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":9, "ts":1718028256519251, "dur":175, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256540504, "dur":120382, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":9, "ts":1718028256660922, "dur":81819, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256743253, "dur":4294, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256747635, "dur":1523, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256749243, "dur":1720, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256751073, "dur":105, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256751196, "dur":1112, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256752356, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256752441, "dur":1446, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256753942, "dur":85, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256754047, "dur":1090, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256755183, "dur":115, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256755305, "dur":73, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256755383, "dur":1443, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256756883, "dur":234, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256757137, "dur":1759, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256759014, "dur":17884, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256776941, "dur":473, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256777431, "dur":1217, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1718028256778717, "dur":80, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256779089, "dur":1671, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/SavedGameNumber0.json" }}
-,{ "pid":12345, "tid":9, "ts":1718028256780778, "dur":209, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1718028256781015, "dur":1203, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":9, "ts":1718028256782263, "dur":883, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":9, "ts":1718028256783156, "dur":161928, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256497086, "dur":3235, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256500321, "dur":18697, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256519044, "dur":167, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":10, "ts":1718028256519021, "dur":192, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":10, "ts":1718028256519746, "dur":13759, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":10, "ts":1718028256533552, "dur":104, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config" }}
-,{ "pid":12345, "tid":10, "ts":1718028256533550, "dur":107, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":10, "ts":1718028256540422, "dur":112977, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":10, "ts":1718028256653429, "dur":99, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":10, "ts":1718028256653529, "dur":5785, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256659338, "dur":3079, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":10, "ts":1718028256662456, "dur":80298, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256743242, "dur":1750, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256745148, "dur":1010, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256746205, "dur":99, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256746321, "dur":3493, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256749871, "dur":109, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256749995, "dur":1305, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256751350, "dur":203, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256751574, "dur":1099, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256752713, "dur":154, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256752911, "dur":2534, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256755496, "dur":489, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256756005, "dur":1387, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256757441, "dur":87, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256757543, "dur":11813, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256769396, "dur":3227, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1718028256772641, "dur":6570, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256779256, "dur":143, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityPlayer.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256779254, "dur":146, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":10, "ts":1718028256779429, "dur":165569, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256497123, "dur":3204, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256500327, "dur":18687, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256524770, "dur":1224, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/app.info" }}
-,{ "pid":12345, "tid":11, "ts":1718028256525997, "dur":114, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":11, "ts":1718028256526111, "dur":7038, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256540427, "dur":112424, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":11, "ts":1718028256652890, "dur":100, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\machine.config" }}
-,{ "pid":12345, "tid":11, "ts":1718028256652889, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":11, "ts":1718028256652991, "dur":6313, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256659324, "dur":2342, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":11, "ts":1718028256661700, "dur":81095, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256743308, "dur":1225, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256744579, "dur":188, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256744792, "dur":1165, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256746050, "dur":1808, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256747901, "dur":179, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256748100, "dur":999, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256749164, "dur":983, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256750163, "dur":270, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256750457, "dur":1359, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256751864, "dur":231, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256752112, "dur":1213, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256753367, "dur":256, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256753628, "dur":67, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256753705, "dur":940, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256754692, "dur":257, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256754964, "dur":1204, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256756214, "dur":277, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256756507, "dur":2009, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256758557, "dur":254, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256758827, "dur":17825, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256776700, "dur":111, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256776829, "dur":1658, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1718028256778560, "dur":207, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256779120, "dur":1637, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/SavedGameNumber2.json" }}
-,{ "pid":12345, "tid":11, "ts":1718028256780773, "dur":216, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1718028256781023, "dur":1191, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":11, "ts":1718028256782261, "dur":9120, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/globalgamemanagers.assets.resS" }}
-,{ "pid":12345, "tid":11, "ts":1718028256791395, "dur":153706, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256497169, "dur":3165, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256500334, "dur":18885, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256519235, "dur":191, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config" }}
-,{ "pid":12345, "tid":12, "ts":1718028256519221, "dur":206, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":12, "ts":1718028256533719, "dur":118038, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":12, "ts":1718028256651795, "dur":100, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":12, "ts":1718028256651928, "dur":9102, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":12, "ts":1718028256661065, "dur":81749, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256743276, "dur":1136, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256744469, "dur":295, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256744784, "dur":1168, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256746044, "dur":926, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256747098, "dur":2040, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256749233, "dur":1796, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256751154, "dur":1161, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256752437, "dur":1418, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256753949, "dur":1205, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256755208, "dur":96, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256755322, "dur":1477, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256756837, "dur":279, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256757132, "dur":1755, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256758967, "dur":17940, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256776952, "dur":471, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256777436, "dur":1182, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1718028256778681, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1718028256779059, "dur":1206, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/SavedGameNumber1.json" }}
-,{ "pid":12345, "tid":12, "ts":1718028256780293, "dur":1329, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/sharedassets1.assets" }}
-,{ "pid":12345, "tid":12, "ts":1718028256781659, "dur":1349, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/level0.resS" }}
-,{ "pid":12345, "tid":12, "ts":1718028256783019, "dur":162066, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1718028256947573, "dur":1076, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid":12345, "tid":0, "ts":1718206403983872, "dur":836, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1718206403984718, "dur":98, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1718206403984853, "dur":366, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1718206403988156, "dur":80, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d_Data/app.info" }}
+,{ "pid":12345, "tid":0, "ts":1718206403985238, "dur":3628, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1718206403988867, "dur":375214, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1718206404364086, "dur":181, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1718206404364267, "dur":52, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1718206404364492, "dur":912, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1718206403985310, "dur":3564, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1718206403988877, "dur":18439, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1718206404007403, "dur":79, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1718206404007490, "dur":51, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":1, "ts":1718206404007593, "dur":85, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1718206404007832, "dur":90, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":1, "ts":1718206404007922, "dur":95, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":1, "ts":1718206404008018, "dur":55, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\Unity.AI.Navigation.dll" }}
+,{ "pid":12345, "tid":1, "ts":1718206404008074, "dur":183, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":1, "ts":1718206404008258, "dur":153, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\gitProjects\\gamelife\\game life code\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":1, "ts":1718206404007401, "dur":1095, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1718206404008918, "dur":351753, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1718206404363564, "dur":52, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\WinPlayerBuildProgram\\boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1718206404363563, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d_Data/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1718206404363630, "dur":419, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/boot.config" }}
+,{ "pid":12345, "tid":2, "ts":1718206403985422, "dur":3479, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206403988904, "dur":764, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206403989669, "dur":17652, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404007914, "dur":1540, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/app.info" }}
+,{ "pid":12345, "tid":2, "ts":1718206404009456, "dur":103, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":2, "ts":1718206404009559, "dur":9806, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404019419, "dur":6257, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":2, "ts":1718206404025716, "dur":96, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1718206404025715, "dur":97, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1718206404025836, "dur":5188, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1718206404031079, "dur":87, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404031182, "dur":1388, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404032672, "dur":1057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404033769, "dur":147, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404033964, "dur":4262, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404038326, "dur":1582, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404039951, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404040023, "dur":1225, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404041335, "dur":1514, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404042962, "dur":2875, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404045877, "dur":101, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404045997, "dur":1251, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.PropertiesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404047284, "dur":112, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404047432, "dur":1459, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404048933, "dur":206, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404049159, "dur":3495, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404052702, "dur":107, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404052828, "dur":1445, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1718206404054330, "dur":106, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404054578, "dur":2995, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber2.json" }}
+,{ "pid":12345, "tid":2, "ts":1718206404057644, "dur":1216, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/level1.resS" }}
+,{ "pid":12345, "tid":2, "ts":1718206404058872, "dur":119, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1718206404059005, "dur":937, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":2, "ts":1718206404059955, "dur":304135, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206403985350, "dur":3530, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206403988884, "dur":750, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206403989635, "dur":17701, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404007371, "dur":217, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config" }}
+,{ "pid":12345, "tid":3, "ts":1718206404007336, "dur":253, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1718206404007589, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404019491, "dur":7607, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1718206404027134, "dur":308, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\WindowsPlayer.exe" }}
+,{ "pid":12345, "tid":3, "ts":1718206404027134, "dur":308, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d.exe" }}
+,{ "pid":12345, "tid":3, "ts":1718206404027471, "dur":941, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d.exe" }}
+,{ "pid":12345, "tid":3, "ts":1718206404028540, "dur":4833, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404033474, "dur":1630, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404035158, "dur":167, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404035344, "dur":2893, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404038296, "dur":1543, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404039921, "dur":1273, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404041253, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404041358, "dur":1325, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404042777, "dur":2749, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404045565, "dur":142, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404045746, "dur":912, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404046699, "dur":193, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404046907, "dur":1633, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404048650, "dur":1060, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404049746, "dur":2060, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404051842, "dur":1773, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1718206404053681, "dur":189, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404054038, "dur":2977, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/SavedGameNumber1.json" }}
+,{ "pid":12345, "tid":3, "ts":1718206404057034, "dur":202, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1718206404057287, "dur":5537, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":3, "ts":1718206404062839, "dur":301259, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206403985371, "dur":3516, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206403988890, "dur":754, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206403989644, "dur":17690, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404007343, "dur":228, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":4, "ts":1718206404007572, "dur":110, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404008529, "dur":21198, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":4, "ts":1718206404029802, "dur":3241, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404033144, "dur":1206, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404034395, "dur":256, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404034671, "dur":1106, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404035850, "dur":2514, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404038433, "dur":1624, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404040093, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404040166, "dur":1239, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404041458, "dur":277, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404041752, "dur":1127, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404042958, "dur":2900, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404045895, "dur":86, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404046000, "dur":1038, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404047091, "dur":89, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404047195, "dur":1689, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404048920, "dur":225, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404049164, "dur":2909, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404052109, "dur":491, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1718206404052616, "dur":930, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1718206404054034, "dur":2868, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/SavedGameNumber3.json" }}
+,{ "pid":12345, "tid":4, "ts":1718206404056938, "dur":2975, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1718206404059937, "dur":304157, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1718206403985410, "dur":3484, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1718206403988897, "dur":587, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1718206403989484, "dur":17860, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1718206404007347, "dur":235, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1718206404007583, "dur":103, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1718206404019474, "dur":7578, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1718206404027085, "dur":4916, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1718206404027083, "dur":4922, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1718206404032177, "dur":16367, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1718206404048655, "dur":3206, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1718206404051895, "dur":99, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1718206404052008, "dur":1615, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1718206404053683, "dur":198, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1718206404054041, "dur":2950, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/SavedGameNumber2.json" }}
+,{ "pid":12345, "tid":5, "ts":1718206404057029, "dur":1395, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":5, "ts":1718206404058487, "dur":1396, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/level1" }}
+,{ "pid":12345, "tid":5, "ts":1718206404059902, "dur":304201, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206403985451, "dur":3456, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206403988910, "dur":730, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206403989641, "dur":17686, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404007353, "dur":230, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
+,{ "pid":12345, "tid":6, "ts":1718206404007329, "dur":255, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":6, "ts":1718206404007584, "dur":104, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404008787, "dur":14541, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":6, "ts":1718206404023366, "dur":94, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1718206404023566, "dur":6728, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1718206404030364, "dur":3954, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404034371, "dur":275, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404034667, "dur":3413, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404038214, "dur":1482, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404039775, "dur":1327, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404041206, "dur":1387, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404042688, "dur":2497, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404045222, "dur":151, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404045388, "dur":1242, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404046665, "dur":220, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404046901, "dur":1389, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404048326, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404048394, "dur":998, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404049435, "dur":86, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404049540, "dur":3533, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404053118, "dur":132, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404053267, "dur":1021, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1718206404054341, "dur":88, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1718206404054527, "dur":2754, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber1.json" }}
+,{ "pid":12345, "tid":6, "ts":1718206404057323, "dur":1177, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":6, "ts":1718206404058555, "dur":9142, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/globalgamemanagers.assets.resS" }}
+,{ "pid":12345, "tid":6, "ts":1718206404067714, "dur":296382, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1718206403985490, "dur":3424, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1718206403988917, "dur":786, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1718206403989704, "dur":17645, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1718206404007359, "dur":204, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config" }}
+,{ "pid":12345, "tid":7, "ts":1718206404007349, "dur":215, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":7, "ts":1718206404007565, "dur":118, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1718206404008880, "dur":11910, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":7, "ts":1718206404020826, "dur":108, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1718206404020974, "dur":6672, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1718206404027677, "dur":89, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":7, "ts":1718206404027884, "dur":49423, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":7, "ts":1718206404077350, "dur":286742, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206403985522, "dur":3399, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206403988924, "dur":539, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206403989464, "dur":17867, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206404007335, "dur":170, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":8, "ts":1718206404008616, "dur":15394, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":8, "ts":1718206404024045, "dur":103, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config" }}
+,{ "pid":12345, "tid":8, "ts":1718206404024044, "dur":105, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":8, "ts":1718206404024266, "dur":6363, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":8, "ts":1718206404030712, "dur":1066, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404031826, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206404031941, "dur":2264, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404034291, "dur":1202, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404035581, "dur":2615, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404038250, "dur":1528, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404039875, "dur":1330, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404041258, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206404041367, "dur":3587, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404045022, "dur":1322, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404046385, "dur":87, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206404046510, "dur":1057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404047616, "dur":507, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206404048145, "dur":1230, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404049414, "dur":109, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206404049543, "dur":4740, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1718206404054328, "dur":59, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Assets\\StreamingAssets\\SavedData\\Saved2DGameNumber0.json" }}
+,{ "pid":12345, "tid":8, "ts":1718206404054328, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber0.json" }}
+,{ "pid":12345, "tid":8, "ts":1718206404054389, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206404054599, "dur":2939, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber0.json" }}
+,{ "pid":12345, "tid":8, "ts":1718206404057579, "dur":1143, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":8, "ts":1718206404058737, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1718206404058808, "dur":1078, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":8, "ts":1718206404059904, "dur":304184, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1718206403985560, "dur":3369, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1718206403988931, "dur":103, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1718206403989035, "dur":18311, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1718206404007348, "dur":192, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":9, "ts":1718206404019876, "dur":7203, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":9, "ts":1718206404027119, "dur":4858, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":9, "ts":1718206404027118, "dur":4861, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":9, "ts":1718206404032173, "dur":134834, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":9, "ts":1718206404167046, "dur":197055, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206403985585, "dur":3350, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206403988936, "dur":18387, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404007352, "dur":158, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":10, "ts":1718206404007330, "dur":181, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":10, "ts":1718206404007829, "dur":8355, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":10, "ts":1718206404016220, "dur":100, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config" }}
+,{ "pid":12345, "tid":10, "ts":1718206404016219, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":10, "ts":1718206404016321, "dur":3044, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404019426, "dur":5636, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":10, "ts":1718206404025096, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":10, "ts":1718206404025215, "dur":5382, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":10, "ts":1718206404030662, "dur":663, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404031374, "dur":265, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404031657, "dur":1063, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404032759, "dur":160, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404032968, "dur":1015, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404034175, "dur":1264, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404035485, "dur":82, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404035585, "dur":2577, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/Unity.AI.Navigation.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404038204, "dur":1526, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404039817, "dur":1168, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404041071, "dur":1142, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404042252, "dur":247, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404042521, "dur":2307, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404044903, "dur":1382, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404046390, "dur":1218, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404047650, "dur":472, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404048140, "dur":1239, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404049422, "dur":96, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404049536, "dur":3348, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ContentLoadModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404052985, "dur":1272, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1718206404054305, "dur":123, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404054505, "dur":2663, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/Saved2DGameNumber3.json" }}
+,{ "pid":12345, "tid":10, "ts":1718206404057180, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1718206404057246, "dur":1228, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":10, "ts":1718206404058512, "dur":1212, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/level0" }}
+,{ "pid":12345, "tid":10, "ts":1718206404059742, "dur":304337, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206403985637, "dur":3307, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206403988944, "dur":18399, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206404007357, "dur":207, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1718206404007344, "dur":221, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1718206404007566, "dur":115, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206404019416, "dur":6958, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1718206404026410, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":11, "ts":1718206404026664, "dur":5440, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":11, "ts":1718206404032159, "dur":239, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206404032421, "dur":1016, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404033528, "dur":4678, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404038297, "dur":1780, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404040169, "dur":1324, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404041530, "dur":202, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206404041748, "dur":2983, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404044766, "dur":104, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206404044900, "dur":1400, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404046393, "dur":1192, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404047635, "dur":476, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206404048130, "dur":1214, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404049444, "dur":3436, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404052964, "dur":1203, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1718206404054213, "dur":219, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1718206404054554, "dur":2719, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/StreamingAssets/SavedData/SavedGameNumber0.json" }}
+,{ "pid":12345, "tid":11, "ts":1718206404057314, "dur":1129, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":11, "ts":1718206404058483, "dur":1112, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/level0.resS" }}
+,{ "pid":12345, "tid":11, "ts":1718206404059611, "dur":304472, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206403985677, "dur":3274, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206403988952, "dur":18386, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206404007339, "dur":168, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":12, "ts":1718206404019465, "dur":6855, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":12, "ts":1718206404026355, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1718206404026465, "dur":5702, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1718206404032218, "dur":181, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206404032425, "dur":1098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404033613, "dur":1208, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404034915, "dur":3203, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404038199, "dur":1505, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404039795, "dur":1240, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404041128, "dur":1452, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404042680, "dur":2385, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404045105, "dur":274, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206404045393, "dur":1171, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404046601, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206404046694, "dur":1766, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404048495, "dur":136, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206404048647, "dur":963, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404049651, "dur":2153, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206404051837, "dur":1513, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404053393, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1718206404053481, "dur":878, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/game life 3d_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404054395, "dur":109, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityPlayer.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404054393, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/gitProjects/gamelife/GameLife/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404054532, "dur":208045, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/gitProjects/gamelife/GameLife/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":12, "ts":1718206404262623, "dur":101462, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1718206404366604, "dur":1022, "ph":"X", "name": "ProfilerWriteOutput" }
 ,

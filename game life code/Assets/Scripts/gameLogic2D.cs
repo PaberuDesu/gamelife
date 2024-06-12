@@ -15,6 +15,8 @@ public class gameLogic2D : gameLogic {
         if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}
     }
 
+    private void OnDisable() {_paint.AddAction();}
+
     public override void StartGame() {
         continuing = true;
         pregameUI.SetActive(false);

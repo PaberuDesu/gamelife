@@ -37,9 +37,12 @@ public class Paint : MonoBehaviour {
     private bool _isPaintable = false;
     private bool _isInGame = false;
     private bool _isSliderDragged = false;
+    private bool _isUsingBrush = false;
     public Brush brush;
     private int brushSize;
     private int brushShapeID;
+
+    private Roster actions;
 
     [SerializeField] private GameObject canvas2D;
 
@@ -57,6 +60,9 @@ public class Paint : MonoBehaviour {
         canvasCenter = (_rectMask.anchorMin + _rectMask.anchorMax) / 2;
         screenScale = new Vector2(Screen.width, Screen.height);
     }
+
+    private void OnEnable() {actions = new Roster(GameStatusData.All2DCells);}
+    private void OnDisable() {actions = null;}
 
     public void Resize() {
         GameStatusData.size2D = new int[] {
@@ -81,10 +87,21 @@ public class Paint : MonoBehaviour {
 
     private void Update() {
         if (_isOnCanvas && !_isSliderDragged) ChangeZoomParameter();
-        if (_isPaintable && !_isSliderDragged && !_isInGame) UseBrush();
+        if (_isPaintable && !_isSliderDragged && !_isInGame) {
+            UseBrush();
+            if (Input.GetKey(KeyCode.Mouse0)) _isUsingBrush = true;
+        }
         else CurrentCoordOut.text = "";
         MovePicProcess(_rect.offsetMin + (MovePicDirection * Time.deltaTime));
+        if (Input.GetKeyUp(KeyCode.Mouse0) && _isUsingBrush) {
+            AddAction();
+            _isUsingBrush = false;
+        }
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Z)) {SetField(actions.Undo());}
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Y)) {SetField(actions.Redo());}
     }
+
+    public void AddAction() {actions.Add(GameStatusData.All2DCells);}
 
     public void SetOnOrOutOfCanvas(bool _isOn) {_isOnCanvas = _isOn;}
     public void SetPaintable(bool _isOn) {_isPaintable = _isOn;}
@@ -115,7 +132,7 @@ public class Paint : MonoBehaviour {
         }
         CurrentCoordOut.text = $"{coords[0]};{coords[1]}";
 
-        if(!Input.GetKey(KeyCode.Mouse0)) return;
+        if (!Input.GetKey(KeyCode.Mouse0)) return;
         if (brush == Brush.Fill) Fill(coords);
         else if (brush == Brush.Quadrangle) DrawQuadrangle(coords);
         else DrawCircle(coords);
@@ -167,6 +184,17 @@ public class Paint : MonoBehaviour {
                 }
             }
         }
+    }
+
+    private void SetField(byte[,] statement) {
+        if (statement is null) return;
+        GameStatusData.All2DCells = statement;
+        for (int x = 0; x < _textureScale[0]; x++) {
+            for (int y = 0; y < _textureScale[1]; y++) {
+                _texture.SetPixel(x, y, _colors[GameStatusData.All2DCells[x,y]]);
+            }
+        }
+        _texture.Apply();
     }
 
     public void PaintToPlay(int x, int y, int ColorID) {_texture.SetPixel(x, y, _colors[ColorID]);}
@@ -257,6 +285,7 @@ public class Paint : MonoBehaviour {
         else ScaleProportion = new Vector2(1, y/x);
         SetCanvasScale();
         _texture.Reinitialize(_textureScale[0], _textureScale[1]);
+        actions = new Roster(GameStatusData.All2DCells);
     }
 
     private void SetCanvasScale() {
@@ -321,5 +350,59 @@ public class Paint : MonoBehaviour {
         Quadrangle,
         Circle,
         Fill
+    }
+}
+
+internal class Roster {
+    private List<byte[,]> roster;
+    private int stepsInPast;
+    private int nowFlag;
+    private int oldestFlag;
+    private const int size = 51;
+
+    internal Roster(byte[,] statement) {
+        roster = new List<byte[,]>(size);
+        roster.Add((byte[,]) statement.Clone());
+        stepsInPast = 0;
+        nowFlag = 0;
+        oldestFlag = size-1;
+    }
+
+    internal void Add(byte[,] statement) {
+        if (stepsInPast > 0) {
+            nowFlag -= stepsInPast;
+            if (nowFlag < 0) nowFlag += size;
+            stepsInPast = 0;
+        }
+        else if (nowFlag == oldestFlag) oldestFlag = NextFlag();
+        nowFlag = NextFlag();
+        Debug.Log(oldestFlag);
+        Debug.Log(nowFlag);
+
+        if (roster.Count == nowFlag && roster.Count < size) roster.Add((byte[,]) statement.Clone());
+        else roster[nowFlag] = (byte[,]) statement.Clone();
+    }
+
+    private int NextFlag(int i = 1) {return (nowFlag+i) % size;}
+
+    internal byte[,] Undo() {
+        if (stepsInPast >= size - 1) return null;
+        if (NextFlag(size - stepsInPast -1) == oldestFlag) return null;
+        
+        stepsInPast++;
+        return FieldInPast();
+    }
+
+    internal byte[,] Redo() {
+        if (stepsInPast == 0) return null;
+        
+        stepsInPast--;
+        return FieldInPast();
+    }
+
+    private byte[,] FieldInPast() {
+        int pastFlag = nowFlag - stepsInPast;
+        if (pastFlag < 0) pastFlag += size;
+        return (byte[,]) roster[pastFlag].Clone();
     }
 }

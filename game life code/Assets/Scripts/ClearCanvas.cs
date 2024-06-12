@@ -22,6 +22,7 @@ public class ClearCanvas : MonoBehaviour
         if (progressbar.fillAmount == 1) {
             _holding = false;
             canvas.Clear();
+            canvas.AddAction();
         }
     }
 }
