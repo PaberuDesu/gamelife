@@ -332,6 +332,7 @@
 "Assets/Scripts/pregameLogic.cs"
 "Assets/Scripts/ReloadPhotos.cs"
 "Assets/Scripts/Resize2Dmap.cs"
+"Assets/Scripts/Roster.cs"
 "Assets/Scripts/Rotate3DField.cs"
 "Assets/Scripts/SaveData.cs"
 "Assets/Scripts/SavedPaletteViewer.cs"
