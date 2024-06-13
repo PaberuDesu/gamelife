@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - CursorManager
     - DropdownCloser
     - EscClosePanel
+    - GameStatusData
     - Gamemodes
     - InputCleaner
     - MainMenuLogic
@@ -38,6 +39,14 @@ ScriptsOnlyBuild:
     - suicide
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -395,13 +404,13 @@ ScriptsOnlyBuild:
     fullTypeName: ColorChoose
     methodName: ChangeValue
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBorder
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
@@ -416,7 +425,7 @@ ScriptsOnlyBuild:
     fullTypeName: Paint
     methodName: SetOnOrOutOfCanvas
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: pregameLogic
@@ -428,13 +437,13 @@ ScriptsOnlyBuild:
     fullTypeName: escape
     methodName: EscapeSaveMenu
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: Settings3D
     methodName: ChangeScale
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: LogScale
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
@@ -443,22 +452,22 @@ ScriptsOnlyBuild:
     fullTypeName: SaveData
     methodName: Save2DField
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: ModeChanger
     methodName: ChangeModeByButton
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
@@ -473,19 +482,19 @@ ScriptsOnlyBuild:
     fullTypeName: ModeChanger
     methodName: ChangeModeByButton
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
@@ -503,19 +512,19 @@ ScriptsOnlyBuild:
     fullTypeName: Paint
     methodName: ChangeActiveColor
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: pregameLogic
-    methodName: Create
+    methodName: CreateByCoordinates
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
@@ -542,7 +551,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
@@ -569,7 +578,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -596,7 +605,7 @@ ScriptsOnlyBuild:
     fullTypeName: Resize2Dmap
     methodName: OnEnable
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: gameLogic3D
@@ -605,16 +614,16 @@ ScriptsOnlyBuild:
     fullTypeName: Paint
     methodName: ChangeActiveColor
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: SliceCutter
     methodName: ChangeAxis
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -638,7 +647,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
@@ -653,13 +662,13 @@ ScriptsOnlyBuild:
     fullTypeName: Paint
     methodName: SetOnOrOutOfCanvas
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
     methodName: Save2DField
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -680,7 +689,7 @@ ScriptsOnlyBuild:
     fullTypeName: Paint
     methodName: ChangeActiveColor
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
@@ -692,7 +701,7 @@ ScriptsOnlyBuild:
     fullTypeName: SaveData
     methodName: SaveField
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -737,7 +746,7 @@ ScriptsOnlyBuild:
     fullTypeName: SliceCutter
     methodName: ChangeAxis
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -749,7 +758,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: LogScale
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -776,37 +785,37 @@ ScriptsOnlyBuild:
     fullTypeName: escape
     methodName: Escape
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: BackToMenu
     methodName: ReturnToMenu
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBorder
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
@@ -824,7 +833,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSpeed
   - assembly: Assembly-CSharp
     fullTypeName: Paint
@@ -839,7 +848,7 @@ ScriptsOnlyBuild:
     fullTypeName: pregameLogic
     methodName: Change_z
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: pregameLogic
@@ -848,7 +857,7 @@ ScriptsOnlyBuild:
     fullTypeName: game_logic.gameLogic
     methodName: Stop
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -881,13 +890,13 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSpeed
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: Paint
@@ -911,10 +920,10 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: LogScale
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
@@ -923,22 +932,22 @@ ScriptsOnlyBuild:
     fullTypeName: escape
     methodName: EscapeSaveMenu
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: ModeChanger
     methodName: ChangeModeByButton
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
     methodName: SaveField
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: escapeSliceMenu
     methodName: SetDimNumAndLeave
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: game_logic.gameLogic
@@ -953,13 +962,13 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.UI.Selectable
     methodName: set_interactable
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
     methodName: Save2DField
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: gameLogic2D
@@ -983,7 +992,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -1013,7 +1022,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
@@ -1031,16 +1040,16 @@ ScriptsOnlyBuild:
     fullTypeName: SaveData
     methodName: Save2DField
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: ModeChanger
@@ -1064,7 +1073,7 @@ ScriptsOnlyBuild:
     fullTypeName: escape
     methodName: EscapeSaveMenu
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
@@ -1091,16 +1100,16 @@ ScriptsOnlyBuild:
     fullTypeName: Paint
     methodName: ChangeActiveColor
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
     methodName: SaveField
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
@@ -1121,7 +1130,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -1145,16 +1154,16 @@ ScriptsOnlyBuild:
     fullTypeName: Settings2D
     methodName: ChangeScale
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: LogScale
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -1172,43 +1181,43 @@ ScriptsOnlyBuild:
     fullTypeName: escapeSliceMenu
     methodName: SetDimNumAndLeave
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: escape
     methodName: Escape
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: ModeChanger
     methodName: ChangeModeByButton
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: ModeChanger
     methodName: ChangeModeByButton
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: SliceCutter
     methodName: ChangeCoordinate
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
-    fullTypeName: Settings.SettingsClass
+    fullTypeName: Settings
     methodName: SetBornCondition
   sceneClasses:
     Assets/Scenes/Game.unity:
@@ -1247,103 +1256,105 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1564}
+      Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 1608}
+      Script: {instanceID: 1614}
     - Class: 114
-      Script: {instanceID: 1692}
+      Script: {instanceID: 1698}
     - Class: 114
-      Script: {instanceID: 1712}
+      Script: {instanceID: 1718}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1752}
     - Class: 114
-      Script: {instanceID: 1758}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 1822}
+      Script: {instanceID: 1828}
     - Class: 114
-      Script: {instanceID: 1956}
+      Script: {instanceID: 1962}
     - Class: 114
-      Script: {instanceID: 2050}
-    - Class: 114
-      Script: {instanceID: 2178}
+      Script: {instanceID: 2058}
     - Class: 114
       Script: {instanceID: 2186}
     - Class: 114
-      Script: {instanceID: 2382}
+      Script: {instanceID: 2194}
     - Class: 114
       Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2394}
+      Script: {instanceID: 2398}
     - Class: 114
-      Script: {instanceID: 2466}
+      Script: {instanceID: 2402}
     - Class: 114
-      Script: {instanceID: 2492}
+      Script: {instanceID: 2474}
     - Class: 114
-      Script: {instanceID: 2502}
+      Script: {instanceID: 2500}
     - Class: 114
-      Script: {instanceID: 2656}
+      Script: {instanceID: 2510}
     - Class: 114
       Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2700}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 2834}
+      Script: {instanceID: 2708}
     - Class: 114
       Script: {instanceID: 2842}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2894}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 2936}
     - Class: 114
-      Script: {instanceID: 3166}
+      Script: {instanceID: 3090}
     - Class: 114
-      Script: {instanceID: 3344}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 3350}
+      Script: {instanceID: 3352}
     - Class: 114
-      Script: {instanceID: 3412}
+      Script: {instanceID: 3358}
     - Class: 114
-      Script: {instanceID: 3432}
+      Script: {instanceID: 3420}
     - Class: 114
-      Script: {instanceID: 3500}
+      Script: {instanceID: 3440}
     - Class: 114
-      Script: {instanceID: 3526}
+      Script: {instanceID: 3508}
     - Class: 114
-      Script: {instanceID: 3600}
+      Script: {instanceID: 3534}
     - Class: 114
-      Script: {instanceID: 3644}
+      Script: {instanceID: 3608}
     - Class: 114
-      Script: {instanceID: 3688}
+      Script: {instanceID: 3652}
     - Class: 114
-      Script: {instanceID: 3712}
+      Script: {instanceID: 3696}
     - Class: 114
-      Script: {instanceID: 3732}
+      Script: {instanceID: 3720}
     - Class: 114
-      Script: {instanceID: 3804}
+      Script: {instanceID: 3740}
     - Class: 114
-      Script: {instanceID: 3814}
+      Script: {instanceID: 3812}
     - Class: 114
-      Script: {instanceID: 3828}
+      Script: {instanceID: 3822}
     - Class: 114
-      Script: {instanceID: 3860}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 3948}
+      Script: {instanceID: 3868}
     - Class: 114
-      Script: {instanceID: 4088}
+      Script: {instanceID: 3956}
     - Class: 114
-      Script: {instanceID: 4134}
+      Script: {instanceID: 4096}
     - Class: 114
-      Script: {instanceID: 4290}
+      Script: {instanceID: 4142}
     - Class: 114
-      Script: {instanceID: 4314}
+      Script: {instanceID: 4298}
     - Class: 114
-      Script: {instanceID: 4320}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 4432}
+      Script: {instanceID: 4328}
     - Class: 114
-      Script: {instanceID: 4478}
+      Script: {instanceID: 4440}
+    - Class: 114
+      Script: {instanceID: 4486}
+    - Class: 114
+      Script: {instanceID: 4498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1378,43 +1389,43 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1564}
+      Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 1608}
+      Script: {instanceID: 1614}
     - Class: 114
-      Script: {instanceID: 1694}
+      Script: {instanceID: 1700}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1752}
     - Class: 114
-      Script: {instanceID: 1758}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 1822}
+      Script: {instanceID: 1828}
     - Class: 114
-      Script: {instanceID: 2146}
-    - Class: 114
-      Script: {instanceID: 2382}
+      Script: {instanceID: 2154}
     - Class: 114
       Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2492}
+      Script: {instanceID: 2398}
     - Class: 114
-      Script: {instanceID: 2502}
+      Script: {instanceID: 2500}
     - Class: 114
-      Script: {instanceID: 2656}
+      Script: {instanceID: 2510}
     - Class: 114
-      Script: {instanceID: 2834}
+      Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2842}
     - Class: 114
-      Script: {instanceID: 3166}
+      Script: {instanceID: 2936}
     - Class: 114
-      Script: {instanceID: 3196}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 3412}
+      Script: {instanceID: 3204}
     - Class: 114
-      Script: {instanceID: 3600}
+      Script: {instanceID: 3420}
     - Class: 114
-      Script: {instanceID: 4134}
+      Script: {instanceID: 3608}
+    - Class: 114
+      Script: {instanceID: 4142}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1470,7 +1481,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 52c53054810e7568fadb638fbd432127
+      Hash: 6fb990ed9498066fdae70c87249feb71
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: gameLogic2D
@@ -1614,7 +1625,7 @@ ScriptsOnlyBuild:
     className: SavedPaletteViewer
   - hash:
       serializedVersion: 2
-      Hash: e533e0ed357c56a3f5ad89f426b4eff8
+      Hash: ea5250f8a0204fa9b7b2f3f566eaaf56
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MessageCenter
@@ -1854,7 +1865,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 990b1a0711e04c211ca94ec9e3ec4453
+      Hash: a22bbb93bf96e199e132bbe54df00656
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SaveData
@@ -1878,7 +1889,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 056fb7e7aaabbad6080050e07278b58f
+      Hash: 3f395ae03614600a080c1ee926efe421
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: pregameLogic
@@ -1974,7 +1985,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 78f9928fe3be6d7939d7adf2c07e1f78
+      Hash: 2000da4744b16e473b81fbd6af7a9d31
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Settings3D
@@ -2010,7 +2021,7 @@ ScriptsOnlyBuild:
     className: MoveTo2DMode
   - hash:
       serializedVersion: 2
-      Hash: a1dd1fa41ea9b19477e7380287861de2
+      Hash: e461f04b26337fd3ba9ff930eb488350
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ModeChanger
@@ -2046,7 +2057,7 @@ ScriptsOnlyBuild:
     className: EscClosePanel
   - hash:
       serializedVersion: 2
-      Hash: de7121e5fb8168671ad66a47358a6572
+      Hash: 4980d8697b0ec99a25d9752b61079304
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Settings2D
@@ -2088,7 +2099,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: fece3c05a9d0c62a6e775ac8f979db02
+      Hash: 3235672ef0bc3cfc1de3dd5c59dc58a2
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: gameLogic3D
@@ -2104,6 +2115,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ColorChoose
+  - hash:
+      serializedVersion: 2
+      Hash: 981ef83a100bcdade117ea7f7433e0d4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameStatusData
+  - hash:
+      serializedVersion: 2
+      Hash: 57c6cc376c9a4a9fd22592348d00bf82
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SupportTypeSelecting
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

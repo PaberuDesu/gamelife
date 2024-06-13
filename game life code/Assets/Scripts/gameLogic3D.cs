@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using game_logic;
-using Settings;
 
 public class gameLogic3D : gameLogic {
     private byte[,,] AllCells;
@@ -47,7 +46,7 @@ public class gameLogic3D : gameLogic {
 
                     switch (GameStatusData.AllCells[x,y,z]) {
                         case 4:
-                            if (Settings.SurviveConditions[3][CountNeighbours[3]]) break;
+                            if (settings.SurviveConditions[3][CountNeighbours[3]]) break;
 
                             Destroy(GameObject.Find($"{GameStatusData.CellNames[3]}({x}, {y}, {z})"));
                             if (CountNeighbours[0] < 0)
@@ -55,7 +54,7 @@ public class gameLogic3D : gameLogic {
 
                             bool created = false;
                             for (byte i = 1; i < 4; i++) {
-                                if (Settings.SurviveConditions[i-1][CountNeighbours[i-1]]) {
+                                if (settings.SurviveConditions[i-1][CountNeighbours[i-1]]) {
                                     CreateCell(x,y,z,i);
                                     created = true;
                                     break;
@@ -64,23 +63,23 @@ public class gameLogic3D : gameLogic {
                             if (!created) AllCells[x,y,z] = 0;
                             break;
                         case 3:
-                            if (!(Settings.SurviveConditions[2][CountNeighbours[2]]))
+                            if (!(settings.SurviveConditions[2][CountNeighbours[2]]))
                                 DeleteCell(x,y,z,3);
                             break;
                         case 2:
-                            if (!(Settings.SurviveConditions[1][CountNeighbours[1]]))
+                            if (!(settings.SurviveConditions[1][CountNeighbours[1]]))
                                 DeleteCell(x,y,z,2);
                             break;
                         case 1:
                             if (CountNeighbours[0] < 0)
                                 CountNeighbours[0] = 0;
 
-                            if (Settings.BornConditions[1][CountNeighbours[1]]) {
+                            if (settings.BornConditions[1][CountNeighbours[1]]) {
                                 Destroy(GameObject.Find($"{GameStatusData.CellNames[0]}({x}, {y}, {z})"));
                                 CreateCell(x,y,z,2);
                                 break;
                             }
-                            if (!(Settings.SurviveConditions[0][CountNeighbours[0]]))
+                            if (!(settings.SurviveConditions[0][CountNeighbours[0]]))
                                 DeleteCell(x,y,z,1);
                             break;
                         case 0:
@@ -89,7 +88,7 @@ public class gameLogic3D : gameLogic {
 
                             byte[] bornableTypes = {1,3,4};
                             foreach (byte i in bornableTypes) {
-                                if (Settings.BornConditions[i-1][CountNeighbours[i-1]]) {
+                                if (settings.BornConditions[i-1][CountNeighbours[i-1]]) {
                                     CreateCell(x,y,z,i);
                                     break;
                                 }
@@ -124,7 +123,7 @@ public class gameLogic3D : gameLogic {
                 counter = 0;
                 RememberedAllCells = AllCells;
             }
-            yield return new WaitForSeconds(0.1f / Settings.SimulationSpeed);
+            yield return new WaitForSeconds(0.1f / settings.SimulationSpeed);
             StartCoroutine(GameCycle());
         } else {
             _move.enabled = false;
@@ -140,7 +139,7 @@ public class gameLogic3D : gameLogic {
             for (sbyte y_neigbourhood = -1; y_neigbourhood <= 1; y_neigbourhood++) {
                 for (sbyte z_neigbourhood = -1; z_neigbourhood <= 1; z_neigbourhood++) {
                     if (!(x_neigbourhood == 0 && y_neigbourhood == 0 && z_neigbourhood == 0)) {
-                        if (Settings._isBorderExists) {
+                        if (settings._isBorderExists) {
                             try {neighbour_counter[GameStatusData.AllCells[x + x_neigbourhood, y + y_neigbourhood, z + z_neigbourhood]]++;}
                             catch{};
                         }

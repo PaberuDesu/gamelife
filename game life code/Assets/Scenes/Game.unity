@@ -3474,8 +3474,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1753758871}
-        m_TargetAssemblyTypeName: SettingsForModes, Assembly-CSharp
+      - m_Target: {fileID: 1753758873}
+        m_TargetAssemblyTypeName: ModeChanger, Assembly-CSharp
         m_MethodName: ChangeModeByButton
         m_Mode: 3
         m_Arguments:
@@ -8369,8 +8369,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 963194232}
-        m_TargetAssemblyTypeName: gameLogic, Assembly-CSharp
-        m_MethodName: Create
+        m_TargetAssemblyTypeName: pregameLogic, Assembly-CSharp
+        m_MethodName: CreateByCoordinates
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23704,6 +23704,7 @@ GameObject:
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194235}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -23858,13 +23859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99114c289e939343adbcd30d2a0430b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <cellPreinstance>k__BackingField: {fileID: 7828228333896659445, guid: 26030b643bbd3b046864f5a068a9a219, type: 3}
-  <parasitePreinstance>k__BackingField: {fileID: 4078392073299529514, guid: 7c16322ef9deb3646a14d41342716ced, type: 3}
-  <mushroomPreinstance>k__BackingField: {fileID: 7526602969773713494, guid: 04e85551e2dcf144a8c23970a220b4e6, type: 3}
-  <imitatorPreinstance>k__BackingField: {fileID: 941823976610090921, guid: d000ba901651ef8419e92a1c8fb0f00d, type: 3}
-  CellsParentPreinstance: {fileID: 272825008}
-  message_center: {fileID: 1566754534}
   SelectedCellType: 1
+  message_center: {fileID: 1566754534}
 --- !u!114 &963194233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23893,11 +23889,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f82fca24b11ea4f9f91821c7df0ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Settings: {fileID: 1753758871}
+  settings: {fileID: 1753758871}
   _settings2D: {fileID: 1846512942}
   _paint: {fileID: 1197724290}
   take_a_photo: {fileID: 1830921255}
   _photoReloader: {fileID: 963194230}
+--- !u!114 &963194235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfaaebbd9ee33c54d94a8dc50ee0ae2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <cellPreinstances>k__BackingField:
+  - {fileID: 7828228333896659445, guid: 26030b643bbd3b046864f5a068a9a219, type: 3}
+  - {fileID: 4078392073299529514, guid: 7c16322ef9deb3646a14d41342716ced, type: 3}
+  - {fileID: 7526602969773713494, guid: 04e85551e2dcf144a8c23970a220b4e6, type: 3}
+  - {fileID: 941823976610090921, guid: d000ba901651ef8419e92a1c8fb0f00d, type: 3}
+  CellsParentPreinstance: {fileID: 272825008}
 --- !u!1 &970322861
 GameObject:
   m_ObjectHideFlags: 0
@@ -26955,7 +26969,7 @@ MonoBehaviour:
   GameOver: {fileID: 1673419806}
   pregameUI: {fileID: 1793643214}
   gameUI: {fileID: 2094805451}
-  Settings: {fileID: 1753758871}
+  settings: {fileID: 1753758871}
   _move: {fileID: 963194229}
   gamemodes: {fileID: 963194233}
 --- !u!114 &1057189553
@@ -30552,7 +30566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39532580b4af7a341862ebc1e805cd5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pregame: {fileID: 963194232}
+  script: {fileID: 963194232}
 --- !u!114 &1274695195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31560,8 +31574,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1846512942}
-        m_TargetAssemblyTypeName: Settings2D, Assembly-CSharp
+      - m_Target: {fileID: 1846512943}
+        m_TargetAssemblyTypeName: ModeChanger, Assembly-CSharp
         m_MethodName: ChangeModeByButton
         m_Mode: 3
         m_Arguments:
@@ -33866,7 +33880,7 @@ MonoBehaviour:
   GameOver: {fileID: 1141766299}
   pregameUI: {fileID: 816555886}
   gameUI: {fileID: 1758612617}
-  Settings: {fileID: 1846512942}
+  settings: {fileID: 1846512942}
   _paint: {fileID: 1197724290}
 --- !u!114 &1458798122
 MonoBehaviour:
@@ -36627,7 +36641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SuccessMessage: {fileID: 8374829092015291749, guid: 02c8c47761bc73944bdb3135625a3b36, type: 3}
   ObjectExistsMessage: {fileID: 1895472259471427898, guid: 4a289374b90626e4b97f30ad726dc26a, type: 3}
-  WrongCoordinates: {fileID: 7642171981436761772, guid: 54335f6ec467f33409f7cfae0fbb3b14, type: 3}
+  WrongCoordinatesMessage: {fileID: 7642171981436761772, guid: 54335f6ec467f33409f7cfae0fbb3b14, type: 3}
 --- !u!1 &1571538527
 GameObject:
   m_ObjectHideFlags: 0
@@ -40148,6 +40162,7 @@ GameObject:
   - component: {fileID: 1753758869}
   - component: {fileID: 1753758872}
   - component: {fileID: 1753758871}
+  - component: {fileID: 1753758873}
   - component: {fileID: 1753758870}
   m_Layer: 5
   m_Name: Modes
@@ -40205,6 +40220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765a09f87881f514781fadc0e05f0ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectedCellType: 1
   ScaleChangers:
   - {fileID: 168487298}
   - {fileID: 2136907685}
@@ -40217,7 +40233,6 @@ MonoBehaviour:
   _isBorderExists: 0
   MinimumSimulationSpeed: 1
   SimulationSpeed: 1
-  SelectedCellType: 1
   camera_area: {fileID: 1314456950}
 --- !u!114 &1753758872
 MonoBehaviour:
@@ -40245,6 +40260,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1753758873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753758868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39532580b4af7a341862ebc1e805cd5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: {fileID: 1753758871}
 --- !u!1 &1758161030
 GameObject:
   m_ObjectHideFlags: 0
@@ -42044,18 +42072,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2136435792}
-        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1814430533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42907,6 +42923,7 @@ GameObject:
   - component: {fileID: 1846512941}
   - component: {fileID: 1846512940}
   - component: {fileID: 1846512942}
+  - component: {fileID: 1846512943}
   - component: {fileID: 1846512939}
   m_Layer: 5
   m_Name: Modes
@@ -42990,6 +43007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf22af2b75a7d547a557513ae69490e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectedCellType: 1
   ScaleChangers:
   - {fileID: 778152626}
   - {fileID: 332134591}
@@ -43001,8 +43019,20 @@ MonoBehaviour:
   _isBorderExists: 0
   MinimumSimulationSpeed: 1
   SimulationSpeed: 1
-  SelectedCellType: 1
   paint: {fileID: 1197724290}
+--- !u!114 &1846512943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846512937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39532580b4af7a341862ebc1e805cd5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: {fileID: 1846512942}
 --- !u!1 &1848547898
 GameObject:
   m_ObjectHideFlags: 0
@@ -48479,8 +48509,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1846512942}
-        m_TargetAssemblyTypeName: Settings2D, Assembly-CSharp
+      - m_Target: {fileID: 1846512943}
+        m_TargetAssemblyTypeName: ModeChanger, Assembly-CSharp
         m_MethodName: ChangeModeByButton
         m_Mode: 3
         m_Arguments:
@@ -48626,8 +48656,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1753758871}
-        m_TargetAssemblyTypeName: SettingsForModes, Assembly-CSharp
+      - m_Target: {fileID: 1753758873}
+        m_TargetAssemblyTypeName: ModeChanger, Assembly-CSharp
         m_MethodName: ChangeModeByButton
         m_Mode: 3
         m_Arguments:

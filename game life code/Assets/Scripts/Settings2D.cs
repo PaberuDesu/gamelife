@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Settings;
 
-public class Settings2D : SettingsClass {
+public class Settings2D : Settings {
     [SerializeField] private Paint paint;
 
     protected override int dimensions {get {return 2;}}

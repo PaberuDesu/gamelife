@@ -5,37 +5,18 @@ public class MessageCenter : MonoBehaviour
 {
     public GameObject SuccessMessage;
     public GameObject ObjectExistsMessage;
-    public GameObject WrongCoordinates;
+    public GameObject WrongCoordinatesMessage;
 
-    private void OnDisable() {
-        foreach (Transform child in transform) {
-            Destroy(child.gameObject);
-        }
+    private void OnDisable() {foreach (Transform child in transform) Destroy(child.gameObject);}
+
+    public void MessageCellChanged(bool isCellAlive, int x = 0, int y = 0, int z = 0) {
+        Instantiate(SuccessMessage, transform).transform.GetChild(0).gameObject.GetComponent<Text>().text =
+            isCellAlive
+            ? $"Клетка успешно создана в точке ({x}, {y}, {z})"
+            : $"Клетка успешно удалена из точки ({x}, {y}, {z})";
     }
 
-    public void Message(byte MessageCode, int x, int y, int z)
-    {
-        GameObject message;
-        switch (MessageCode)
-        {
-            case 0:
-                message = Instantiate(SuccessMessage, transform);
-                message.name = $"success({x}, {y}, {z})";
-                message.transform.GetChild(0).gameObject.GetComponent<Text>().text = $"Клетка успешно создана в точке ({x}, {y}, {z})";
-                break;
-            case 1:
-                message = Instantiate(ObjectExistsMessage, transform);
-                message.name = $"failure({x}, {y}, {z})";
-                break;
-            case 2:
-                message = Instantiate(WrongCoordinates, transform);
-                message.name = $"failure: uncorrect coordinates";
-                break;
-            case 3:
-                message = Instantiate(SuccessMessage, transform);
-                message.name = $"success({x}, {y}, {z})";
-                message.transform.GetChild(0).gameObject.GetComponent<Text>().text = $"Клетка успешно удалена из точки ({x}, {y}, {z})";
-                break;
-        }
-    }
+    public void MessageCellExists() {Instantiate(ObjectExistsMessage, transform);}
+
+    public void MessageWrongCoordinates() {Instantiate(WrongCoordinatesMessage, transform);}
 }

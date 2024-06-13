@@ -1,15 +1,7 @@
-using System.Collections;
 using UnityEngine;
 
 public class suicide : MonoBehaviour
 {
-    private void Start() {
-       StartCoroutine(Countdown());
-    }
-
-    private IEnumerator Countdown()
-    {
-        yield return new WaitForSeconds(1);
-        Destroy(gameObject);
-    }
+    private void Start() {Invoke("Countdown", 1.0f);}
+    private void Countdown() {Destroy(gameObject);}
 }

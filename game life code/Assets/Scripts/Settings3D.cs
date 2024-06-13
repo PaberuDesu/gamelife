@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Settings;
 
-public class Settings3D : SettingsClass {
+public class Settings3D : Settings {
     [SerializeField] private Transform camera_area;
     
     private const int maxArea = 3000;

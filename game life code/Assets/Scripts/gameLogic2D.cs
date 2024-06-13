@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using game_logic;
-using Settings;
 
 public class gameLogic2D : gameLogic {
     [SerializeField] private Paint _paint;
@@ -47,14 +46,14 @@ public class gameLogic2D : gameLogic {
                 CountNeighbours[3] = neighbour_counter[1] + neighbour_counter[2] + neighbour_counter[3] + neighbour_counter[4];
                 switch (GameStatusData.All2DCells[x,y]) {
                     case 4:
-                        if (Settings.SurviveConditions[3][CountNeighbours[3]]) break;
+                        if (settings.SurviveConditions[3][CountNeighbours[3]]) break;
 
                         if (CountNeighbours[0] < 0)
                             CountNeighbours[0] = 0;
 
                         bool created = false;
                         for (byte i = 1; i < 4; i++) {
-                            if (Settings.SurviveConditions[i-1][CountNeighbours[i-1]]) {
+                            if (settings.SurviveConditions[i-1][CountNeighbours[i-1]]) {
                                 CreateCell(x,y,i);
                                 created = true;
                                 break;
@@ -63,20 +62,20 @@ public class gameLogic2D : gameLogic {
                         if (!created) CreateCell(x,y,0);
                         break;
                     case 3:
-                        if (!(Settings.SurviveConditions[2][CountNeighbours[2]]))
+                        if (!(settings.SurviveConditions[2][CountNeighbours[2]]))
                             CreateCell(x,y,0);
                         break;
                     case 2:
-                        if (!(Settings.SurviveConditions[1][CountNeighbours[1]]))
+                        if (!(settings.SurviveConditions[1][CountNeighbours[1]]))
                             CreateCell(x,y,0);
                         break;
                     case 1:
                         if (CountNeighbours[0] < 0)
                             CountNeighbours[0] = 0;
                         
-                        if (Settings.BornConditions[1][CountNeighbours[1]])
+                        if (settings.BornConditions[1][CountNeighbours[1]])
                             CreateCell(x,y,2);
-                        else if (!(Settings.SurviveConditions[0][CountNeighbours[0]]))
+                        else if (!(settings.SurviveConditions[0][CountNeighbours[0]]))
                             CreateCell(x,y,0);
                         break;
                     case 0:
@@ -85,7 +84,7 @@ public class gameLogic2D : gameLogic {
                         
                         byte[] bornableTypes = {1,3,4};
                         foreach (byte i in bornableTypes) {
-                            if (Settings.BornConditions[i-1][CountNeighbours[i-1]]) {
+                            if (settings.BornConditions[i-1][CountNeighbours[i-1]]) {
                                 CreateCell(x,y,i);
                                 break;
                             }
@@ -122,7 +121,7 @@ public class gameLogic2D : gameLogic {
                 counter = 0;
                 RememberedAllCells = AllCells;
             }
-            yield return new WaitForSeconds(0.1f / Settings.SimulationSpeed);
+            yield return new WaitForSeconds(0.1f / settings.SimulationSpeed);
             StartCoroutine(GameCycle());
         } else {
             pregameUI.SetActive(true);
@@ -137,7 +136,7 @@ public class gameLogic2D : gameLogic {
         for (sbyte x_neigbourhood = -1; x_neigbourhood <= 1; x_neigbourhood++) {
             for (sbyte y_neigbourhood = -1; y_neigbourhood <= 1; y_neigbourhood++) {
                 if (!(x_neigbourhood == 0 && y_neigbourhood == 0)) {
-                    if (Settings._isBorderExists) {
+                    if (settings._isBorderExists) {
                         try {neighbour_counter[GameStatusData.All2DCells[x + x_neigbourhood, y + y_neigbourhood]]++;}
                         catch{;}
                     }

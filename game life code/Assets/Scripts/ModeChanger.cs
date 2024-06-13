@@ -5,33 +5,29 @@ using UnityEngine;
 
 public class ModeChanger : MonoBehaviour
 {
-    [SerializeField] pregameLogic pregame;
-    short step = 1300;
+    [SerializeField] private SupportTypeSelecting script;
+    const short step = 1300;
     int remain_of_step;
     int MaximumAbs;
-    byte FPS = 10;
+    const byte FPS = 10;
 
-    void Awake()
-    {
+    private void Awake() {
         MaximumAbs = step * (transform.childCount - 1) / 2;
         remain_of_step = MaximumAbs % step;
     }
 
-    public void ChangeModeByButton(int MoveMultiplier)
-    {
-        StartCoroutine(ChangeMode(Convert.ToSByte(MoveMultiplier)));
+    public void ChangeModeByButton(int MoveMultiplier) {
+        if (-MoveMultiplier * transform.localPosition.x != MaximumAbs && Mathf.Abs(transform.localPosition.x % (step)) == remain_of_step) {
+            script.SelectedCellType += MoveMultiplier;
+            if (script is Settings settingsScript) settingsScript.ChangeButtonsColors();
+            StartCoroutine(ChangeMode(MoveMultiplier));
+        }
     }
 
-    IEnumerator ChangeMode(sbyte MoveMultiplier)
-    {
-        if (-MoveMultiplier * transform.localPosition.x != MaximumAbs && Mathf.Abs(transform.localPosition.x % (step)) == remain_of_step)
-        {
-            for (byte i = 0; i < FPS; i++)
-            {
-                transform.localPosition += (step * MoveMultiplier / FPS) * Vector3.left;
-                yield return new WaitForSeconds(0.1f / FPS);
-            }
-            pregame.SelectedCellType += MoveMultiplier;
+    private IEnumerator ChangeMode(int MoveMultiplier) {
+        for (byte i = 0; i < FPS; i++) {
+            transform.localPosition += (step * MoveMultiplier / FPS) * Vector3.left;
+            yield return new WaitForSeconds(0.1f / FPS);
         }
     }
 }

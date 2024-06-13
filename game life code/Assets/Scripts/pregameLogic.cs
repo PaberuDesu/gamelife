@@ -1,45 +1,23 @@
 using System;
 using UnityEngine;
 
-public class pregameLogic : MonoBehaviour {
-    [field: SerializeField] public GameObject cellPreinstance{get;private set;}
-    [field: SerializeField] public GameObject parasitePreinstance{get;private set;}
-    [field: SerializeField] public GameObject mushroomPreinstance{get;private set;}
-    [field: SerializeField] public GameObject imitatorPreinstance{get;private set;}
-
-    [SerializeField] private Transform CellsParentPreinstance;
-
+public class pregameLogic : SupportTypeSelecting {
     [SerializeField] private MessageCenter message_center;
-
-    public int SelectedCellType = 1;
-    private string X_text, Y_text, Z_text;
-    
+    private string[] coordText = new string[3];
     private bool _isChangingCellInView = false;
 
-    private void Awake() {
-        GameStatusData.size3D = new int[] {10,10,10};
-        GameStatusData.cellTypes[0] = cellPreinstance;
-        GameStatusData.cellTypes[1] = parasitePreinstance;
-        GameStatusData.cellTypes[2] = mushroomPreinstance;
-        GameStatusData.cellTypes[3] = imitatorPreinstance;
-        GameStatusData.CellsParent = CellsParentPreinstance;
-    }
+    private void Update() {if (Input.GetMouseButton(1)) ChangeCellInView(Input.GetKey(KeyCode.LeftControl));}
 
-    private void Update() {
-        if (Input.GetMouseButton(1)) ChangeCellInView(Input.GetKey(KeyCode.LeftControl));
-    }
+    public void Change_x(string input) {coordText[0] = input;}
 
-    public void Change_x(string input) {X_text = input;}
+    public void Change_y(string input) {coordText[1] = input;}
 
-    public void Change_y(string input) {Y_text = input;}
-
-    public void Change_z(string input) {Z_text = input;}
+    public void Change_z(string input) {coordText[2] = input;}
 
     private void ChangeCellInView(bool changeOnlyEmptyCells) {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        LayerMask mask = LayerMask.GetMask("Default");
-        if (Physics.Raycast(ray, out hit, 35, mask) && !_isChangingCellInView) {
+        if (Physics.Raycast(ray, out hit, 35, LayerMask.GetMask("Default")) && !_isChangingCellInView) {
             _isChangingCellInView = true;
             Vector3 coordinates = hit.collider.transform.position;
             if (GameStatusData.AllCells[(int) coordinates.x, (int) coordinates.y, (int) coordinates.z] == SelectedCellType || changeOnlyEmptyCells)
@@ -52,30 +30,25 @@ public class pregameLogic : MonoBehaviour {
 
     private void WaitForChangeNext() {_isChangingCellInView = false;}
 
-    public void Create() {
+    public void CreateByCoordinates() {
         byte x, y, z;
         try {
-            x = Convert.ToByte(X_text);
-            y = Convert.ToByte(Y_text);
-            z = Convert.ToByte(Z_text);
-            if (GameStatusData.AllCells[x,y,z] != SelectedCellType)
-                Create(x,y,z);
-            else message_center.Message(1, x, y, z);//message: cell is already exist
-        }
-        catch {
-            message_center.Message(2, 0, 0, 0);//message: wrong coordinates
-        }
+            x = Convert.ToByte(coordText[0]);
+            y = Convert.ToByte(coordText[1]);
+            z = Convert.ToByte(coordText[2]);
+            if (GameStatusData.AllCells[x,y,z] != SelectedCellType) Create(x,y,z);
+            else message_center.MessageCellExists();
+        } catch {message_center.MessageWrongCoordinates();}
     }
 
-    public void Create(int x, int y, int z) {
-        if (SelectedCellType > 0) message_center.Message(0, x, y, z);//message: cell has been created
-        else message_center.Message(3, x, y, z);//message: cell has been deleted
+    private void Create(int x, int y, int z) {
         Create(x,y,z, SelectedCellType);
+        if (SelectedCellType > 0) message_center.MessageCellChanged(true, x, y, z);
+        else message_center.MessageCellChanged(false, x, y, z);
     }
 
     public static void Create(int x, int y, int z, int cell_type) {
-        if (GameStatusData.AllCells[x,y,z] > 0)
-            DeleteCell(x, y, z);
+        if (GameStatusData.AllCells[x,y,z] > 0) DeleteCell(x, y, z);
         if (cell_type > 0) {
             GameObject New_cell = Instantiate(GameStatusData.cellTypes[cell_type-1], new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
             New_cell.name = $"{GameStatusData.CellNames[cell_type-1]}({x}, {y}, {z})";
@@ -83,21 +56,17 @@ public class pregameLogic : MonoBehaviour {
         GameStatusData.AllCells[x,y,z] = Convert.ToByte(cell_type);
     }
 
-    static void DeleteCell(int x, int y, int z) {
-        if (GameStatusData.AllCells[x,y,z] > 0)
-            Destroy(GameObject.Find($"{GameStatusData.CellNames[GameStatusData.AllCells[x,y,z] - 1]}({x}, {y}, {z})"));
-    }
+    private static void DeleteCell(int x, int y, int z) {Destroy(GameObject.Find($"{GameStatusData.CellNames[GameStatusData.AllCells[x,y,z] - 1]}({x}, {y}, {z})"));}
 
     public static void CutField() {
         foreach(Transform child in GameStatusData.CellsParent) {
-            if (child.transform.position.x >= GameStatusData.size3D[0] || child.transform.position.y >= GameStatusData.size3D[1] || child.transform.position.z >= GameStatusData.size3D[2])
+            if (child.position.x >= GameStatusData.size3D[0] || child.position.y >= GameStatusData.size3D[1] || child.position.z >= GameStatusData.size3D[2])
                 Destroy(child.gameObject);
         }
     }
 
     public static void ClearField() {
-        foreach(Transform child in GameStatusData.CellsParent)
-            Destroy(child.gameObject);
+        foreach(Transform child in GameStatusData.CellsParent) Destroy(child.gameObject);
         GameStatusData.AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
     }
 }

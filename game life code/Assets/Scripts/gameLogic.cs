@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using Settings;
 
 namespace game_logic {
     abstract public class gameLogic : MonoBehaviour {
@@ -9,7 +8,7 @@ namespace game_logic {
         public GameObject GameOver;
         [SerializeField] protected GameObject pregameUI;
         [SerializeField] protected GameObject gameUI;
-        [SerializeField] protected SettingsClass Settings;
+        [SerializeField] protected Settings settings;
 
         public void Stop() {continuing = false;}
         protected abstract void Update();

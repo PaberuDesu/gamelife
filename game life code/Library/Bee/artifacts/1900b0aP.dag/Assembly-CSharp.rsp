@@ -342,6 +342,7 @@
 "Assets/Scripts/Settings3D.cs"
 "Assets/Scripts/SliceCutter.cs"
 "Assets/Scripts/suicide.cs"
+"Assets/Scripts/SupportTypeSelecting.cs"
 "Assets/Scripts/TakeAPhoto.cs"
 -langversion:9.0
 /deterministic

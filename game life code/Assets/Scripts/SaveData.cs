@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.IO;
 
 public class SaveData : MonoBehaviour {
-    public Settings3D Settings;
+    public Settings3D settings;
     public Settings2D _settings2D;
     [SerializeField] Paint _paint;
     [SerializeField] TakeAPhoto take_a_photo;
@@ -28,15 +28,15 @@ public class SaveData : MonoBehaviour {
     }
 
     public void SaveField(int SlotNumber) {
-        FieldData CellData = new FieldData(new SettingsData(Settings));
+        FieldData CellData = new FieldData(new SettingsData(settings));
         File.WriteAllText(Application.streamingAssetsPath + $"/SavedData/SavedGameNumber{SlotNumber}.json", JsonUtility.ToJson(CellData));
         SavePhoto(SlotNumber);
     }
 
     public void LoadField(int SlotNumber) {
         FieldData CellData = JsonUtility.FromJson<FieldData>(File.ReadAllText(Application.streamingAssetsPath + $"/SavedData/SavedGameNumber{SlotNumber}.json"));
-        CellData.Apply(Settings);
-        CellData.Settings.Apply(Settings);
+        CellData.Apply(settings);
+        CellData.settings.Apply(settings);
     }
 
     public void Save2DField(int SlotNumber) {
@@ -48,7 +48,7 @@ public class SaveData : MonoBehaviour {
     public void Load2DField(int SlotNumber) {
         Field2DData CellData = JsonUtility.FromJson<Field2DData>(File.ReadAllText(Application.streamingAssetsPath + $"/SavedData/Saved2DGameNumber{SlotNumber}.json"));
         CellData.Apply(_paint);
-        CellData.Settings.Apply(_settings2D);
+        CellData.settings.Apply(_settings2D);
     }
 
     public void SavePhoto(int SlotNumber) {
@@ -73,10 +73,10 @@ public class SaveData : MonoBehaviour {
 [System.Serializable] public class FieldData {
     public List<Cell> AllCells = new List<Cell>();
     public int X_size, Y_size, Z_size;
-    public SettingsData Settings;
+    public SettingsData settings;
     
     public FieldData(SettingsData settings_data) {
-        Settings = settings_data;
+        settings = settings_data;
         X_size = GameStatusData.size3D[0];
         Y_size = GameStatusData.size3D[1];
         Z_size = GameStatusData.size3D[2];
@@ -105,11 +105,11 @@ public class SaveData : MonoBehaviour {
 [System.Serializable] public class Field2DData {
     public List<int> AllCells = new List<int>();
     public int X_size, Y_size;
-    public Settings2DData Settings;
+    public Settings2DData settings;
     public Color[] palette;
     
     public Field2DData(Settings2DData settings_data, Paint _paint) {
-        Settings = settings_data;
+        settings = settings_data;
         palette = _paint._colors;
         X_size = GameStatusData.size2D[0];
         Y_size = GameStatusData.size2D[1];
@@ -144,30 +144,30 @@ public class SaveData : MonoBehaviour {
     //speed of game
     public float SimulationSpeed;
 
-    public SettingsData(Settings3D Settings) {
+    public SettingsData(Settings3D settings) {
         for (int i = 0; i < 4; i++)
-            CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], Settings.BornConditions[i], Settings.SurviveConditions[i]));
-        BorderExistance = Settings._isBorderExists;
-        SimulationSpeed = Settings.SimulationSpeed;
+            CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], settings.BornConditions[i], settings.SurviveConditions[i]));
+        BorderExistance = settings._isBorderExists;
+        SimulationSpeed = settings.SimulationSpeed;
     }
 
-    public void Apply(Settings3D Settings) {
+    public void Apply(Settings3D settings) {
         foreach (CellType cell in CellTypes) {
             for (int i = 0; i < 4; i++) {
                 if (cell.name == GameStatusData.CellNames[i]) {
-                    Settings.BornConditions[i] = cell.BornConditions;
-                    Settings.SurviveConditions[i] = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == i+1)
-                        Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
+                    settings.BornConditions[i] = cell.BornConditions;
+                    settings.SurviveConditions[i] = cell.SurviveConditions;
+                    if (settings.SelectedCellType == i+1)
+                        settings.ChangeButtonsColors(cell.BornConditions, cell.SurviveConditions);
                 }
             }
         }
 
-        Settings._isBorderExists = BorderExistance;
-        Settings.BorderExistsIndicator.color = BorderExistance ? Color.green : Color.red;
+        settings._isBorderExists = BorderExistance;
+        settings.BorderExistsIndicator.color = BorderExistance ? Color.green : Color.red;
 
-        Settings.SimulationSpeed = SimulationSpeed;
-        Settings.SpeedSlider.value = (SimulationSpeed - Settings.MinimumSimulationSpeed)/10;
+        settings.SimulationSpeed = SimulationSpeed;
+        settings.SpeedSlider.value = (SimulationSpeed - settings.MinimumSimulationSpeed)/10;
     }
 }
 
@@ -176,30 +176,30 @@ public class SaveData : MonoBehaviour {
     public bool BorderExistance;
     public float SimulationSpeed;
 
-    public Settings2DData(Settings2D Settings) {
+    public Settings2DData(Settings2D settings) {
         for (int i = 0; i < 4; i++)
-            CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], Settings.BornConditions[i], Settings.SurviveConditions[i]));
-        BorderExistance = Settings._isBorderExists;
-        SimulationSpeed = Settings.SimulationSpeed;
+            CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], settings.BornConditions[i], settings.SurviveConditions[i]));
+        BorderExistance = settings._isBorderExists;
+        SimulationSpeed = settings.SimulationSpeed;
     }
 
-    public void Apply(Settings2D Settings) {
+    public void Apply(Settings2D settings) {
         foreach (CellType cell in CellTypes) {
             for (int i = 0; i < 4; i++) {
                 if (cell.name == GameStatusData.CellNames[i]) {
-                    Settings.BornConditions[i] = cell.BornConditions;
-                    Settings.SurviveConditions[i] = cell.SurviveConditions;
-                    if (Settings.SelectedCellType == i+1)
-                        Settings.change_buttons_colors(cell.BornConditions, cell.SurviveConditions);
+                    settings.BornConditions[i] = cell.BornConditions;
+                    settings.SurviveConditions[i] = cell.SurviveConditions;
+                    if (settings.SelectedCellType == i+1)
+                        settings.ChangeButtonsColors(cell.BornConditions, cell.SurviveConditions);
                 }
             }
         }
 
-        Settings._isBorderExists = BorderExistance;
-        Settings.BorderExistsIndicator.color = BorderExistance ? Color.green : Color.red;
+        settings._isBorderExists = BorderExistance;
+        settings.BorderExistsIndicator.color = BorderExistance ? Color.green : Color.red;
 
-        Settings.SimulationSpeed = SimulationSpeed;
-        Settings.SpeedSlider.value = (SimulationSpeed - Settings.MinimumSimulationSpeed)/10;
+        settings.SimulationSpeed = SimulationSpeed;
+        settings.SpeedSlider.value = (SimulationSpeed - settings.MinimumSimulationSpeed)/10;
     }
 }
 
