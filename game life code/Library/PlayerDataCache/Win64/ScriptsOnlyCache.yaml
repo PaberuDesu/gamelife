@@ -4,7 +4,7 @@ ScriptsOnlyBuild:
     - Activator
     - BackToMenu
     - ChooseBut
-    - ClearCanvas
+    - ClearField
     - CloseAfterClickOutside
     - ColorChoose
     - ControlSettings
@@ -773,13 +773,13 @@ ScriptsOnlyBuild:
     fullTypeName: SliceCutter
     methodName: ChangeAxis
   - assembly: Assembly-CSharp
-    fullTypeName: ClearCanvas
+    fullTypeName: ClearField
     methodName: setHolding
   - assembly: Assembly-CSharp
-    fullTypeName: ClearCanvas
+    fullTypeName: ClearField
     methodName: setHolding
   - assembly: Assembly-CSharp
-    fullTypeName: ClearCanvas
+    fullTypeName: ClearField
     methodName: setHolding
   - assembly: Assembly-CSharp
     fullTypeName: escape
@@ -895,6 +895,15 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Settings
     methodName: SetSpeed
+  - assembly: Assembly-CSharp
+    fullTypeName: ClearField
+    methodName: setHolding
+  - assembly: Assembly-CSharp
+    fullTypeName: ClearField
+    methodName: setHolding
+  - assembly: Assembly-CSharp
+    fullTypeName: ClearField
+    methodName: setHolding
   - assembly: Assembly-CSharp
     fullTypeName: Settings
     methodName: SetSurviveCondition
@@ -1326,35 +1335,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3696}
     - Class: 114
-      Script: {instanceID: 3720}
+      Script: {instanceID: 3722}
     - Class: 114
-      Script: {instanceID: 3740}
+      Script: {instanceID: 3742}
     - Class: 114
-      Script: {instanceID: 3812}
+      Script: {instanceID: 3814}
     - Class: 114
-      Script: {instanceID: 3822}
+      Script: {instanceID: 3824}
     - Class: 114
-      Script: {instanceID: 3836}
+      Script: {instanceID: 3838}
     - Class: 114
-      Script: {instanceID: 3868}
+      Script: {instanceID: 3870}
     - Class: 114
-      Script: {instanceID: 3956}
+      Script: {instanceID: 3958}
     - Class: 114
-      Script: {instanceID: 4096}
+      Script: {instanceID: 4098}
     - Class: 114
-      Script: {instanceID: 4142}
+      Script: {instanceID: 4144}
     - Class: 114
-      Script: {instanceID: 4298}
+      Script: {instanceID: 4300}
     - Class: 114
-      Script: {instanceID: 4322}
+      Script: {instanceID: 4324}
     - Class: 114
-      Script: {instanceID: 4328}
+      Script: {instanceID: 4330}
     - Class: 114
-      Script: {instanceID: 4440}
+      Script: {instanceID: 4442}
     - Class: 114
-      Script: {instanceID: 4486}
+      Script: {instanceID: 4488}
     - Class: 114
-      Script: {instanceID: 4498}
+      Script: {instanceID: 4500}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1425,7 +1434,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3608}
     - Class: 114
-      Script: {instanceID: 4142}
+      Script: {instanceID: 4144}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1685,7 +1694,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: fc98c8d8bbc7e167d17922fda1d23ede
+      Hash: c14da528c7494e004d5fcfc7303ca35c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Paint
@@ -1865,7 +1874,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: a22bbb93bf96e199e132bbe54df00656
+      Hash: 437fda9563ea616bfaab1322e7d4852a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SaveData
@@ -1907,7 +1916,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: a23804ea7de1c79271e2300b6b610dfb
+      Hash: 695b9f6ca4ac95b9af0abc1ea2aafc59
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SaveLayer
@@ -1937,10 +1946,10 @@ ScriptsOnlyBuild:
     className: CursorManager
   - hash:
       serializedVersion: 2
-      Hash: f9a862391f0d0cc1987d75a68a5262cf
+      Hash: 035d863fad44fc75681ecb9bfca4a11a
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: ClearCanvas
+    className: ClearField
   - hash:
       serializedVersion: 2
       Hash: d0392b7f3f52d5af537ade186b4f51f1
@@ -2117,16 +2126,10 @@ ScriptsOnlyBuild:
     className: ColorChoose
   - hash:
       serializedVersion: 2
-      Hash: 981ef83a100bcdade117ea7f7433e0d4
+      Hash: 63059fa6739a9bdcc58d09bc43048fff
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameStatusData
-  - hash:
-      serializedVersion: 2
-      Hash: 57c6cc376c9a4a9fd22592348d00bf82
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SupportTypeSelecting
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

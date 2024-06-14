@@ -17,6 +17,7 @@ abstract public class Settings : SupportTypeSelecting {
     public bool _isBorderExists = false;
     public float MinimumSimulationSpeed = 1f;
     public float SimulationSpeed = 1f;
+    private const int simulationSpeedModifier = 10;
 
 
     protected abstract int dimensions{get;}
@@ -47,9 +48,11 @@ abstract public class Settings : SupportTypeSelecting {
         }
     }
 
-    public void SetBorder() {
-        _isBorderExists = !_isBorderExists;
-        BorderExistsIndicator.color = _isBorderExists ? Color.green : Color.red;
+    public void SetBorder() {SetBorder(!_isBorderExists);}
+
+    public void SetBorder(bool borderExistance) {
+        _isBorderExists = borderExistance;
+        BorderExistsIndicator.color = borderExistance ? Color.green : Color.red;
     }
 
     public void SetBornCondition(int neighbour_count) {
@@ -68,5 +71,10 @@ abstract public class Settings : SupportTypeSelecting {
 
     public void LogScale(Text logger) {logger.text = GameStatusData.WrittenSize(dimensions);}
 
-    public void SetSpeed() {SimulationSpeed = MinimumSimulationSpeed + (SpeedSlider.value * 10);}
+    public void SetSpeed() {SimulationSpeed = MinimumSimulationSpeed + (SpeedSlider.value * simulationSpeedModifier);}
+
+    public void SetSpeed(float simulationSpeed) {
+        SimulationSpeed = simulationSpeed;
+        SpeedSlider.value = (simulationSpeed - MinimumSimulationSpeed)/simulationSpeedModifier;
+    }
 }

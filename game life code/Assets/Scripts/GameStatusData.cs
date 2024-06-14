@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class GameStatusData : MonoBehaviour {
-    [field: SerializeField] public GameObject[] cellPreinstances{get;private set;}
+    [SerializeField] public GameObject[] cellPreinstances;
     [SerializeField] private Transform CellsParentPreinstance;
 
     public static GameObject[] cellTypes;

@@ -4,7 +4,7 @@
 
 ### Code
 
-> /game life code/Assets/Scripts
+> /game life code
 
 ### Builded game
 

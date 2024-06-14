@@ -344,7 +344,7 @@
 "Assets/Scripts/Activator.cs"
 "Assets/Scripts/BackToMenu.cs"
 "Assets/Scripts/ChooseBut.cs"
-"Assets/Scripts/ClearCanvas.cs"
+"Assets/Scripts/ClearField.cs"
 "Assets/Scripts/CloseAfterClickOutside.cs"
 "Assets/Scripts/ColorChoose.cs"
 "Assets/Scripts/ControlSettings.cs"

@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Paint : MonoBehaviour {
+public class Paint : Field {
     private float Zoom = 1;
     private const int minZoom = 1;
     private const int maxZoom = 12;
@@ -26,7 +25,6 @@ public class Paint : MonoBehaviour {
     [SerializeField] private Transform ColorActivator;
     [SerializeField] private Transform ColorActivator_parentsList;
     public Color[] _colors = {Color.white, Color.green, Color.red, new Color(0.6f, 0.3f, 0, 1), Color.magenta};
-    [SerializeField] private byte _activeColorNumber = 1;
     
     [SerializeField] private Text CurrentCoordOut;
 
@@ -101,7 +99,7 @@ public class Paint : MonoBehaviour {
         else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Y)) {SetField(actions.Redo());}
     }
 
-    public void AddAction() {actions.Add(GameStatusData.All2DCells);}
+    public override void AddAction() {actions.Add(GameStatusData.All2DCells);}
 
     public void SetOnOrOutOfCanvas(bool _isOn) {_isOnCanvas = _isOn;}
     public void SetPaintable(bool _isOn) {_isPaintable = _isOn;}
@@ -141,9 +139,8 @@ public class Paint : MonoBehaviour {
 
     private void DrawQuadrangle(int[] coords) {
         for (int x = Mathf.Max(coords[0] - brushSize, 0); x < Mathf.Min(coords[0] + brushSize + 1, _textureScale[0]); x++) {
-            for (int y = Mathf.Max(coords[1] - brushSize, 0); y < Mathf.Min(coords[1] + brushSize + 1, _textureScale[1]); y++) {
-                SetCell(x, y, _activeColorNumber);
-            }
+            for (int y = Mathf.Max(coords[1] - brushSize, 0); y < Mathf.Min(coords[1] + brushSize + 1, _textureScale[1]); y++)
+                SetCell(x, y, (byte) SelectedCellType);
         }
     }
 
@@ -156,7 +153,7 @@ public class Paint : MonoBehaviour {
                 float y2 = Mathf.Pow(y - coords[1], 2);
                 float r2 = Mathf.Pow(brushSize,2);
                 if (((x2 == r2) || (y2 == r2)) && brushSize > circleMetamorphoseSize) continue;
-                if (x2 + y2 <= r2) SetCell(x, y, _activeColorNumber);
+                if (x2 + y2 <= r2) SetCell(x, y, (byte) SelectedCellType);
             }
         }
     }
@@ -166,12 +163,11 @@ public class Paint : MonoBehaviour {
         Queue<int[]> cells_nearby = new Queue<int[]>();
         cells_nearby.Enqueue(coords);
         byte FillableColorID = GameStatusData.All2DCells[coords[0],coords[1]];
-        if (FillableColorID == _activeColorNumber) return;
+        if (FillableColorID == SelectedCellType) return;
         while(cells_nearby.Count != 0) {
             xy = cells_nearby.Dequeue();
-            byte ColorID = GameStatusData.All2DCells[xy[0],xy[1]];
-            if (ColorID == FillableColorID) {
-                SetCell(xy[0], xy[1], _activeColorNumber);
+            if (GameStatusData.All2DCells[xy[0],xy[1]] == FillableColorID) {
+                SetCell(xy[0], xy[1], (byte) SelectedCellType);
                 for (int x_neigbourhood = -1; x_neigbourhood <= 1; x_neigbourhood++) {
                     for (int y_neigbourhood = -1; y_neigbourhood <= 1; y_neigbourhood++) {
                         if (Mathf.Abs((x_neigbourhood + y_neigbourhood) % 2) == 1) {
@@ -190,9 +186,8 @@ public class Paint : MonoBehaviour {
         if (statement is null) return;
         GameStatusData.All2DCells = statement;
         for (int x = 0; x < _textureScale[0]; x++) {
-            for (int y = 0; y < _textureScale[1]; y++) {
+            for (int y = 0; y < _textureScale[1]; y++)
                 _texture.SetPixel(x, y, _colors[GameStatusData.All2DCells[x,y]]);
-            }
         }
         _texture.Apply();
     }
@@ -245,7 +240,7 @@ public class Paint : MonoBehaviour {
     
     public void ChangeActiveColor(int ColorNumber) {
         ColorActivator.SetParent(ColorActivator_parentsList.GetChild(ColorNumber),false);
-        _activeColorNumber = Convert.ToByte(ColorNumber);
+        SelectedCellType = ColorNumber;
     }
 
     public void DrawSlice() {
@@ -262,11 +257,10 @@ public class Paint : MonoBehaviour {
         _texture.Apply();
     }
 
-    public void Clear() {
+    public override void Clear() {
         for (int x = 0; x < _textureScale[0]; x++) {
-            for (int y = 0; y < _textureScale[1]; y++) {
+            for (int y = 0; y < _textureScale[1]; y++)
                 SetCell(x, y, 0);
-            }
         }
         _texture.Apply();
     }

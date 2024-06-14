@@ -7,7 +7,8 @@ using System.IO;
 public class SaveData : MonoBehaviour {
     public Settings3D settings;
     public Settings2D _settings2D;
-    [SerializeField] Paint _paint;
+    [SerializeField] Paint pregame2D;
+    [SerializeField] pregameLogic pregame3D;
     [SerializeField] TakeAPhoto take_a_photo;
     [SerializeField] ReloadPhotos _photoReloader;
 
@@ -16,8 +17,7 @@ public class SaveData : MonoBehaviour {
         if (MainMenuLogic._isChosen2D) {
             if (MainMenuLogic.data_slot_to_load >= 0)
                 Load2DField(MainMenuLogic.data_slot_to_load);
-            else
-                GameStatusData.All2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
+            else GameStatusData.All2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
         }
         else {
             if (MainMenuLogic.data_slot_to_load >= 0)
@@ -28,26 +28,26 @@ public class SaveData : MonoBehaviour {
     }
 
     public void SaveField(int SlotNumber) {
-        FieldData CellData = new FieldData(new SettingsData(settings));
+        Field3DData CellData = new Field3DData(new Settings3DData(settings));
         File.WriteAllText(Application.streamingAssetsPath + $"/SavedData/SavedGameNumber{SlotNumber}.json", JsonUtility.ToJson(CellData));
         SavePhoto(SlotNumber);
     }
 
     public void LoadField(int SlotNumber) {
-        FieldData CellData = JsonUtility.FromJson<FieldData>(File.ReadAllText(Application.streamingAssetsPath + $"/SavedData/SavedGameNumber{SlotNumber}.json"));
-        CellData.Apply(settings);
+        Field3DData CellData = JsonUtility.FromJson<Field3DData>(File.ReadAllText(Application.streamingAssetsPath + $"/SavedData/SavedGameNumber{SlotNumber}.json"));
+        CellData.Apply(settings, pregame3D);
         CellData.settings.Apply(settings);
     }
 
     public void Save2DField(int SlotNumber) {
-        Field2DData CellData = new Field2DData(new Settings2DData(_settings2D),  _paint);
+        Field2DData CellData = new Field2DData(new Settings2DData(_settings2D),  pregame2D);
         File.WriteAllText(Application.streamingAssetsPath + $"/SavedData/Saved2DGameNumber{SlotNumber}.json", JsonUtility.ToJson(CellData));
         SavePhoto2D(SlotNumber);
     }
 
     public void Load2DField(int SlotNumber) {
         Field2DData CellData = JsonUtility.FromJson<Field2DData>(File.ReadAllText(Application.streamingAssetsPath + $"/SavedData/Saved2DGameNumber{SlotNumber}.json"));
-        CellData.Apply(_paint);
+        CellData.Apply(pregame2D);
         CellData.settings.Apply(_settings2D);
     }
 
@@ -58,24 +58,24 @@ public class SaveData : MonoBehaviour {
     }
     
     public void SavePhoto2D(int SlotNumber) {
-        File.WriteAllBytes(Application.dataPath + $"/Resources/Image{SlotNumber}of2D.png", _paint._texture.EncodeToPNG());
+        File.WriteAllBytes(Application.dataPath + $"/Resources/Image{SlotNumber}of2D.png", pregame2D._texture.EncodeToPNG());
 
         int colorNum = 5;
         Texture2D texPalette = new Texture2D(colorNum, 1);
         for (int i=0; i<colorNum; i++)
-            texPalette.SetPixel(i, 1, _paint._colors[i]);
+            texPalette.SetPixel(i, 1, pregame2D._colors[i]);
         File.WriteAllBytes(Application.dataPath + $"/Resources/Palette{SlotNumber}.png", texPalette.EncodeToPNG());
         
         _photoReloader.ReloadPhoto2D(SlotNumber);
     }
 }
 
-[System.Serializable] public class FieldData {
+[System.Serializable] public class Field3DData {
     public List<Cell> AllCells = new List<Cell>();
     public int X_size, Y_size, Z_size;
-    public SettingsData settings;
+    public Settings3DData settings;
     
-    public FieldData(SettingsData settings_data) {
+    public Field3DData(Settings3DData settings_data) {
         settings = settings_data;
         X_size = GameStatusData.size3D[0];
         Y_size = GameStatusData.size3D[1];
@@ -90,15 +90,14 @@ public class SaveData : MonoBehaviour {
         }
     }
 
-    public void Apply(Settings3D settings) {
+    public void Apply(Settings3D settings, pregameLogic field) {
         GameStatusData.size3D[0] = X_size;
         GameStatusData.size3D[1] = Y_size;
         GameStatusData.size3D[2] = Z_size;
         settings.FixCamera(X_size, Y_size, Z_size);
-        pregameLogic.ClearField();
-        foreach (Cell cell in AllCells) {
-            pregameLogic.Create(cell.x, cell.y, cell.z, cell.ID);
-        }
+        field.Clear();
+        foreach (Cell cell in AllCells)
+            field.Create(cell.x, cell.y, cell.z, cell.ID);
     }
 }
 
@@ -108,43 +107,39 @@ public class SaveData : MonoBehaviour {
     public Settings2DData settings;
     public Color[] palette;
     
-    public Field2DData(Settings2DData settings_data, Paint _paint) {
+    public Field2DData(Settings2DData settings_data, Paint field) {
         settings = settings_data;
-        palette = _paint._colors;
+        palette = field._colors;
         X_size = GameStatusData.size2D[0];
         Y_size = GameStatusData.size2D[1];
         for (byte x = 0; x < X_size; x++) {
-            for (byte y = 0; y < Y_size; y++) {
+            for (byte y = 0; y < Y_size; y++)
                 AllCells.Add(GameStatusData.All2DCells[x,y]);
-            }
         }
     }
 
-    public void Apply(Paint _paint) {
-        _paint._colors = palette;
-        _paint.recolorVisualisers();
+    public void Apply(Paint field) {
+        field._colors = palette;
+        field.recolorVisualisers();
         GameStatusData.size2D[0] = X_size;
         GameStatusData.size2D[1] = Y_size;
         GameStatusData.All2DCells = new byte[X_size, Y_size];
-        _paint.GetNewSize();
+        field.GetNewSize();
         for (int i = 0; i < X_size * Y_size; i++) {
             int x = (int) i / Y_size, y = (int) i % Y_size;
             GameStatusData.All2DCells[x,y] = Convert.ToByte(AllCells[i]);
-            _paint.PaintToPlay(x, y, GameStatusData.All2DCells[x,y]);
+            field.PaintToPlay(x, y, GameStatusData.All2DCells[x,y]);
         }
-        _paint._texture.Apply();
+        field._texture.Apply();
     }
 }
 
-[System.Serializable] public class SettingsData {
-    //cell types
+[System.Serializable] public class Settings3DData {
     public List<CellType> CellTypes = new List<CellType>();
-    //border existance
     public bool BorderExistance;
-    //speed of game
     public float SimulationSpeed;
 
-    public SettingsData(Settings3D settings) {
+    public Settings3DData(Settings3D settings) {
         for (int i = 0; i < 4; i++)
             CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], settings.BornConditions[i], settings.SurviveConditions[i]));
         BorderExistance = settings._isBorderExists;
@@ -162,12 +157,8 @@ public class SaveData : MonoBehaviour {
                 }
             }
         }
-
-        settings._isBorderExists = BorderExistance;
-        settings.BorderExistsIndicator.color = BorderExistance ? Color.green : Color.red;
-
-        settings.SimulationSpeed = SimulationSpeed;
-        settings.SpeedSlider.value = (SimulationSpeed - settings.MinimumSimulationSpeed)/10;
+        settings.SetBorder(BorderExistance);
+        settings.SetSpeed(SimulationSpeed);
     }
 }
 
@@ -194,20 +185,15 @@ public class SaveData : MonoBehaviour {
                 }
             }
         }
-
-        settings._isBorderExists = BorderExistance;
-        settings.BorderExistsIndicator.color = BorderExistance ? Color.green : Color.red;
-
-        settings.SimulationSpeed = SimulationSpeed;
-        settings.SpeedSlider.value = (SimulationSpeed - settings.MinimumSimulationSpeed)/10;
+        settings.SetBorder(BorderExistance);
+        settings.SetSpeed(SimulationSpeed);
     }
 }
 
 [System.Serializable] public class CellType {
     public int ID;
     public string name;
-    public bool[] BornConditions;
-    public bool[] SurviveConditions;
+    public bool[] BornConditions, SurviveConditions;
 
     public CellType(int ID, string name, bool[] BornConditions, bool[] SurviveConditions) {
         this.ID = ID;
@@ -219,9 +205,7 @@ public class SaveData : MonoBehaviour {
 
 [System.Serializable] public class Cell {
     public int ID;
-    public byte x;
-    public byte y;
-    public byte z;
+    public byte x, y, z;
 
     public Cell(int ID, byte x, byte y, byte z) {
         this.ID = ID;

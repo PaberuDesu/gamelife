@@ -6,10 +6,10 @@ using UnityEngine;
 public class ModeChanger : MonoBehaviour
 {
     [SerializeField] private SupportTypeSelecting script;
-    const short step = 1300;
-    int remain_of_step;
-    int MaximumAbs;
-    const byte FPS = 10;
+    private const short step = 1300;
+    private int remain_of_step;
+    private int MaximumAbs;
+    private const byte FPS = 10;
 
     private void Awake() {
         MaximumAbs = step * (transform.childCount - 1) / 2;

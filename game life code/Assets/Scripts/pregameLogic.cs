@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class pregameLogic : SupportTypeSelecting {
+public class pregameLogic : Field {
     [SerializeField] private MessageCenter message_center;
     private string[] coordText = new string[3];
     private bool _isChangingCellInView = false;
@@ -47,7 +47,7 @@ public class pregameLogic : SupportTypeSelecting {
         else message_center.MessageCellChanged(false, x, y, z);
     }
 
-    public static void Create(int x, int y, int z, int cell_type) {
+    public void Create(int x, int y, int z, int cell_type) {
         if (GameStatusData.AllCells[x,y,z] > 0) DeleteCell(x, y, z);
         if (cell_type > 0) {
             GameObject New_cell = Instantiate(GameStatusData.cellTypes[cell_type-1], new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
@@ -65,8 +65,10 @@ public class pregameLogic : SupportTypeSelecting {
         }
     }
 
-    public static void ClearField() {
+    public override void Clear() {
         foreach(Transform child in GameStatusData.CellsParent) Destroy(child.gameObject);
         GameStatusData.AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
     }
+
+    public override void AddAction() {}
 }
