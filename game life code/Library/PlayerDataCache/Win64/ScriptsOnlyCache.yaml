@@ -42,10 +42,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -432,7 +430,7 @@ ScriptsOnlyBuild:
     methodName: Change_x
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
-    methodName: LoadField
+    methodName: Load3DField
   - assembly: Assembly-CSharp
     fullTypeName: escape
     methodName: EscapeSaveMenu
@@ -447,7 +445,7 @@ ScriptsOnlyBuild:
     methodName: LogScale
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
-    methodName: SaveField
+    methodName: Save3DField
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
     methodName: Save2DField
@@ -699,7 +697,7 @@ ScriptsOnlyBuild:
     methodName: EscapeSaveMenu
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
-    methodName: SaveField
+    methodName: Save3DField
   - assembly: Assembly-CSharp
     fullTypeName: Settings
     methodName: SetBornCondition
@@ -819,7 +817,7 @@ ScriptsOnlyBuild:
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
-    methodName: LoadField
+    methodName: Load3DField
   - assembly: Assembly-CSharp
     fullTypeName: escape
     methodName: EscapeSaveMenu
@@ -948,7 +946,7 @@ ScriptsOnlyBuild:
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
-    methodName: SaveField
+    methodName: Save3DField
   - assembly: Assembly-CSharp
     fullTypeName: Settings
     methodName: SetBornCondition
@@ -1035,7 +1033,7 @@ ScriptsOnlyBuild:
     methodName: SetSurviveCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
-    methodName: LoadField
+    methodName: Load3DField
   - assembly: Assembly-CSharp
     fullTypeName: escape
     methodName: EscapeSaveMenu
@@ -1116,13 +1114,13 @@ ScriptsOnlyBuild:
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
-    methodName: SaveField
+    methodName: Save3DField
   - assembly: Assembly-CSharp
     fullTypeName: Settings
     methodName: SetBornCondition
   - assembly: Assembly-CSharp
     fullTypeName: SaveData
-    methodName: LoadField
+    methodName: Load3DField
   - assembly: Assembly-CSharp
     fullTypeName: escape
     methodName: EscapeSaveMenu
@@ -1874,7 +1872,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 437fda9563ea616bfaab1322e7d4852a
+      Hash: af8e7fe21e8bda423c0393fbb621d724
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SaveData
