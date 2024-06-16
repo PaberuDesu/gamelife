@@ -14,15 +14,12 @@ public class SaveData : MonoBehaviour {
 
 
     private void Start() {
-        if (MainMenuLogic._isChosen2D) {
-            if (MainMenuLogic.data_slot_to_load >= 0)
-                Load2DField(MainMenuLogic.data_slot_to_load);
-            else GameStatusData.All2DCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
-        }
-        else {
+        if (MainMenuLogic._isChosen2D && MainMenuLogic.data_slot_to_load >= 0)
+            Load2DField(MainMenuLogic.data_slot_to_load);
+        else if (!MainMenuLogic._isChosen2D) {
             if (MainMenuLogic.data_slot_to_load >= 0)
                 Load3DField(MainMenuLogic.data_slot_to_load);
-            else GameStatusData.AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
+            else GameStatusData.All3DCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
         }
     }
 
@@ -34,7 +31,7 @@ public class SaveData : MonoBehaviour {
 
     public void Load3DField(int SlotNumber) {
         Field3DData CellData = JsonUtility.FromJson<Field3DData>(File.ReadAllText(Application.streamingAssetsPath + $"/SavedData/SavedGameNumber{SlotNumber}.json"));
-        CellData.Apply(settings3D, pregame3D);
+        CellData.Apply(pregame3D);
         CellData.settings.Apply(settings3D);
     }
 
@@ -82,18 +79,18 @@ public class SaveData : MonoBehaviour {
         for (byte x = 0; x < X_size; x++) {
             for (byte y = 0; y < Y_size; y++) {
                 for (byte z = 0; z < Z_size; z++) {
-                    if (GameStatusData.AllCells[x,y,z] > 0)
-                        AllCells.Add(new Cell(GameStatusData.AllCells[x,y,z], x, y, z));
+                    if (GameStatusData.All3DCells[x,y,z] > 0)
+                        AllCells.Add(new Cell(GameStatusData.All3DCells[x,y,z], x, y, z));
                 }
             }
         }
     }
 
-    public void Apply(Settings3D settings, pregameLogic field) {
+    public void Apply(pregameLogic field) {
         GameStatusData.size3D[0] = X_size;
         GameStatusData.size3D[1] = Y_size;
         GameStatusData.size3D[2] = Z_size;
-        settings.FixCamera(X_size, Y_size, Z_size);
+        field.FixCamera();
         field.Clear();
         foreach (Cell cell in AllCells)
             field.Create(cell.x, cell.y, cell.z, cell.ID);

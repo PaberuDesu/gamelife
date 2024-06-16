@@ -28,7 +28,7 @@ public class gameLogic3D : gameLogic {
         for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
             for (byte y = 0; y < GameStatusData.size3D[1]; y++) {
                 for (byte z = 0; z < GameStatusData.size3D[2]; z++) {
-                    AllCells[x,y,z] = GameStatusData.AllCells[x,y,z];
+                    AllCells[x,y,z] = GameStatusData.All3DCells[x,y,z];
                 }
             }
         }
@@ -44,7 +44,7 @@ public class gameLogic3D : gameLogic {
                     CountNeighbours[2] = neighbour_counter[0] + neighbour_counter[3];
                     CountNeighbours[3] = neighbour_counter[1] + neighbour_counter[2] + neighbour_counter[3] + neighbour_counter[4];
 
-                    switch (GameStatusData.AllCells[x,y,z]) {
+                    switch (GameStatusData.All3DCells[x,y,z]) {
                         case 4:
                             if (settings.SurviveConditions[3][CountNeighbours[3]]) break;
 
@@ -103,7 +103,7 @@ public class gameLogic3D : gameLogic {
         for (byte x = 0; flag && x < GameStatusData.size3D[0]; x++) {
             for (byte y = 0; flag && y < GameStatusData.size3D[1]; y++) {
                 for (byte z = 0; flag && z < GameStatusData.size3D[2]; z++) {
-                    if (!(GameStatusData.AllCells[x,y,z] == AllCells[x,y,z]))
+                    if (!(GameStatusData.All3DCells[x,y,z] == AllCells[x,y,z]))
                         EqualityShort = false;
                     if (!(RememberedAllCells[x,y,z] == AllCells[x,y,z]))
                         EqualityLong = false;
@@ -112,7 +112,7 @@ public class gameLogic3D : gameLogic {
                 }
             } 
         }
-        GameStatusData.AllCells = AllCells;
+        GameStatusData.All3DCells = AllCells;
 
         if (flag) {
             _move.enabled = false;
@@ -140,11 +140,11 @@ public class gameLogic3D : gameLogic {
                 for (sbyte z_neigbourhood = -1; z_neigbourhood <= 1; z_neigbourhood++) {
                     if (!(x_neigbourhood == 0 && y_neigbourhood == 0 && z_neigbourhood == 0)) {
                         if (settings._isBorderExists) {
-                            try {neighbour_counter[GameStatusData.AllCells[x + x_neigbourhood, y + y_neigbourhood, z + z_neigbourhood]]++;}
+                            try {neighbour_counter[GameStatusData.All3DCells[x + x_neigbourhood, y + y_neigbourhood, z + z_neigbourhood]]++;}
                             catch{};
                         }
                         else
-                            neighbour_counter[GameStatusData.AllCells[(x + x_neigbourhood + GameStatusData.size3D[0])%GameStatusData.size3D[0], (y + y_neigbourhood + GameStatusData.size3D[1])%GameStatusData.size3D[1], (z + z_neigbourhood + GameStatusData.size3D[2])%GameStatusData.size3D[2]]]++;
+                            neighbour_counter[GameStatusData.All3DCells[(x + x_neigbourhood + GameStatusData.size3D[0])%GameStatusData.size3D[0], (y + y_neigbourhood + GameStatusData.size3D[1])%GameStatusData.size3D[1], (z + z_neigbourhood + GameStatusData.size3D[2])%GameStatusData.size3D[2]]]++;
                     }
                 }
             }

@@ -13,6 +13,7 @@ abstract public class Settings : SupportTypeSelecting {
     public Transform SurviveConditionChanger;
     public Slider SpeedSlider;
     [SerializeField] protected GameObject SettingsPanel;
+    [SerializeField] protected Field field;
 
     public bool _isBorderExists = false;
     public float MinimumSimulationSpeed = 1f;
@@ -21,6 +22,7 @@ abstract public class Settings : SupportTypeSelecting {
 
 
     protected abstract int dimensions{get;}
+    protected abstract int[] fieldSize{get;set;}
     private int neighboursCount;
 
     private void Awake() {
@@ -67,7 +69,30 @@ abstract public class Settings : SupportTypeSelecting {
         button.color = SurviveConditions[SelectedCellType-1][neighbour_count] ? Color.green : Color.red;
     }
 
-    public abstract void ChangeScale();
+    public void ChangeScale() {
+        int[] sizes = new int[dimensions];
+        for (int i = 0; i < dimensions; i++) {
+            try {
+                sizes[i] = int.Parse(ScaleChangers[i].text);
+                if (sizes[i] == 0) sizes[i] = fieldSize[i];
+            }
+            catch {sizes[i] = fieldSize[i];}
+        }
+        bool _changed = false;
+        for (int i = 0; i < dimensions; i++) {
+            if (sizes[i] != fieldSize[i]) {
+                _changed = true;
+                break;
+            }
+        }
+        if (_changed && AllowedSize(sizes)) {
+            fieldSize = sizes;
+            GameStatusData.CutField(dimensions);
+            field.CutField();
+        }
+    }
+
+    protected abstract bool AllowedSize(int[] sizes);
 
     public void LogScale(Text logger) {logger.text = GameStatusData.WrittenSize(dimensions);}
 

@@ -40,13 +40,10 @@ public class Paint : Field {
     private int brushSize;
     private int brushShapeID;
 
-    private Roster actions;
-
     [SerializeField] private GameObject canvas2D;
 
     private void Awake() {
-        GameStatusData.size2D = new int[] {10,10};
-        _textureScale = GameStatusData.size2D;
+        _textureScale = new int[] {10,10};
         _texture = new Texture2D(_textureScale[0], _textureScale[1]);
         _texture.wrapMode = TextureWrapMode.Clamp;
         _texture.filterMode = FilterMode.Point;
@@ -71,7 +68,7 @@ public class Paint : Field {
         GameStatusData.All2DCells = new byte[_textureScale[0], _textureScale[1]];
     }
 
-    public void CutField() {
+    public override void CutField() {
         int[] OldTexture = _textureScale;
         GetNewSize();
         for (int x = 0; x < _textureScale[0]; x++) {
@@ -95,8 +92,8 @@ public class Paint : Field {
             AddAction();
             _isUsingBrush = false;
         }
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Z)) {SetField(actions.Undo());}
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Y)) {SetField(actions.Redo());}
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Z)) {SetField(actions.Undo2D());}
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Y)) {SetField(actions.Redo2D());}
     }
 
     public override void AddAction() {actions.Add(GameStatusData.All2DCells);}
@@ -249,18 +246,19 @@ public class Paint : Field {
         int coord = SliceCutter.Coordinate;
         for (int x = 0; x < _textureScale[0]; x++) {
             for (int y = 0; y < _textureScale[1]; y++) {
-                if (axis == 0) SetCell(x, y, GameStatusData.AllCells[coord, y, x]);
-                else if (axis == 1) SetCell(x, y, GameStatusData.AllCells[x, coord, y]);
-                else SetCell(x, y, GameStatusData.AllCells[x, y, coord]);
+                if (axis == 0) SetCell(x, y, GameStatusData.All3DCells[coord, y, x]);
+                else if (axis == 1) SetCell(x, y, GameStatusData.All3DCells[x, coord, y]);
+                else SetCell(x, y, GameStatusData.All3DCells[x, y, coord]);
             }
         }
         _texture.Apply();
     }
 
     public override void Clear() {
+        GameStatusData.All2DCells = new byte[_textureScale[0], _textureScale[1]];
         for (int x = 0; x < _textureScale[0]; x++) {
             for (int y = 0; y < _textureScale[1]; y++)
-                SetCell(x, y, 0);
+                _texture.SetPixel(x, y, _colors[0]);
         }
         _texture.Apply();
     }
