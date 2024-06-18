@@ -132,42 +132,42 @@ public class SaveData : MonoBehaviour {
 
 [System.Serializable] public class SettingsData {
     public List<CellType> CellTypes = new List<CellType>();
-    public bool BorderExistance;
-    public float SimulationSpeed;
+    public bool borderExistance;
+    public float simulationSpeed;
 
     public SettingsData(Settings settings) {
         for (int i = 0; i < 4; i++)
-            CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], settings.BornConditions[i], settings.SurviveConditions[i]));
-        BorderExistance = settings._isBorderExists;
-        SimulationSpeed = settings.SimulationSpeed;
+            CellTypes.Add(new CellType(i+1, GameStatusData.CellNames[i], settings.bornConditions[i], settings.surviveConditions[i]));
+        borderExistance = settings._isBorderExists;
+        simulationSpeed = settings.simulationSpeed;
     }
 
     public void Apply(Settings settings) {
         foreach (CellType cell in CellTypes) {
             for (int i = 0; i < 4; i++) {
                 if (cell.name == GameStatusData.CellNames[i]) {
-                    settings.BornConditions[i] = cell.BornConditions;
-                    settings.SurviveConditions[i] = cell.SurviveConditions;
+                    settings.bornConditions[i] = cell.bornConditions;
+                    settings.surviveConditions[i] = cell.surviveConditions;
                     if (settings.SelectedCellType == i+1)
-                        settings.ChangeButtonsColors(cell.BornConditions, cell.SurviveConditions);
+                        settings.ChangeButtonsColors(cell.bornConditions, cell.surviveConditions);
                 }
             }
         }
-        settings.SetBorder(BorderExistance);
-        settings.SetSpeed(SimulationSpeed);
+        settings.SetBorder(borderExistance);
+        settings.SetSpeed(simulationSpeed);
     }
 }
 
 [System.Serializable] public class CellType {
     public int ID;
     public string name;
-    public bool[] BornConditions, SurviveConditions;
+    public bool[] bornConditions, surviveConditions;
 
-    public CellType(int ID, string name, bool[] BornConditions, bool[] SurviveConditions) {
+    public CellType(int ID, string name, bool[] bornConditions, bool[] surviveConditions) {
         this.ID = ID;
         this.name = name;
-        this.BornConditions = BornConditions;
-        this.SurviveConditions = SurviveConditions;
+        this.bornConditions = bornConditions;
+        this.surviveConditions = surviveConditions;
     }
 }
 

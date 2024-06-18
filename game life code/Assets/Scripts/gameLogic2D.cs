@@ -46,14 +46,14 @@ public class gameLogic2D : gameLogic {
                 CountNeighbours[3] = neighbour_counter[1] + neighbour_counter[2] + neighbour_counter[3] + neighbour_counter[4];
                 switch (GameStatusData.All2DCells[x,y]) {
                     case 4:
-                        if (settings.SurviveConditions[3][CountNeighbours[3]]) break;
+                        if (settings.surviveConditions[3][CountNeighbours[3]]) break;
 
                         if (CountNeighbours[0] < 0)
                             CountNeighbours[0] = 0;
 
                         bool created = false;
                         for (byte i = 1; i < 4; i++) {
-                            if (settings.SurviveConditions[i-1][CountNeighbours[i-1]]) {
+                            if (settings.surviveConditions[i-1][CountNeighbours[i-1]]) {
                                 CreateCell(x,y,i);
                                 created = true;
                                 break;
@@ -62,20 +62,20 @@ public class gameLogic2D : gameLogic {
                         if (!created) CreateCell(x,y,0);
                         break;
                     case 3:
-                        if (!(settings.SurviveConditions[2][CountNeighbours[2]]))
+                        if (!(settings.surviveConditions[2][CountNeighbours[2]]))
                             CreateCell(x,y,0);
                         break;
                     case 2:
-                        if (!(settings.SurviveConditions[1][CountNeighbours[1]]))
+                        if (!(settings.surviveConditions[1][CountNeighbours[1]]))
                             CreateCell(x,y,0);
                         break;
                     case 1:
                         if (CountNeighbours[0] < 0)
                             CountNeighbours[0] = 0;
                         
-                        if (settings.BornConditions[1][CountNeighbours[1]])
+                        if (settings.bornConditions[1][CountNeighbours[1]])
                             CreateCell(x,y,2);
-                        else if (!(settings.SurviveConditions[0][CountNeighbours[0]]))
+                        else if (!(settings.surviveConditions[0][CountNeighbours[0]]))
                             CreateCell(x,y,0);
                         break;
                     case 0:
@@ -84,7 +84,7 @@ public class gameLogic2D : gameLogic {
                         
                         byte[] bornableTypes = {1,3,4};
                         foreach (byte i in bornableTypes) {
-                            if (settings.BornConditions[i-1][CountNeighbours[i-1]]) {
+                            if (settings.bornConditions[i-1][CountNeighbours[i-1]]) {
                                 CreateCell(x,y,i);
                                 break;
                             }
@@ -121,7 +121,7 @@ public class gameLogic2D : gameLogic {
                 counter = 0;
                 RememberedAllCells = AllCells;
             }
-            yield return new WaitForSeconds(0.1f / settings.SimulationSpeed);
+            yield return new WaitForSeconds(0.1f / settings.simulationSpeed);
             StartCoroutine(GameCycle());
         } else {
             pregameUI.SetActive(true);

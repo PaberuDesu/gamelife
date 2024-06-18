@@ -42,8 +42,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -639,9 +641,6 @@ ScriptsOnlyBuild:
     fullTypeName: escapeSliceMenu
     methodName: SetDimensionNum
   - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
@@ -998,6 +997,9 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: Settings
     methodName: SetBornCondition
@@ -1187,6 +1189,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: escapeSliceMenu
     methodName: SetDimNumAndLeave
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: Settings
     methodName: SetSurviveCondition
@@ -1638,7 +1643,7 @@ ScriptsOnlyBuild:
     className: MessageCenter
   - hash:
       serializedVersion: 2
-      Hash: 3f2a44ab167068af54c7e66f57cebff0
+      Hash: 943de4bd4599761010d7a45d93168a7c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: escapeSliceMenu
@@ -1992,7 +1997,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 64ebd030770cd25260a23e37b55da0b8
+      Hash: 3a1ab0abed76e4625865e885eb6722b7
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Settings3D
@@ -2022,7 +2027,7 @@ ScriptsOnlyBuild:
     className: Resize2Dmap
   - hash:
       serializedVersion: 2
-      Hash: afbf1b64f6facb86ec3e406bdb1b7c8f
+      Hash: 63ca1f5871501c9d7a69a5830f8f3b10
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MoveTo2DMode
@@ -2064,7 +2069,7 @@ ScriptsOnlyBuild:
     className: EscClosePanel
   - hash:
       serializedVersion: 2
-      Hash: e56b4ce12dca3471d95dc0b5d068fdd1
+      Hash: 5730712eac6f946a665834902e86b301
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Settings2D

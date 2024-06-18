@@ -46,7 +46,7 @@ public class gameLogic3D : gameLogic {
 
                     switch (GameStatusData.All3DCells[x,y,z]) {
                         case 4:
-                            if (settings.SurviveConditions[3][CountNeighbours[3]]) break;
+                            if (settings.surviveConditions[3][CountNeighbours[3]]) break;
 
                             Destroy(GameObject.Find($"{GameStatusData.CellNames[3]}({x}, {y}, {z})"));
                             if (CountNeighbours[0] < 0)
@@ -54,7 +54,7 @@ public class gameLogic3D : gameLogic {
 
                             bool created = false;
                             for (byte i = 1; i < 4; i++) {
-                                if (settings.SurviveConditions[i-1][CountNeighbours[i-1]]) {
+                                if (settings.surviveConditions[i-1][CountNeighbours[i-1]]) {
                                     CreateCell(x,y,z,i);
                                     created = true;
                                     break;
@@ -63,23 +63,23 @@ public class gameLogic3D : gameLogic {
                             if (!created) AllCells[x,y,z] = 0;
                             break;
                         case 3:
-                            if (!(settings.SurviveConditions[2][CountNeighbours[2]]))
+                            if (!(settings.surviveConditions[2][CountNeighbours[2]]))
                                 DeleteCell(x,y,z,3);
                             break;
                         case 2:
-                            if (!(settings.SurviveConditions[1][CountNeighbours[1]]))
+                            if (!(settings.surviveConditions[1][CountNeighbours[1]]))
                                 DeleteCell(x,y,z,2);
                             break;
                         case 1:
                             if (CountNeighbours[0] < 0)
                                 CountNeighbours[0] = 0;
 
-                            if (settings.BornConditions[1][CountNeighbours[1]]) {
+                            if (settings.bornConditions[1][CountNeighbours[1]]) {
                                 Destroy(GameObject.Find($"{GameStatusData.CellNames[0]}({x}, {y}, {z})"));
                                 CreateCell(x,y,z,2);
                                 break;
                             }
-                            if (!(settings.SurviveConditions[0][CountNeighbours[0]]))
+                            if (!(settings.surviveConditions[0][CountNeighbours[0]]))
                                 DeleteCell(x,y,z,1);
                             break;
                         case 0:
@@ -88,7 +88,7 @@ public class gameLogic3D : gameLogic {
 
                             byte[] bornableTypes = {1,3,4};
                             foreach (byte i in bornableTypes) {
-                                if (settings.BornConditions[i-1][CountNeighbours[i-1]]) {
+                                if (settings.bornConditions[i-1][CountNeighbours[i-1]]) {
                                     CreateCell(x,y,z,i);
                                     break;
                                 }
@@ -123,7 +123,7 @@ public class gameLogic3D : gameLogic {
                 counter = 0;
                 RememberedAllCells = AllCells;
             }
-            yield return new WaitForSeconds(0.1f / settings.SimulationSpeed);
+            yield return new WaitForSeconds(0.1f / settings.simulationSpeed);
             StartCoroutine(GameCycle());
         } else {
             _move.enabled = false;
