@@ -10,9 +10,7 @@ public class OrbitCamera : MonoBehaviour
     private float x = 0.0f;
     private float y = 0.0f;
 
-    private void Awake() {
-        speedPref = PlayerPrefs.GetFloat("frs");
-    }
+    private void Awake() {speedPref = PlayerPrefs.GetFloat("frs");}
 
     private void OnEnable() {
         transform.localPosition = Vector3.one * 2;

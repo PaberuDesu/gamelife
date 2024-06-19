@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class moveCharacter : MonoBehaviour
 {
-    [SerializeField] private byte movementSpeed;
+    private const byte movementSpeed = 60;
     private float speedPref = 1.0f;
-    [SerializeField] private int turnSpeed;
+    private const int turnSpeed = 400;
     private float turnSpeedPref = 1.0f;
-    [SerializeField] private byte turnLimit;
-    private Rigidbody _rb;
+    private const byte turnLimit = 60;
 
     private void Start() {
-        _rb = GetComponent<Rigidbody>();
         speedPref = PlayerPrefs.GetFloat("speed");
         turnSpeedPref = PlayerPrefs.GetFloat("crs");
     }

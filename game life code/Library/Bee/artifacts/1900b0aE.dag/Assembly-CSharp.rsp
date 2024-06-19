@@ -366,6 +366,7 @@
 "Assets/Scripts/MoveTo2DMode.cs"
 "Assets/Scripts/Paint.cs"
 "Assets/Scripts/PanelStabilizer.cs"
+"Assets/Scripts/PhotocameraController.cs"
 "Assets/Scripts/pregameLogic.cs"
 "Assets/Scripts/ReloadPhotos.cs"
 "Assets/Scripts/Resize2Dmap.cs"

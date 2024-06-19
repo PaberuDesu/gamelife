@@ -23885,9 +23885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc2974f18c219448b0a49198d92da4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 60
-  turnSpeed: 400
-  turnLimit: 60
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25285,7 +25282,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 41
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -40776,6 +40773,7 @@ GameObject:
   - component: {fileID: 1765769429}
   - component: {fileID: 1765769431}
   - component: {fileID: 1765769430}
+  - component: {fileID: 1765769432}
   m_Layer: 5
   m_Name: SavePanel
   m_TagString: Untagged
@@ -40841,6 +40839,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765769428}
   m_CullTransparentMesh: 1
+--- !u!114 &1765769432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765769428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3ca2afdadb1a74cbede9ab9f97263f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photocamera: {fileID: 1830921254}
 --- !u!1 &1770866700
 GameObject:
   m_ObjectHideFlags: 0
@@ -42855,7 +42866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1830921255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42877,8 +42888,8 @@ Camera:
   m_GameObject: {fileID: 1830921254}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
-  m_BackGroundColor: {r: 0.40809897, g: 0.6239359, b: 0.9528302, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.40809897, g: 0.6239359, b: 0.9528302, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -42907,7 +42918,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 33
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 02f0d43dcede2f9428b3421af26c5bb1, type: 2}
   m_TargetDisplay: 0
@@ -51078,9 +51089,9 @@ RectTransform:
   m_Father: {fileID: 1015473873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 64.00006, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2129709715
 MonoBehaviour:

@@ -21,6 +21,7 @@ ScriptsOnlyBuild:
     - OrbitCamera
     - Paint
     - PanelStabilizer
+    - PhotocameraController
     - ReloadPhotos
     - Resize2Dmap
     - SaveData
@@ -42,10 +43,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1290,83 +1289,85 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2188}
     - Class: 114
-      Script: {instanceID: 2384}
+      Script: {instanceID: 2324}
     - Class: 114
-      Script: {instanceID: 2392}
+      Script: {instanceID: 2386}
     - Class: 114
-      Script: {instanceID: 2396}
+      Script: {instanceID: 2394}
     - Class: 114
-      Script: {instanceID: 2468}
+      Script: {instanceID: 2398}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2470}
     - Class: 114
-      Script: {instanceID: 2504}
+      Script: {instanceID: 2496}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2506}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 2660}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2836}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2844}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 2888}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 2930}
+      Script: {instanceID: 2890}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 2932}
     - Class: 114
-      Script: {instanceID: 3168}
+      Script: {instanceID: 3086}
     - Class: 114
-      Script: {instanceID: 3346}
+      Script: {instanceID: 3170}
     - Class: 114
-      Script: {instanceID: 3352}
+      Script: {instanceID: 3348}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3354}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 3502}
+      Script: {instanceID: 3436}
     - Class: 114
-      Script: {instanceID: 3528}
+      Script: {instanceID: 3504}
     - Class: 114
-      Script: {instanceID: 3602}
+      Script: {instanceID: 3530}
     - Class: 114
-      Script: {instanceID: 3646}
+      Script: {instanceID: 3604}
     - Class: 114
-      Script: {instanceID: 3690}
+      Script: {instanceID: 3648}
     - Class: 114
-      Script: {instanceID: 3716}
+      Script: {instanceID: 3692}
     - Class: 114
-      Script: {instanceID: 3736}
+      Script: {instanceID: 3718}
     - Class: 114
-      Script: {instanceID: 3808}
+      Script: {instanceID: 3738}
     - Class: 114
-      Script: {instanceID: 3818}
+      Script: {instanceID: 3810}
     - Class: 114
-      Script: {instanceID: 3832}
+      Script: {instanceID: 3820}
     - Class: 114
-      Script: {instanceID: 3864}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 3952}
+      Script: {instanceID: 3866}
     - Class: 114
-      Script: {instanceID: 4092}
+      Script: {instanceID: 3954}
     - Class: 114
-      Script: {instanceID: 4138}
+      Script: {instanceID: 4094}
     - Class: 114
-      Script: {instanceID: 4294}
+      Script: {instanceID: 4140}
     - Class: 114
-      Script: {instanceID: 4318}
+      Script: {instanceID: 4296}
     - Class: 114
-      Script: {instanceID: 4324}
+      Script: {instanceID: 4320}
     - Class: 114
-      Script: {instanceID: 4436}
+      Script: {instanceID: 4326}
     - Class: 114
-      Script: {instanceID: 4482}
+      Script: {instanceID: 4438}
     - Class: 114
-      Script: {instanceID: 4494}
+      Script: {instanceID: 4484}
+    - Class: 114
+      Script: {instanceID: 4496}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1415,29 +1416,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2148}
     - Class: 114
-      Script: {instanceID: 2384}
+      Script: {instanceID: 2386}
     - Class: 114
-      Script: {instanceID: 2392}
+      Script: {instanceID: 2394}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2496}
     - Class: 114
-      Script: {instanceID: 2504}
+      Script: {instanceID: 2506}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2660}
     - Class: 114
-      Script: {instanceID: 2836}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 2930}
+      Script: {instanceID: 2932}
     - Class: 114
-      Script: {instanceID: 3168}
+      Script: {instanceID: 3170}
     - Class: 114
-      Script: {instanceID: 3198}
+      Script: {instanceID: 3200}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 3602}
+      Script: {instanceID: 3604}
     - Class: 114
-      Script: {instanceID: 4138}
+      Script: {instanceID: 4140}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1623,6 +1624,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 7723c7055b72b6a96fc2daa3b27a5546
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PhotocameraController
   - hash:
       serializedVersion: 2
       Hash: 540882762544409cc4530e60db00e951
@@ -1883,7 +1890,7 @@ ScriptsOnlyBuild:
     className: SaveData
   - hash:
       serializedVersion: 2
-      Hash: f8079941b7f4afe41966e6eeac709178
+      Hash: a58d7bea29dd2acbaa70ab98b6a0814d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: moveCharacter

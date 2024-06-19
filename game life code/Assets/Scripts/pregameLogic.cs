@@ -7,6 +7,8 @@ public class pregameLogic : Field {
     private string[] coordText = new string[3];
     private bool _isChangingCellInView = false;
 
+    private void OnEnable() {FixCamera();}
+
     private void Update() {if (Input.GetMouseButton(1)) ChangeCellInView(Input.GetKey(KeyCode.LeftControl));}
 
     public void Change_x(string input) {coordText[0] = input;}
