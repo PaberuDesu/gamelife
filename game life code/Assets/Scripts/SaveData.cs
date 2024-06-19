@@ -49,7 +49,7 @@ public class SaveData : MonoBehaviour {
 
     public void SavePhoto(int SlotNumber) {
         Texture2D photo = take_a_photo.CamPhoto();
-        File.WriteAllBytes(Application.dataPath + $"/Resources/Image{SlotNumber}.png", photo.EncodeToPNG());
+        File.WriteAllBytes(Application.dataPath + $"/Resources/Image{SlotNumber}of3D.png", photo.EncodeToPNG());
         _photoReloader.ReloadPhoto3D(SlotNumber);
     }
     

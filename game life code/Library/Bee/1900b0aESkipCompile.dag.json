@@ -24,12 +24,11 @@
     {
       "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json",
       "DisplayName": "BuildPlayerDataGenerator TypeDb-All",
-      "Action": "\"C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data\\Tools\\netcorerun\\netcorerun.exe\" \"C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\Assembly-CSharp.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\Unity.AI.Navigation.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\Unity.TextMeshPro.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\Unity.Timeline.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\UnityEngine.TestRunner.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\UnityEngine.UI.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\\nunit.framework.dll\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\Managed\\UnityEngine\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netfx\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netstandard\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\NetStandard\\Extensions\\2.0.0\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\NetStandard\\ref\\2.1.0\" -s=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\" -s=\"D:\\gitProjects\\gamelife\\game life code\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
+      "Action": "\"C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data\\Tools\\netcorerun\\netcorerun.exe\" \"C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\Assembly-CSharp.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\Unity.TextMeshPro.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\Unity.Timeline.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\UnityEngine.TestRunner.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\\UnityEngine.UI.dll\" -a=\"D:\\gitProjects\\gamelife\\game life code\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\\nunit.framework.dll\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\Managed\\UnityEngine\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netfx\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netstandard\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\NetStandard\\Extensions\\2.0.0\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.29f1\\Editor\\Data\\NetStandard\\ref\\2.1.0\" -s=\"D:\\gitProjects\\gamelife\\game life code\\Library\\ScriptAssemblies\" -s=\"D:\\gitProjects\\gamelife\\game life code\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
       "Inputs": [
         "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/Tools/netcorerun/netcorerun.exe",
         "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
         "Library/ScriptAssemblies/Assembly-CSharp.dll",
-        "Library/ScriptAssemblies/Unity.AI.Navigation.dll",
         "Library/ScriptAssemblies/Unity.TextMeshPro.dll",
         "Library/ScriptAssemblies/Unity.Timeline.dll",
         "Library/ScriptAssemblies/UnityEngine.TestRunner.dll",
@@ -178,9 +177,6 @@
     },
     {
       "File": "Library/ScriptAssemblies/Assembly-CSharp.dll"
-    },
-    {
-      "File": "Library/ScriptAssemblies/Unity.AI.Navigation.dll"
     },
     {
       "File": "Library/ScriptAssemblies/Unity.TextMeshPro.dll"

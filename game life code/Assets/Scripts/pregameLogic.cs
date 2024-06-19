@@ -6,10 +6,14 @@ public class pregameLogic : Field {
     [SerializeField] private MessageCenter message_center;
     private string[] coordText = new string[3];
     private bool _isChangingCellInView = false;
+    private float createInViewSpeedPref = 1.0f;
+    private const float createInViewCooldown = 0.01f;
 
     private void OnEnable() {FixCamera();}
 
-    private void Update() {if (Input.GetMouseButton(1)) ChangeCellInView(Input.GetKey(KeyCode.LeftControl));}
+    private void Start() {createInViewSpeedPref = PlayerPrefs.GetFloat("createSpeed");}
+
+    private void Update() {if (Input.GetMouseButton(1) && !_isChangingCellInView) ChangeCellInView(Input.GetKey(KeyCode.LeftControl));}
 
     public void Change_x(string input) {coordText[0] = input;}
 
@@ -20,14 +24,14 @@ public class pregameLogic : Field {
     private void ChangeCellInView(bool changeOnlyEmptyCells) {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 35, LayerMask.GetMask("Default")) && !_isChangingCellInView) {
+        if (Physics.Raycast(ray, out hit, 35, LayerMask.GetMask("Default"))) {
             _isChangingCellInView = true;
             Vector3 coordinates = hit.collider.transform.position;
             if (GameStatusData.All3DCells[(int) coordinates.x, (int) coordinates.y, (int) coordinates.z] == SelectedCellType || changeOnlyEmptyCells)
                 coordinates += hit.normal;
             if (coordinates.x >= 0 && coordinates.x < GameStatusData.size3D[0] && coordinates.y >= 0 && coordinates.y < GameStatusData.size3D[1] && coordinates.z >= 0 && coordinates.z < GameStatusData.size3D[2])
                 Create((int) coordinates.x, (int) coordinates.y, (int) coordinates.z);
-            Invoke("WaitForChangeNext", 0.1f);
+            Invoke("WaitForChangeNext", createInViewCooldown / createInViewSpeedPref);
         }
     }
 
