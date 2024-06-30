@@ -129,7 +129,28 @@
         121,
         122,
         123,
-        124
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145
       ],
       "OverwriteOutputs": false,
       "DebugActionIndex": 0
@@ -1733,6 +1754,18 @@
       "DebugActionIndex": 120
     },
     {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/game life 3d_Data/Resources/unity default resources",
+      "DisplayName": "Copying unity default resources",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/Data/Resources/unity default resources"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/game life 3d_Data/Resources/unity default resources"
+      ],
+      "DebugActionIndex": 121
+    },
+    {
       "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/game life 3d.exe",
       "DisplayName": "Copying game life 3d.exe",
       "ActionType": "CopyFiles",
@@ -1742,7 +1775,247 @@
       "Outputs": [
         "C:/Users/pasha/gamelife/GameLife/game life 3d.exe"
       ],
-      "DebugActionIndex": 121
+      "DebugActionIndex": 122
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll",
+      "DisplayName": "Copying mono-2.0-bdwgc.dll",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll"
+      ],
+      "DebugActionIndex": 123
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll",
+      "DisplayName": "Copying MonoPosixHelper.dll",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll"
+      ],
+      "DebugActionIndex": 124
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser",
+      "DisplayName": "Copying Compat.browser",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser"
+      ],
+      "DebugActionIndex": 125
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx",
+      "DisplayName": "Copying DefaultWsdlHelpGenerator.aspx",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx"
+      ],
+      "DebugActionIndex": 126
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/machine.config",
+      "DisplayName": "Copying machine.config",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/machine.config"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/machine.config"
+      ],
+      "DebugActionIndex": 127
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/settings.map",
+      "DisplayName": "Copying settings.map",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/settings.map"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/settings.map"
+      ],
+      "DebugActionIndex": 128
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/web.config",
+      "DisplayName": "Copying web.config",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/web.config"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/2.0/web.config"
+      ],
+      "DebugActionIndex": 129
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser",
+      "DisplayName": "Copying Compat.browser",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser"
+      ],
+      "DebugActionIndex": 130
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx",
+      "DisplayName": "Copying DefaultWsdlHelpGenerator.aspx",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx"
+      ],
+      "DebugActionIndex": 131
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/machine.config",
+      "DisplayName": "Copying machine.config",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/machine.config"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/machine.config"
+      ],
+      "DebugActionIndex": 132
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/settings.map",
+      "DisplayName": "Copying settings.map",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/settings.map"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/settings.map"
+      ],
+      "DebugActionIndex": 133
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/web.config",
+      "DisplayName": "Copying web.config",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/web.config"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.0/web.config"
+      ],
+      "DebugActionIndex": 134
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser",
+      "DisplayName": "Copying Compat.browser",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser"
+      ],
+      "DebugActionIndex": 135
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx",
+      "DisplayName": "Copying DefaultWsdlHelpGenerator.aspx",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx"
+      ],
+      "DebugActionIndex": 136
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/machine.config",
+      "DisplayName": "Copying machine.config",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/machine.config"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/machine.config"
+      ],
+      "DebugActionIndex": 137
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/settings.map",
+      "DisplayName": "Copying settings.map",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/settings.map"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/settings.map"
+      ],
+      "DebugActionIndex": 138
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/web.config",
+      "DisplayName": "Copying web.config",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/web.config"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/4.5/web.config"
+      ],
+      "DebugActionIndex": 139
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/browscap.ini",
+      "DisplayName": "Copying browscap.ini",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/browscap.ini"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/browscap.ini"
+      ],
+      "DebugActionIndex": 140
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/config",
+      "DisplayName": "Copying config",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/config"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/config"
+      ],
+      "DebugActionIndex": 141
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/mconfig/config.xml",
+      "DisplayName": "Copying config.xml",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/mconfig/config.xml"
+      ],
+      "Outputs": [
+        "C:/Users/pasha/gamelife/GameLife/MonoBleedingEdge/etc/mono/mconfig/config.xml"
+      ],
+      "DebugActionIndex": 142
     },
     {
       "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/UnityCrashHandler64.exe",
@@ -1754,7 +2027,7 @@
       "Outputs": [
         "C:/Users/pasha/gamelife/GameLife/UnityCrashHandler64.exe"
       ],
-      "DebugActionIndex": 122
+      "DebugActionIndex": 143
     },
     {
       "Annotation": "CopyFiles C:/Users/pasha/gamelife/GameLife/UnityPlayer.dll",
@@ -1766,7 +2039,7 @@
       "Outputs": [
         "C:/Users/pasha/gamelife/GameLife/UnityPlayer.dll"
       ],
-      "DebugActionIndex": 123
+      "DebugActionIndex": 144
     },
     {
       "Annotation": "Player",
@@ -1893,10 +2166,31 @@
         120,
         121,
         122,
-        123
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144
       ],
       "OverwriteOutputs": false,
-      "DebugActionIndex": 124
+      "DebugActionIndex": 145
     }
   ],
   "FileSignatures": [
@@ -2051,6 +2345,10 @@
       "Recurse": 1
     },
     {
+      "Path": "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/Data/Resources",
+      "Recurse": 1
+    },
+    {
       "Path": "C:/Program Files/Unity/Hub/Editor/2022.3.29f1/Editor/Data/Tools/BuildPipeline"
     },
     {
@@ -2093,7 +2391,7 @@
   "EmitDataForBeeWhy": 0,
         "NamedNodes": {
           "all_tundra_nodes": 0,
-          "Player": 124
+          "Player": 145
         }
 ,  "DefaultNodes": [
     0
