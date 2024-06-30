@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using game_logic;
 
 public class gameLogic2D : gameLogic {
     [SerializeField] private Paint _paint;
@@ -13,9 +12,7 @@ public class gameLogic2D : gameLogic {
         _isFrameChanged = true;
         if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}
     }
-
-    private void OnDisable() {_paint.AddAction();}
-
+    
     public override void StartGame() {
         continuing = true;
         pregameUI.SetActive(false);

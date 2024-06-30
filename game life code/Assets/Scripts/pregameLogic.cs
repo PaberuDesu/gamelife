@@ -6,14 +6,40 @@ public class pregameLogic : Field {
     [SerializeField] private MessageCenter message_center;
     private string[] coordText = new string[3];
     private bool _isChangingCellInView = false;
+    private bool _isDrawing = false;
     private float createInViewSpeedPref = 1.0f;
     private const float createInViewCooldown = 0.01f;
 
     private void OnEnable() {FixCamera();}
+    private void OnDisable() {actions = null;}
 
     private void Start() {createInViewSpeedPref = PlayerPrefs.GetFloat("createSpeed");}
 
-    private void Update() {if (Input.GetMouseButton(1) && !_isChangingCellInView) ChangeCellInView(Input.GetKey(KeyCode.LeftControl));}
+    private void Update() {
+        if (!_isChangingCellInView) {
+            if (Input.GetMouseButton(1)) ChangeCellInView(Input.GetKey(KeyCode.LeftControl));
+            else if (_isDrawing) {
+                AddAction();
+                _isDrawing = false;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Z)) {SetField(actions.Undo3D());}
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Y)) {SetField(actions.Redo3D());}
+    }
+
+    private void SetField(byte[,,] statement) {
+        if (statement is null) return;
+        for (int x = 0; x < GameStatusData.size3D[0]; x++) {
+            for (int y = 0; y < GameStatusData.size3D[1]; y++) {
+                for (int z = 0; z < GameStatusData.size3D[2]; z++) {
+                    byte type = statement[x,y,z];
+                    if (type != GameStatusData.All3DCells[x,y,z])
+                        Create(x,y,z,type);
+                }
+            }
+        }
+    }
 
     public void Change_x(string input) {coordText[0] = input;}
 
@@ -29,8 +55,10 @@ public class pregameLogic : Field {
             Vector3 coordinates = hit.collider.transform.position;
             if (GameStatusData.All3DCells[(int) coordinates.x, (int) coordinates.y, (int) coordinates.z] == SelectedCellType || changeOnlyEmptyCells)
                 coordinates += hit.normal;
-            if (coordinates.x >= 0 && coordinates.x < GameStatusData.size3D[0] && coordinates.y >= 0 && coordinates.y < GameStatusData.size3D[1] && coordinates.z >= 0 && coordinates.z < GameStatusData.size3D[2])
+            if (coordinates.x >= 0 && coordinates.x < GameStatusData.size3D[0] && coordinates.y >= 0 && coordinates.y < GameStatusData.size3D[1] && coordinates.z >= 0 && coordinates.z < GameStatusData.size3D[2]) {
                 Create((int) coordinates.x, (int) coordinates.y, (int) coordinates.z);
+                _isDrawing = true;
+            }
             Invoke("WaitForChangeNext", createInViewCooldown / createInViewSpeedPref);
         }
     }
@@ -43,7 +71,10 @@ public class pregameLogic : Field {
             x = Convert.ToByte(coordText[0]);
             y = Convert.ToByte(coordText[1]);
             z = Convert.ToByte(coordText[2]);
-            if (GameStatusData.All3DCells[x,y,z] != SelectedCellType) Create(x,y,z);
+            if (GameStatusData.All3DCells[x,y,z] != SelectedCellType) {
+                Create(x,y,z);
+                AddAction();
+            }
             else message_center.MessageCellExists();
         } catch {message_center.MessageWrongCoordinates();}
     }
@@ -79,6 +110,7 @@ public class pregameLogic : Field {
     }
 
     public void FixCamera() {
+        actions = new Roster(GameStatusData.All3DCells);
         int x = GameStatusData.size3D[0];
         int y = GameStatusData.size3D[1];
         int z = GameStatusData.size3D[2];
@@ -92,7 +124,7 @@ public class pregameLogic : Field {
         cam_transform.GetComponent<Camera>().orthographicSize = 2*((x+y+z)/3);
     }
 
-    public override void AddAction() {}
+    public override void AddAction() {actions.Add(GameStatusData.All3DCells);}
 
     public void AddAction(int prevCell, int nextCell, byte x, byte y, byte z) {
 

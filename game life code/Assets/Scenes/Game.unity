@@ -27207,6 +27207,7 @@ MonoBehaviour:
   pregameUI: {fileID: 1793643214}
   gameUI: {fileID: 2094805451}
   settings: {fileID: 1753758871}
+  field: {fileID: 568406442}
   _move: {fileID: 963194229}
   gamemodes: {fileID: 963194233}
 --- !u!114 &1057189553
@@ -34367,6 +34368,7 @@ MonoBehaviour:
   pregameUI: {fileID: 816555886}
   gameUI: {fileID: 1758612617}
   settings: {fileID: 1846512942}
+  field: {fileID: 1197724290}
   _paint: {fileID: 1197724290}
 --- !u!114 &1458798122
 MonoBehaviour:

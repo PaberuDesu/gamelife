@@ -90,10 +90,10 @@ public class SaveData : MonoBehaviour {
         GameStatusData.size3D[0] = X_size;
         GameStatusData.size3D[1] = Y_size;
         GameStatusData.size3D[2] = Z_size;
-        field.FixCamera();
         field.Clear();
         foreach (Cell cell in AllCells)
             field.Create(cell.x, cell.y, cell.z, cell.ID);
+        field.FixCamera();
     }
 }
 
@@ -120,10 +120,13 @@ public class SaveData : MonoBehaviour {
         GameStatusData.size2D[0] = X_size;
         GameStatusData.size2D[1] = Y_size;
         GameStatusData.All2DCells = new byte[X_size, Y_size];
-        field.GetNewSize();
         for (int i = 0; i < X_size * Y_size; i++) {
             int x = (int) i / Y_size, y = (int) i % Y_size;
             GameStatusData.All2DCells[x,y] = Convert.ToByte(AllCells[i]);
+        }
+        field.GetNewSize();
+        for (int i = 0; i < X_size * Y_size; i++) {
+            int x = (int) i / Y_size, y = (int) i % Y_size;
             field.PaintToPlay(x, y, GameStatusData.All2DCells[x,y]);
         }
         field._texture.Apply();

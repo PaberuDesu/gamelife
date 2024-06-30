@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using game_logic;
 
 public class gameLogic3D : gameLogic {
     private byte[,,] AllCells;
