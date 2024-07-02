@@ -3,25 +3,20 @@ using UnityEngine;
 
 public class gameLogic3D : gameLogic {
     private byte[,,] AllCells;
-    private byte[,,] RememberedAllCells;
+    public byte[,,] RememberedAllCells;
 
     [SerializeField] private moveCharacter _move;
     [SerializeField] private Gamemodes gamemodes;
 
-    protected override void Update() {if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}}
+    protected override int dimensions {get {return 3;}}
 
-    public override void StartGame() {
-        continuing = true;
-        pregameUI.SetActive(false);
-        gameUI.SetActive(true);
+    protected override void SetStart() {
         _move.enabled = true;
         gamemodes.gameStarted = true;
-        counter = 0;
         RememberedAllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
-        StartCoroutine(GameCycle());
     }
 
-    protected override IEnumerator GameCycle() {
+    protected override void GameCycle() {
         AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
 
         for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
@@ -99,7 +94,7 @@ public class gameLogic3D : gameLogic {
         }
 
         bool EqualityShort = true, EqualityLong = true, flag = true;
-        for (byte x = 0; flag && x < GameStatusData.size3D[0]; x++) {
+        for (byte x = 0; doStopIfStable && flag && x < GameStatusData.size3D[0]; x++) {
             for (byte y = 0; flag && y < GameStatusData.size3D[1]; y++) {
                 for (byte z = 0; flag && z < GameStatusData.size3D[2]; z++) {
                     if (!(GameStatusData.All3DCells[x,y,z] == AllCells[x,y,z]))
@@ -113,23 +108,12 @@ public class gameLogic3D : gameLogic {
         }
         GameStatusData.All3DCells = AllCells;
 
-        if (flag) {
-            _move.enabled = false;
-            GameOver.SetActive(true);
-        } else if (continuing) {
-            counter++;
-            if (counter == 100) {
-                counter = 0;
-                RememberedAllCells = AllCells;
-            }
-            yield return new WaitForSeconds(0.1f / settings.simulationSpeed);
-            StartCoroutine(GameCycle());
-        } else {
-            _move.enabled = false;
-            pregameUI.SetActive(true);
-            gameUI.SetActive(false);
-            gamemodes.gameStarted = false;
-        }
+        StartCoroutine(DesizeContinueOrStop(flag));
+    }
+
+    protected override void SetEnd(bool isContinuing) {
+        _move.enabled = isContinuing;
+        gamemodes.gameStarted = isContinuing;
     }
 
     private byte[] checkNeighbours(byte x, byte y, byte z) {

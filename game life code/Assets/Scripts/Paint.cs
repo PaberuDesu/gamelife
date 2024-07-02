@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Paint : Field {
+public class Paint : Pregame {
     private float Zoom = 1;
     private const int minZoom = 1;
     private const int maxZoom = 12;

@@ -2,28 +2,20 @@ using System.Collections;
 using UnityEngine;
 
 public class gameLogic2D : gameLogic {
-    [SerializeField] private Paint _paint;
     private byte[,] AllCells;
-    private byte[,] RememberedAllCells;
+    public byte[,] RememberedAllCells;
 
-    private bool _isFrameChanged = false;
-
-    protected override void Update() {
-        _isFrameChanged = true;
-        if (Input.GetKeyDown(KeyCode.Escape)) {continuing = false;}
-    }
+    [SerializeField] private Paint _paint;
+    private float frameChangeTime = 0;
     
-    public override void StartGame() {
-        continuing = true;
-        pregameUI.SetActive(false);
-        gameUI.SetActive(true);
+    protected override int dimensions {get {return 2;}}
+
+    protected override void SetStart() {
         _paint.SetInGame(true);
-        counter = 0;
         RememberedAllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
-        StartCoroutine(GameCycle());
     }
 
-    protected override IEnumerator GameCycle() {
+    protected override void GameCycle() {
         AllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
 
         for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
@@ -91,13 +83,13 @@ public class gameLogic2D : gameLogic {
             }
         }
 
-        if (_isFrameChanged) {
+        if (Time.time != frameChangeTime) {
             _paint._texture.Apply();
-            _isFrameChanged = false;
+            frameChangeTime = Time.time;
         }
 
         bool EqualityShort = true, EqualityLong = true, flag = true;
-        for (byte x = 0; flag && x < GameStatusData.size2D[0]; x++) {
+        for (byte x = 0; doStopIfStable && flag && x < GameStatusData.size2D[0]; x++) {
             for (byte y = 0; flag && y < GameStatusData.size2D[1]; y++) {
                 if (!(GameStatusData.All2DCells[x,y] == AllCells[x,y]))
                     EqualityShort = false;
@@ -109,23 +101,12 @@ public class gameLogic2D : gameLogic {
         }
         GameStatusData.All2DCells = AllCells;
         
-        if (flag) {
-            _paint._texture.Apply();
-            GameOver.SetActive(true);
-        } else if (continuing) {
-            counter++;
-            if (counter == 100) {
-                counter = 0;
-                RememberedAllCells = AllCells;
-            }
-            yield return new WaitForSeconds(0.1f / settings.simulationSpeed);
-            StartCoroutine(GameCycle());
-        } else {
-            pregameUI.SetActive(true);
-            gameUI.SetActive(false);
-            _paint._texture.Apply();
-            _paint.SetInGame(false);
-        }
+        StartCoroutine(DesizeContinueOrStop(flag));
+    }
+
+    protected override void SetEnd(bool isContinuing) {
+        _paint._texture.Apply();
+        _paint.SetInGame(isContinuing);
     }
 
     private byte[] checkNeighbours(byte x, byte y) {

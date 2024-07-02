@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ClearField : MonoBehaviour
 {
-    [SerializeField] private Field field;
+    [SerializeField] private Pregame field;
     [SerializeField] private Image progressbar;
     private bool _holding = false;
     private const float inreaseSpeedMultiplier = 3;

@@ -14,7 +14,7 @@ abstract public class Settings : SupportTypeSelecting {
     [SerializeField] private Transform surviveConditionChanger;
     [SerializeField] private Slider speedSlider;
     [SerializeField] private GameObject settingsPanel;
-    [SerializeField] private Field field;
+    [SerializeField] private Pregame field;
 
     private const float minimumSimulationSpeed = 1f;
     private const int simulationSpeedModifier = 10;

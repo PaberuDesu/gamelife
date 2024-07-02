@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class pregameLogic : Field {
+public class pregameLogic : Pregame {
     [SerializeField] private Transform camera_area;
     [SerializeField] private MessageCenter message_center;
     private string[] coordText = new string[3];
@@ -125,8 +125,5 @@ public class pregameLogic : Field {
     }
 
     public override void AddAction() {actions.Add(GameStatusData.All3DCells);}
-
-    public void AddAction(int prevCell, int nextCell, byte x, byte y, byte z) {
-
-    }
+    //public void AddAction(int prevCell, int nextCell, byte x, byte y, byte z) {}
 }

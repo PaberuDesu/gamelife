@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Gamemodes : MonoBehaviour
 {
-    public moveCharacter Camera_on;
-    public GameObject PregameUI_on;
+    [SerializeField] private moveCharacter Camera_on;
+    [SerializeField] private GameObject PregameUI_on;
 
     public bool cameraEnabled = false;
     public bool gameStarted = false;
@@ -18,6 +18,4 @@ public class Gamemodes : MonoBehaviour
         Camera_on.enabled = cameraEnabled;
         PregameUI_on.SetActive(!cameraEnabled);
     }
-
-    public void ChangeGamemodePregameAndGame(bool value) {gameStarted = value;}
 }
