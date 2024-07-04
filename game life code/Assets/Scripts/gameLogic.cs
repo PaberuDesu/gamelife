@@ -10,7 +10,7 @@ abstract public class gameLogic : MonoBehaviour {
     [SerializeField] protected GameObject gameUI;
     [SerializeField] protected Settings settings;
     [SerializeField] private Pregame field;
-    protected abstract int dimensions{get;}
+    public bool playingOneFrame{get {return Input.GetKey(KeyCode.P);}}
 
     private void OnDisable() {field.AddAction();}
 
@@ -20,8 +20,10 @@ abstract public class gameLogic : MonoBehaviour {
 
     public void StartGame() {
         continuing = true;
-        pregameUI.SetActive(false);
-        gameUI.SetActive(true);
+        if (!playingOneFrame) {
+            pregameUI.SetActive(false);
+            gameUI.SetActive(true);
+        }
         counter = 0;
         SetStart();
         GameCycle();
@@ -45,15 +47,20 @@ abstract public class gameLogic : MonoBehaviour {
 
     protected abstract void GameCycle();
 
-    protected IEnumerator DesizeContinueOrStop(bool isStable) {
-        if (isStable && doStopIfStable && continuing) {
+    protected void EndIteration(bool isStable) {
+        if (!playingOneFrame) StartCoroutine(DesizeContinueOrStop(isStable));
+        else if (this is gameLogic2D) ((gameLogic2D) this)._paint._texture.Apply();
+    }
+
+    private IEnumerator DesizeContinueOrStop(bool isStable) {
+        if (isStable && continuing) {
             SetEnd(false);
             GameOver.SetActive(true);
         } else if (continuing) {
             counter++;
             if (counter == 100) {
                 counter = 0;
-                if (dimensions == 2) ((gameLogic2D)this).RememberedAllCells = GameStatusData.All2DCells;
+                if (this is gameLogic2D) ((gameLogic2D)this).RememberedAllCells = GameStatusData.All2DCells;
                 else ((gameLogic3D)this).RememberedAllCells = GameStatusData.All3DCells;
             }
             yield return new WaitForSeconds(0.1f / settings.simulationSpeed);

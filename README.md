@@ -51,7 +51,8 @@ The player can:
 - save field and rools (and color palette in 2D) and load this data.
 - use zoom on 2D-field, move along it and change color palette
 - draw on 2D-field.
-- undo operations (only in 2D)
+- undo operations
+- run the game frame by frame, clicking "p"
 - create a slice of a 3D-field at a certain coordinate or insert a 2D-field as a slice inside a 3D one.
 
 ### General technical data

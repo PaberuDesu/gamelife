@@ -11,9 +11,8 @@ public class pregameLogic : Pregame {
     private const float createInViewCooldown = 0.01f;
 
     private void OnEnable() {FixCamera();}
-    private void OnDisable() {actions = null;}
 
-    private void Start() {createInViewSpeedPref = PlayerPrefs.GetFloat("createSpeed");}
+    private void Awake() {createInViewSpeedPref = PlayerPrefs.GetFloat("createSpeed");}
 
     private void Update() {
         if (!_isChangingCellInView) {
@@ -24,8 +23,9 @@ public class pregameLogic : Pregame {
             }
         }
 
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Z)) {SetField(actions.Undo3D());}
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Y)) {SetField(actions.Redo3D());}
+        if (hotkeyUndo) {SetField(actions.Undo3D());}
+        else if (hotkeyRedo) {SetField(actions.Redo3D());}
+        if (Input.GetKeyUp(KeyCode.P)) AddAction();
     }
 
     private void SetField(byte[,,] statement) {

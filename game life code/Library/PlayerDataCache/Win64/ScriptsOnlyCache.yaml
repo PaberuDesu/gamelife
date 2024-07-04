@@ -38,11 +38,15 @@ ScriptsOnlyBuild:
     - moveCharacter
     - pregameLogic
     - suicide
+    Unity.Timeline.Editor.dll:
+    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1669,7 +1673,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 26ecc6a6e69cea5c45879cf8fb79a987
+      Hash: 4ca973600ab78e425c610d69b3279f7d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: pregameLogic
@@ -1957,7 +1961,7 @@ ScriptsOnlyBuild:
     className: Gamemodes
   - hash:
       serializedVersion: 2
-      Hash: c14da528c7494e004d5fcfc7303ca35c
+      Hash: ac4acc286e87b19f6a24537d04a227da
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Paint

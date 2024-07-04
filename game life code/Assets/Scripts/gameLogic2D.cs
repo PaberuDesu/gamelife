@@ -5,12 +5,11 @@ public class gameLogic2D : gameLogic {
     private byte[,] AllCells;
     public byte[,] RememberedAllCells;
 
-    [SerializeField] private Paint _paint;
+    public Paint _paint;
     private float frameChangeTime = 0;
     
-    protected override int dimensions {get {return 2;}}
-
     protected override void SetStart() {
+        if (playingOneFrame) return;
         _paint.SetInGame(true);
         RememberedAllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
     }
@@ -87,21 +86,23 @@ public class gameLogic2D : gameLogic {
             _paint._texture.Apply();
             frameChangeTime = Time.time;
         }
-
+        
         bool EqualityShort = true, EqualityLong = true, flag = true;
-        for (byte x = 0; doStopIfStable && flag && x < GameStatusData.size2D[0]; x++) {
-            for (byte y = 0; flag && y < GameStatusData.size2D[1]; y++) {
-                if (!(GameStatusData.All2DCells[x,y] == AllCells[x,y]))
-                    EqualityShort = false;
-                if (!(RememberedAllCells[x,y] == AllCells[x,y]))
-                    EqualityLong = false;
-                if (!EqualityLong && !EqualityShort)
-                    flag = false;
-            } 
+        if (!playingOneFrame && doStopIfStable) {
+            for (byte x = 0; flag && x < GameStatusData.size2D[0]; x++) {
+                for (byte y = 0; flag && y < GameStatusData.size2D[1]; y++) {
+                    if (!(GameStatusData.All2DCells[x,y] == AllCells[x,y]))
+                        EqualityShort = false;
+                    if (!(RememberedAllCells[x,y] == AllCells[x,y]))
+                        EqualityLong = false;
+                    if (!EqualityLong && !EqualityShort)
+                        flag = false;
+                } 
+            }
         }
         GameStatusData.All2DCells = AllCells;
         
-        StartCoroutine(DesizeContinueOrStop(flag));
+        EndIteration(flag && doStopIfStable);
     }
 
     protected override void SetEnd(bool isContinuing) {

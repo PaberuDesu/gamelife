@@ -8,9 +8,8 @@ public class gameLogic3D : gameLogic {
     [SerializeField] private moveCharacter _move;
     [SerializeField] private Gamemodes gamemodes;
 
-    protected override int dimensions {get {return 3;}}
-
     protected override void SetStart() {
+        if (playingOneFrame) return;
         _move.enabled = true;
         gamemodes.gameStarted = true;
         RememberedAllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
@@ -94,21 +93,23 @@ public class gameLogic3D : gameLogic {
         }
 
         bool EqualityShort = true, EqualityLong = true, flag = true;
-        for (byte x = 0; doStopIfStable && flag && x < GameStatusData.size3D[0]; x++) {
-            for (byte y = 0; flag && y < GameStatusData.size3D[1]; y++) {
-                for (byte z = 0; flag && z < GameStatusData.size3D[2]; z++) {
-                    if (!(GameStatusData.All3DCells[x,y,z] == AllCells[x,y,z]))
-                        EqualityShort = false;
-                    if (!(RememberedAllCells[x,y,z] == AllCells[x,y,z]))
-                        EqualityLong = false;
-                    if (!EqualityLong && !EqualityShort)
-                        flag = false;
-                }
-            } 
+        if (!playingOneFrame && doStopIfStable) {
+            for (byte x = 0; flag && x < GameStatusData.size3D[0]; x++) {
+                for (byte y = 0; flag && y < GameStatusData.size3D[1]; y++) {
+                    for (byte z = 0; flag && z < GameStatusData.size3D[2]; z++) {
+                        if (!(GameStatusData.All3DCells[x,y,z] == AllCells[x,y,z]))
+                            EqualityShort = false;
+                        if (!(RememberedAllCells[x,y,z] == AllCells[x,y,z]))
+                            EqualityLong = false;
+                        if (!EqualityLong && !EqualityShort)
+                            flag = false;
+                    }
+                } 
+            }
         }
         GameStatusData.All3DCells = AllCells;
 
-        StartCoroutine(DesizeContinueOrStop(flag));
+        EndIteration(flag && doStopIfStable);
     }
 
     protected override void SetEnd(bool isContinuing) {

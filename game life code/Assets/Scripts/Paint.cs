@@ -57,7 +57,6 @@ public class Paint : Pregame {
     }
 
     private void OnEnable() {actions = new Roster(GameStatusData.All2DCells);}
-    private void OnDisable() {actions = null;}
 
     public void Resize() {
         GameStatusData.size2D = new int[] {
@@ -92,8 +91,9 @@ public class Paint : Pregame {
             AddAction();
             _isUsingBrush = false;
         }
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Z)) {SetField(actions.Undo2D());}
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Y)) {SetField(actions.Redo2D());}
+        if (hotkeyUndo) {SetField(actions.Undo2D());}
+        else if (hotkeyRedo) {SetField(actions.Redo2D());}
+        if (Input.GetKeyUp(KeyCode.P)) AddAction();
     }
 
     public override void AddAction() {actions.Add(GameStatusData.All2DCells);}
