@@ -103,15 +103,5 @@ internal class Action2D : Action {
 
 internal class Action3D : Action {
     internal byte[,,] statement;
-    //private byte previousType, nextType;
-    //private byte x, y, z;
-
     internal Action3D(byte[,,] statement) {this.statement = statement;}
-    //internal Action3D(byte previousType, byte nextType, byte x, byte y, byte z) {
-    //    this.previousType = previousType;
-    //    this.nextType = nextType;
-    //    this.x = x;
-    //    this.y = y;
-    //    this.z = z;
-    //}
 }

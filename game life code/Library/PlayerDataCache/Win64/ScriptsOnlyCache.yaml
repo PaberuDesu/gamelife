@@ -38,8 +38,6 @@ ScriptsOnlyBuild:
     - moveCharacter
     - pregameLogic
     - suicide
-    Unity.Timeline.Editor.dll:
-    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI

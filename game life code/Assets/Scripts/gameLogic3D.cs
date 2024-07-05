@@ -15,7 +15,7 @@ public class gameLogic3D : gameLogic {
         RememberedAllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
     }
 
-    protected override void GameCycle() {
+    protected override IEnumerator GameCycle() {
         AllCells = new byte[GameStatusData.size3D[0], GameStatusData.size3D[1], GameStatusData.size3D[2]];
 
         for (byte x = 0; x < GameStatusData.size3D[0]; x++) {
@@ -91,6 +91,7 @@ public class gameLogic3D : gameLogic {
                 }
             }
         }
+        yield return new WaitForSeconds(0.05f / settings.simulationSpeed);
 
         bool EqualityShort = true, EqualityLong = true, flag = true;
         if (!playingOneFrame && doStopIfStable) {

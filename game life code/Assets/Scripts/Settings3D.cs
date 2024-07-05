@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Settings3D : Settings {
     protected override int dimensions {get {return 3;}}

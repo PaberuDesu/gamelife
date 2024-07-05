@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class pregameLogic : Pregame {
@@ -68,9 +67,9 @@ public class pregameLogic : Pregame {
     public void CreateByCoordinates() {
         byte x, y, z;
         try {
-            x = Convert.ToByte(coordText[0]);
-            y = Convert.ToByte(coordText[1]);
-            z = Convert.ToByte(coordText[2]);
+            x = byte.Parse(coordText[0]);
+            y = byte.Parse(coordText[1]);
+            z = byte.Parse(coordText[2]);
             if (GameStatusData.All3DCells[x,y,z] != SelectedCellType) {
                 Create(x,y,z);
                 AddAction();
@@ -91,7 +90,7 @@ public class pregameLogic : Pregame {
             GameObject New_cell = Instantiate(GameStatusData.cellTypes[cell_type-1], new Vector3(x, y, z), Quaternion.identity, GameStatusData.CellsParent);
             New_cell.name = $"{GameStatusData.CellNames[cell_type-1]}({x}, {y}, {z})";
         }
-        GameStatusData.All3DCells[x,y,z] = Convert.ToByte(cell_type);
+        GameStatusData.All3DCells[x,y,z] = (byte) cell_type;
     }
 
     private static void DeleteCell(int x, int y, int z) {Destroy(GameObject.Find($"{GameStatusData.CellNames[GameStatusData.All3DCells[x,y,z] - 1]}({x}, {y}, {z})"));}
@@ -125,5 +124,4 @@ public class pregameLogic : Pregame {
     }
 
     public override void AddAction() {actions.Add(GameStatusData.All3DCells);}
-    //public void AddAction(int prevCell, int nextCell, byte x, byte y, byte z) {}
 }

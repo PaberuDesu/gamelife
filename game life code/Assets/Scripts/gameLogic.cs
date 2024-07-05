@@ -26,7 +26,7 @@ abstract public class gameLogic : MonoBehaviour {
         }
         counter = 0;
         SetStart();
-        GameCycle();
+        StartCoroutine(GameCycle());
     }
 
     protected abstract void SetStart();
@@ -42,10 +42,10 @@ abstract public class gameLogic : MonoBehaviour {
     public void Continue() {
         doStopIfStable = false;
         SetEnd(true);
-        GameCycle();
+        StartCoroutine(GameCycle());
     }
 
-    protected abstract void GameCycle();
+    protected abstract IEnumerator GameCycle();
 
     protected void EndIteration(bool isStable) {
         if (!playingOneFrame) StartCoroutine(DesizeContinueOrStop(isStable));
@@ -63,8 +63,8 @@ abstract public class gameLogic : MonoBehaviour {
                 if (this is gameLogic2D) ((gameLogic2D)this).RememberedAllCells = GameStatusData.All2DCells;
                 else ((gameLogic3D)this).RememberedAllCells = GameStatusData.All3DCells;
             }
-            yield return new WaitForSeconds(0.1f / settings.simulationSpeed);
-            GameCycle();
+            yield return new WaitForSeconds(0.05f / settings.simulationSpeed);
+            StartCoroutine(GameCycle());
         } else {
             SetEnd(false);
             EndGame();

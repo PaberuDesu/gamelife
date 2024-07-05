@@ -14,7 +14,7 @@ public class gameLogic2D : gameLogic {
         RememberedAllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
     }
 
-    protected override void GameCycle() {
+    protected override IEnumerator GameCycle() {
         AllCells = new byte[GameStatusData.size2D[0], GameStatusData.size2D[1]];
 
         for (byte x = 0; x < GameStatusData.size2D[0]; x++) {
@@ -81,6 +81,7 @@ public class gameLogic2D : gameLogic {
                 }
             }
         }
+        yield return new WaitForSeconds(0.05f / settings.simulationSpeed);
 
         if (Time.time != frameChangeTime) {
             _paint._texture.Apply();
